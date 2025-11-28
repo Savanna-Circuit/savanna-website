@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Savanna Circuit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/sav-logo.jpeg" alt="Savanna Circuit Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+                <li class="nav-item"><a href="impact.html" class="nav-link">Impact</a></li>
+                <li class="nav-item"><a href="news.html" class="nav-link">News & Stories</a></li>
+                <li class="nav-item"><a href="store-app/index.html" class="nav-link">Store</a></li>
+                <li class="nav-item"><a href="support.html" class="nav-link">Support</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Specialists in Solar Cooling, Solar Drying and Dairy Management Solutions</h1>
+            <p>Savanna Circuit Technologies builds hybrid milk chillers, solar dryers, and dairy management ERPs to add value and provide more income to youth and smallholder farmers.</p>
+            <a href="about.html" class="cta-button primary">About</a>
+        </div>
+        <div class="hero-image">
+            <img src="images/hero-banner.jpg" alt="Hero Banner">
+        </div>
+    </section>
+
+    <!-- Product Slideshow Section -->
+    <section class="product-slideshow">
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="images/product-1.jpg" alt="Solar Cooling">
+                <div class="slide-content">
+                    <h2>Solar Cooling Solutions</h2>
+                    <p>Hybrid milk chillers and solar-powered cooling systems for dairy farmers</p>
+                    <div class="slide-buttons">
+                        <a href="store.html" class="cta-button secondary">Buy</a>
+                        <a href="contact.html" class="cta-button secondary">Contact</a>
+                        <a href="contact.html#partner-form" class="cta-button secondary">Partner</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide fade">
+                <img src="images/product-2.jpg" alt="MaziwaPlus DMS">
+                <div class="slide-content">
+                    <h2>MaziwaPlus Dairy Management System</h2>
+                    <p>Cloud-based ERP for production tracking, financial management, and market linkages</p>
+                    <div class="slide-buttons">
+                        <a href="store.html" class="cta-button secondary">Buy</a>
+                        <a href="contact.html" class="cta-button secondary">Contact</a>
+                        <a href="contact.html#partner-form" class="cta-button secondary">Partner</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide fade">
+                <img src="images/product-3.jpg" alt="Eco-Sav Dryer">
+                <div class="slide-content">
+                    <h2>Eco-Sav Solar Dryer</h2>
+                    <p>Solar-powered agricultural dryer for sustainable food preservation and value addition</p>
+                    <div class="slide-buttons">
+                        <a href="store.html" class="cta-button secondary">Buy</a>
+                        <a href="contact.html" class="cta-button secondary">Contact</a>
+                        <a href="contact.html#partner-form" class="cta-button secondary">Partner</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide fade">
+                <img src="images/product-4.jpg" alt="Solar Thrive">
+                <div class="slide-content">
+                    <h2>Solar Thrive</h2>
+                    <p>Nomad Cans, Ice Water Dispenser, and Eco-Sav Bag — last-mile market solutions</p>
+                    <div class="slide-buttons">
+                        <a href="store.html" class="cta-button secondary">Buy</a>
+                        <a href="contact.html" class="cta-button secondary">Contact</a>
+                        <a href="contact.html#partner-form" class="cta-button secondary">Partner</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+
+        <!-- Dots for slideshow -->
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </section>
+
+    <!-- Impact Highlights Section -->
+    <section class="impact-highlights">
+        <h2>Our Impact</h2>
+        <div class="impact-grid">
+            <div class="impact-card">
+                <h3>50,000+</h3>
+                <p>Farmers Empowered</p>
+            </div>
+            <div class="impact-card">
+                <h3>2.5M+</h3>
+                <p>Hectares Transformed</p>
+            </div>
+            <div class="impact-card">
+                <h3>35%</h3>
+                <p>Average Yield Increase</p>
+            </div>
+            <div class="impact-card">
+                <h3>$500M+</h3>
+                <p>Income Generated</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Farmers Say</h2>
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"AgriConnect transformed my farm. I increased my yield by 40% in just one season!"</p>
+                <p class="testimonial-author">- Rajesh Kumar, India</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The smart irrigation system saved me thousands in water costs while improving quality."</p>
+                <p class="testimonial-author">- Maria Santos, Brazil</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Finally, I have access to data-driven insights that help me make better decisions."</p>
+                <p class="testimonial-author">- James Ochieng, Kenya</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The support team is incredible. They're always there when I need them."</p>
+                <p class="testimonial-author">- Sofia Rodriguez, Mexico</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key CTAs Section -->
+    <section class="key-ctas">
+        <div class="cta-grid">
+            <div class="cta-card">
+                <h3>For Farmers</h3>
+                <p>Access cutting-edge tools and resources to maximize your farm's potential</p>
+                <a href="products.html" class="cta-button primary">Explore Products</a>
+            </div>
+            <div class="cta-card">
+                <h3>For Partners</h3>
+                <p>Join our network of organizations transforming agriculture globally</p>
+                <a href="about.html#partners" class="cta-button primary">Partner With Us</a>
+            </div>
+            <div class="cta-card">
+                <h3>Explore Products</h3>
+                <p>Discover our full range of innovative agricultural solutions</p>
+                <a href="store.html" class="cta-button primary">Buy</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Savanna Circuit</h4>
+                <p>Empowering farmers through technology and innovation</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="store.html">Store</a></li>
+                    <li><a href="impact.html">Impact</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="about.html#partners">Partners</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-communications">
+            <div class="comm-left">
+                <img src="images/footer-logo.jpeg" alt="Savanna Circuit communications" class="footer-comm-logo">
+            </div>
+            <div class="comm-center">
+                <p><strong>Tel:</strong> 0208000265</p>
+                <p><strong>Cel:</strong> +254714574007</p>
+                <p>Savanna Business Park, Off Kangundo road-Ruai, Nairobi</p>
+            </div>
+            <div class="comm-right">
+                <p><strong>SAVANNA CIRCUIT TECHNOLOGIES</strong></p>
+                <p>P.O.Box 5107-00200</p>
+                <p>www.sav-circuit.com</p>
+                <p>info@sav-circuit.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Savanna Circuit Technologies. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
