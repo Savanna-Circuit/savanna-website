@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savanna Circuit Store - Premium Agricultural Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../Website/index.html" class="logo-link" aria-label="Savanna Circuit Website">
+                    <img src="../images/sav%20logo%20(2).jpeg" alt="Savanna Circuit Logo" class="logo-image">
+                    <span class="site-title"> SAVANNA CIRCUIT STORE</span>
+                </a>
+            </div>
+            <div class="search-box" aria-label="Search products">
+                <input id="searchInput" type="text" placeholder="Search products..." aria-label="Search products">
+                <button id="searchBtn" aria-label="Run search">🔎</button>
+            </div>
+            <div class="icons" aria-label="User actions">
+                <div class="icon" id="cartBtn" title="Cart" aria-label="Cart">🛒</div>
+                <div class="icon" id="signInBtn" title="Sign In" aria-label="Sign In">👤</div>
+                <div class="menu-icon hamburger" id="menuBtn" title="Menu" aria-label="Menu">☰</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section: store landing banner -->
+    <section class="hero-subpage">
+        <h1>Savanna Circuit Store</h1>
+        <p>Premium agricultural solutions with flexible financing options</p>
+    </section>
+
+    <!-- Featured Products Slideshow: highlights top categories -->
+    <section class="featured-slideshow">
+        <div class="slideshow-container">
+
+            <!-- Slide 1: Solar Thrive (portable solutions) -->
+            <div class="slide fade">
+                <img src="../images/SOLAR THRIVE..jpg" alt="Solar Thrive" loading="lazy">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h2>Solar Thrive Collection</h2>
+                        <p>portable cooling, and storage solutions for farmers on the move.</p>
+                        <a href="#solar-thrive" class="cta-button primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Solar Cooling -->
+            <div class="slide fade">
+                <img src="../images/SOLAR%20BMC.jpg" alt="Solar Cooling Solutions" loading="lazy">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h2>Solar Cooling Solutions</h2>
+                        <p>Advanced milk cooling technology powered by renewable energy. From entry-level to premium systems.</p>
+                        <a href="#solar-cooling" class="cta-button primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: MaziwaPlus DMS (software) -->
+            <div class="slide fade">
+                <img src="../images/M+%20DMS.png" alt="MaziwaPlus Dairy Management" loading="lazy">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h2>MaziwaPlus Dairy Management</h2>
+                        <p>Cloud-based software for complete dairy farm management, analytics, and market linkages.</p>
+                        <a href="#management-systems" class="cta-button primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Eco-Sav Dryer (drying systems) -->
+            <div class="slide fade">
+                <img src="../images/DRYER.webp" alt="Eco-Sav Solar Dryer" loading="lazy">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h2>Eco-Sav Solar Dryer </h2>
+                        <p>Solar-powered agricultural dryers for grains, herbs, and produce. Preserve harvest, add value.</p>
+                        <a href="#drying-systems" class="cta-button primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Arrows (prev/next slide) -->
+            <a class="prev" onclick="changeSlide(-1)">❮</a>
+            <a class="next" onclick="changeSlide(1)">❯</a>
+        </div>
+
+        <!-- Dot Navigation (slide position indicators) -->
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </section>
+
+    <!-- Filter Section: category filters controlling visibility below -->
+    <section class="filter-section">
+        <div class="section-container">
+            <h2>Shop by Category</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+                <button class="filter-btn" onclick="filterProducts('solar-cooling')">Solar Cooling</button>
+                <button class="filter-btn" onclick="filterProducts('solar-thrive')">Solar Thrive</button>
+                <button class="filter-btn" onclick="filterProducts('management-systems')">Management Systems</button>
+                <button class="filter-btn" onclick="filterProducts('drying-systems')">Drying Systems</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-showcase">
+        <div class="section-container">
+               <!-- Solar Thrive Section: portable solutions and accessories -->
+            <div id="solar-thrive" class="product-category">
+                <h3 class="category-title">Solar Thrive Collection</h3>
+                <div class="products-grid">
+                    <!-- Product: Nomad Cans 10L -->
+                    <div class="product-card" data-category="solar-thrive">
+                        <img class="product-image" loading="lazy" src="../images/NOMAD%2010%20LTRS.png" alt="Nomad Cans 10L">
+                        <h4>Nomad Cans - 10L</h4>
+                        <p class="product-spec">Portable Milk  container</p>
+                        <p class="product-price">KSH 3,990</p>
+                        <p class="product-description">Durable portable container for mobile operations. Lightweight and efficient for small-scale farmers.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/nomad-cans-10l.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary add-to-cart" data-product="Nomad Cans - 10L">Add to Cart</a>
+                            <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20Nomad%20Cans%2010L" target="_blank" rel="noopener" class="cta-button">Request Quote</a>
+                        </div>
+                    </div>
+
+                    <!-- Product: Nomad Cans 25L -->
+                    <div class="product-card" data-category="solar-thrive">
+                        <img class="product-image" loading="lazy" src="../images/nomad%2025.JPG" alt="Nomad Cans 25L">
+                        <h4>Nomad Cans - 25L</h4>
+                        <p class="product-spec">Mid-capacity container</p>
+                        <p class="product-price">KSH 6,990</p>
+                        <p class="product-description">Perfect balance between capacity and portability for medium-scale farm operations.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/nomad-cans-25l.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary add-to-cart" data-product="Nomad Cans - 25L">Add to Cart</a>
+                            <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20Nomad%20Cans%2025L" target="_blank" rel="noopener" class="cta-button">Request Quote</a>
+                        </div>
+                    </div>
+
+                    <!-- Product: Nomad Cans 50L -->
+                    <div class="product-card" data-category="solar-thrive">
+                        <img class="product-image" loading="lazy" src="../images/NOMAD%20CANS.jpeg" alt="Nomad Cans 50L">
+                        <h4>Nomad Cans - 50L</h4>
+                        <p class="product-spec">Heavy-duty container</p>
+                        <p class="product-price">KSH 9,990</p>
+                        <p class="product-description">High-capacity portable container for bulk operations. Industrial-grade construction for durability.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/nomad-cans-50l.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary add-to-cart" data-product="Nomad Cans - 50L">Add to Cart</a>
+                            <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20Nomad%20Cans%2050L" target="_blank" rel="noopener" class="cta-button">Request Quote</a>
+                        </div>
+                    </div>
+
+                    <!-- Product: IWD Ice Water Dispenser -->
+                    <div class="product-card" data-category="solar-thrive">
+                        <img class="product-image" loading="lazy" src="../images/IWD.jpg" alt="IWD Ice Water Dispenser">
+                        <h4>IWD Ice Water Dispenser</h4>
+                        <p class="product-spec">Solar-powered cold water</p>
+                        <p class="product-price">KSH 129,900</p>
+                        <p class="product-description">Solar-powered chilled water for farms and communities. Improves produce preservation and ensured low food spoilage .</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/iwd-ice-water-dispenser.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary add-to-cart" data-product="IWD Ice Water Dispenser">Add to Cart</a>
+                            <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20IWD%20Ice%20Water%20Dispenser" target="_blank" rel="noopener" class="cta-button">Request Quote</a>
+                        </div>
+                    </div>
+
+                    <!-- Product: Eco-Sav Thermal Bags -->
+                    <div class="product-card" data-category="solar-thrive">
+                        <img class="product-image" loading="lazy" src="../images/Eco-Sav%20bag.jpg" alt="Eco-Sav Thermal Bags">
+                        <h4>Eco-Sav Thermal Bags</h4>
+                        <p class="product-spec">Insulated transport bags</p>
+                        <p class="product-price">KSH 1,990</p>
+                        <p class="product-description">Durable thermal bags for temperature-sensitive product transport. Reusable and environmentally friendly.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/eco-sav-bags.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary add-to-cart" data-product="Eco-Sav Thermal Bags">Add to Cart</a>
+                            <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20Eco-Sav%20Thermal%20Bags" target="_blank" rel="noopener" class="cta-button">Request Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Solar Cooling Section: cards rendered inline for now -->
+            <div id="solar-cooling" class="product-category">
+                <h3 class="category-title">Solar Cooling Solutions</h3>
+                <div class="products-grid">
+                    <!-- Product: MaziwaPlus Prechillers 300-1000L -->
+                    <div class="product-card" data-category="solar-cooling">
+                        <img class="product-image" loading="lazy" src="../images/M+%20PRE%20CHILLER.JPG" alt="MaziwaPlus Prechillers 300-1000L">
+                        <h4>MaziwaPlus Prechillers 300-1000L</h4>
+                        <p class="product-spec">Entry-level hybrid milk chiller</p>
+                        <p class="product-price">KSH 249,900</p>
+                        <p class="product-description">Efficiently cools and stores milk with hybrid power options. Customizable from 300-1000L capacity.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/maziwaplus-prechiller-300.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary add-to-cart" data-product="MaziwaPlus Prechillers 300-1000L">Add to Cart</a>
+                            <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20MaziwaPlus%20Prechillers%20300-1000L" target="_blank" rel="noopener" class="cta-button">Request Quote</a>
+                        </div>
+                    </div>
+
+                    <!-- Product: MaziwaPlus Prechillers Pro 200-2000L -->
+                    <div class="product-card" data-category="solar-cooling">
+                        <img class="product-image" loading="lazy" src="../images/pre%20chillers%20PRO.jpg" alt="MaziwaPlus Prechillers Pro 200-2000L">
+                        <h4>MaziwaPlus Prechillers Pro 200-2000L</h4>
+                        <p class="product-spec">Advanced hybrid milk chiller</p>
+                        <p class="product-price">KSH 499,900</p>
+                        <p class="product-description">Premium features for large farms  and milk collection centers. Enhanced efficiency with smart monitoring and analytics.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/maziwaplus-prechiller-pro.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary add-to-cart" data-product="MaziwaPlus Prechillers Pro 200-2000L">Add to Cart</a>
+                            <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20MaziwaPlus%20Prechillers%20Pro%20200-2000L" target="_blank" rel="noopener" class="cta-button">Request Quote</a>
+                        </div>
+                    </div>
+
+                    <!-- Product: BMC Hybrid Milk Cooler -->
+                    <div class="product-card" data-category="solar-cooling">
+                        <img class="product-image" loading="lazy" src="../images/HYBRID%20BMC.jpeg" alt="BMC Hybrid Milk Cooler">
+                        <h4>BMC Hybrid Milk Cooler</h4>
+                        <p class="product-spec">Flexible solar + grid power</p>
+                        <p class="product-price">KSH 699,900</p>
+                        <p class="product-description">Versatile hybrid system combining solar and grid power. Perfect for inconsistent solar areas.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/bmc-hybrid.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary add-to-cart" data-product="BMC Hybrid Milk Cooler">Add to Cart</a>
+                            <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20BMC%20Hybrid%20Milk%20Cooler" target="_blank" rel="noopener" class="cta-button">Request Quote</a>
+                        </div>
+                    </div>
+
+                    <!-- Product: BMC Solar Milk Cooler -->
+                    <div class="product-card" data-category="solar-cooling">
+                        <img class="product-image" loading="lazy" src="../images/SOLAR%20BMC.jpg" alt="BMC Solar Milk Cooler">
+                        <h4>BMC Solar Milk Cooler</h4>
+                        <p class="product-spec">100% solar-powered</p>
+                        <p class="product-price">KSH 849,900</p>
+                        <p class="product-description">Pure solar cooling with battery storage. Ideal for off-grid locations with maximum sustainability.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/bmc-solar.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary add-to-cart" data-product="BMC Solar Milk Cooler">Add to Cart</a>
+                            <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20BMC%20Solar%20Milk%20Cooler" target="_blank" rel="noopener" class="cta-button">Request Quote</a>
+                        </div>
+                    </div>
+
+                    <!-- Product: Eco-Sav Pasteurizer -->
+                    <div class="product-card" data-category="solar-cooling">
+                        <img class="product-image" loading="lazy" src="../images/PASTUERIZER.jpg" alt="Eco-Sav Pasteurizer 100-500L">
+                        <h4>Eco-Sav Pasteurizer 100-500L</h4>
+                        <p class="product-spec">Solar-powered pasteurization</p>
+                        <p class="product-price">KSH 329,900</p>
+                        <p class="product-description">Professional milk pasteurization system powered by solar. Extends shelf life and meets safety standards.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/eco-sav-pasteurizer.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary add-to-cart" data-product="Eco-Sav Pasteurizer 100-500L">Add to Cart</a>
+                            <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20Eco-Sav%20Pasteurizer%20100-500L" target="_blank" rel="noopener" class="cta-button">Request Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+         
+            <!-- Management Systems Section: DMS SaaS subscription -->
+            <div id="management-systems" class="product-category">
+                <h3 class="category-title">Management Systems</h3>
+                <div class="products-grid single-column">
+                    <!-- Product: MaziwaPlus Dairy Management System -->
+                    <div class="product-card" data-category="management-systems">
+                        <img class="product-image" loading="lazy" src="../images/M+%20DMS.png" alt="MaziwaPlus Dairy Management System">
+                        <h4>MaziwaPlus Dairy Management System</h4>
+                        <p class="product-spec">Cloud-based ERP platform</p>
+                        <p class="product-price">KSH 2,490/month</p>
+                        <p class="product-description">Comprehensive dairy  management platform with real-time tracking, financial management, and market linkages.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/maziwaplus-dms.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary add-to-cart" data-product="MaziwaPlus DMS">Subscribe</a>
+                            <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20MaziwaPlus%20Dairy%20Management%20System" target="_blank" rel="noopener" class="cta-button">Request Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drying Systems Section: solar drying solutions -->
+            <div id="drying-systems" class="product-category">
+                <h3 class="category-title">Drying Systems</h3>
+                <div class="products-grid single-column">
+                    <!-- Product: Eco-Sav Solar Dryer -->
+                    <div class="product-card" data-category="drying-systems">
+                        <img class="product-image small" loading="lazy" src="../images/DRYER.webp" alt="Eco-Sav Solar Dryer">
+                        <h4>Eco-Sav Solar Dryer</h4>
+                        <p class="product-spec">Solar-powered agricultural dryer</p>
+                        <p class="product-price">KSH 329,900</p>
+                        <p class="product-description">Professional-grade solar dryer for grains, herbs, and produce. Extend storage life and add premium market value.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/eco-sav-dryer.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary add-to-cart" data-product="Eco-Sav Solar Dryer">Add to Cart</a>
+                            <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20Eco-Sav%20Solar%20Dryer" target="_blank" rel="noopener" class="cta-button">Request Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financing Options: plans and programs -->
+    <section class="financing-section">
+        <div class="section-container">
+            <h2>Flexible Financing Options</h2>
+            <p class="section-intro">We offer multiple payment plans to make our solutions accessible to all farmers.</p>
+            <div class="financing-grid">
+                <div class="financing-card">
+                    <h3>💳 Cooling as a Service (CaaS)</h3>
+                    <p>Pay monthly for cooling services without purchasing equipment upfront.</p>
+                    <ul>
+                        <li>Includes installation, maintenance, and support</li>
+                        <li>Fixed monthly fee based on capacity and usage</li>
+                        <li>Ideal for cooperatives and aggregation centers</li>
+                    </ul>
+                    <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20to%20apply%20for%20cooling%20as%20a%20Service" target="_blank" rel="noopener" class="cta-button secondary">Learn More</a>
+                </div>
+                <div class="financing-card">
+                    <h3>📋 Lease Programs</h3>
+                    <p>Lease equipment with option to purchase, making solutions accessible to all.</p>
+                    <ul>
+                        <li>Low upfront cost with predictable monthly payments</li>
+                        <li>Option to own at end of term</li>
+                        <li>Flexible terms from 12–48 months</li>
+                    </ul>
+                    <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20to%20apply%20for%20lease%20programs" target="_blank" rel="noopener" class="cta-button secondary">Learn More</a>
+                </div>
+                <div class="financing-card">
+                    <h3>📊 Hybrid Financing</h3>
+                    <p>Customize payment plans tailored to your farm's needs and cash flow.</p>
+                    <ul>
+                        <li>Mix of upfront + subscription or lease</li>
+                        <li>Structured for seasonality of income</li>
+                        <li>Available for both equipment and software</li>
+                    </ul>
+                   <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20to%20apply%20for%20Hybrid%20financing%20services" target="_blank" rel="noopener" class="cta-button secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Savanna Circuit</h4>
+                 <a href="../Website/index.html" class="logo-link" aria-label="Savanna Circuit Website">
+                    <img src="../images/sav%20logo%20(2).jpeg" alt="Savanna Circuit Logo" class="logo-image">
+                <p>Empowering farmers through technology and innovation</p>
+               
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="store.html">Store</a></li>
+                    <li><a href="impact.html">Impact</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../Website/about.html">About Us</a></li>
+                    <li><a href="../Website/about.html#partners">Partners</a></li>
+                    <li><a href="https://sav-circuit.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a></li>
+                    <li><a href="https://sav-circuit.com/terms-of-operations/" target="_blank" rel="noopener">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/savannacircuit/" aria-label="Facebook" class="social-facebook" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07C2 17.1 5.66 21.24 10.44 22v-7.01H7.9v-2.92h2.54V9.41c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.92h-2.34V22C18.34 21.24 22 17.1 22 12.07z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/savanna-circuit-technologies/about/" aria-label="LinkedIn" class="social-linkedin" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3A2.94 2.94 0 0 1 22 6v12a2.94 2.94 0 0 1-3 3H5a2.94 2.94 0 0 1-3-3V6a2.94 2.94 0 0 1 3-3h14Zm-9.54 16V10.5H7.06V19h2.4Zm-1.2-9.81a1.39 1.39 0 1 0 0-2.78 1.39 1.39 0 0 0 0 2.78ZM20 19v-5.2c0-2.8-1.49-4.1-3.47-4.1a3 3 0 0 0-2.72 1.49h-.06V10.5h-2.4V19h2.4v-4.48c0-1.18.21-2.32 1.69-2.32s1.5 1.36 1.5 2.4V19H20Z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/savannacircuit/" aria-label="Instagram" class="social-instagram" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.2 2.4.4.6.2 1 .4 1.4.8.4.4.6.8.8 1.4.2.5.3 1.2.4 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.9-.4 2.4-.2.6-.4 1-.8 1.4-.4.4-.8.6-1.4.8-.5.2-1.2.3-2.4.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.2-2.4-.4-.6-.2-1-.4-1.4-.8-.4-.4-.6-.8-.8-1.4-.2-.5-.3-1.2-.4-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.9.4-2.4.2-.6.4-1 .8-1.4.4-.4.8-.6 1.4-.8.5-.2 1.2-.3 2.4-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.7.1-1 .1-1.6.2-2 .4-.5.2-.8.4-1.1.7-.3.3-.5.6-.7 1.1-.2.4-.3 1-.4 2-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1 .2 1.6.4 2 .2.5.4.8.7 1.1.3.3.6.5 1.1.7.4.2 1 .3 2 .4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1-.1 1.6-.2 2-.4.5-.2.8-.4 1.1-.7.3-.3.5-.6.7-1.1.2-.4.3-1 .4-2 .1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1-.2-1.6-.4-2-.2-.5-.4-.8-.7-1.1-.3-.3-.6-.5-1.1-.7-.4-.2-1-.3-2-.4-1.2-.1-1.6-.1-4.9-.1Zm0 3.5a6.5 6.5 0 1 1 0 13 6.5 6.5 0 0 1 0-13Zm0 2.2a4.3 4.3 0 1 0 0 8.6 4.3 4.3 0 0 0 0-8.6Zm5.3-3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/></svg>
+                    </a>
+                    <a href="https://twitter.com/sav_circuittech" aria-label="X (Twitter)" class="social-x" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.53 3h3.13l-6.84 7.82L22 21h-6.7l-5.23-6.82L3.9 21H.75l7.3-8.34L1 3h6.86l4.73 6.2L17.53 3Zm-1.17 16.2h1.73L7.72 4.68H5.86L16.36 19.2Z"/></svg>
+                    </a>
+                    <a href="https://api.whatsapp.com/send/?phone=+254714574007&text=Hello,%20From%20SCT%20Website." aria-label="WhatsApp" class="social-whatsapp" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A10.5 10.5 0 0 0 3.8 17.9L2 22l4.3-1.7A10.5 10.5 0 1 0 20.5 3.5Zm-8.4 16.6c-1.8 0-3.5-.6-4.9-1.7l-.3-.2-2.9 1.1 1.1-2.8-.2-.3a8.5 8.5 0 1 1 7.2 4.9Zm4.9-6.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-1.8-.9-3-1.6-4.2-3.6-.3-.4 0-.5.2-.7.2-.2.3-.3.4-.5.2-.2.1-.4 0-.6-.1-.2-.7-1.6-.9-2.2-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 3s1.2 3.5 1.3 3.7c.2.2 2.3 3.6 5.7 5 2.1.9 2.9 1 3.9.8.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4 0-.1-.1-.2-.3-.3Z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <address>
+                    <strong>Savanna Circuit Technologies</strong><br>
+                    <span class="address-line">
+                        <svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.7 2 6 4.7 6 8c0 4.6 6 12 6 12s6-7.4 6-12c0-3.3-2.7-6-6-6Zm0 8.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 5.5 12 5.5s2.5 1.1 2.5 2.5S13.4 10.5 12 10.5Z"/></svg>
+                        Savanna Business Park, Off Kangundo Road - Ruai, Nairobi
+                    </span><br>
+                    P.O. Box 5107-00200, Nairobi, Kenya
+                </address>
+                <ul class="contact-list">
+                    <li>Tel: <a href="tel:0208000265">020 800 0265</a></li>
+                    <li>Mobile: <a href="tel:+254714574007">+254 714 574 007</a></li>
+                    <li>Email: <a href="mailto:info@sav-circuit.com">info@sav-circuit.com</a></li>
+                    <li>Website: <a href="https://www.sav-circuit.com" target="_blank" rel="noopener">www.sav-circuit.com</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Savanna Circuit Technologies. All rights reserved.|created by TechVannah</p>
+        </div>
+    </footer>
+
+    <script src="store-script.js"></script>
+</body>
+</html>
