@@ -1,0 +1,285 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - Savanna Circuit{% endblock %}
+
+{% block head_extra %}
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    /* Form styling */
+    .form-input, .form-select, .form-textarea {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 2px solid #e5e7eb;
+        border-radius: 0.75rem;
+        font-size: 1rem;
+        transition: all 0.3s;
+    }
+    
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+        outline: none;
+        border-color: #a7cc40;
+        box-shadow: 0 0 0 3px rgba(167, 204, 64, 0.1);
+    }
+    
+    .form-label {
+        display: block;
+        font-weight: 600;
+        color: #374151;
+        margin-bottom: 0.5rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-20 md:py-24 pt-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4">Get in Touch</h1>
+            <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">We'd love to hear from you. Let's talk about how we can help your farm thrive.</p>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-3xl mb-4">📍</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Our Location</h3>
+                    <p class="text-gray-600">Savanna Circuit Technologies<br/>Kampala, Uganda<br/>East Africa</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-3xl mb-4">📞</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Phone</h3>
+                    <p class="text-gray-600">Main: +256 XXX XXX XXX<br/>WhatsApp: +256 XXX XXX XXX<br/>Hours: Mon-Fri 8AM-6PM UTC+3</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-3xl mb-4">📧</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Email</h3>
+                    <p class="text-gray-600">General: info@savanacircuit.com<br/>Sales: sales@savanacircuit.com<br/>Support: support@savanacircuit.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Routes -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-12 text-center">How Can We Help?</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-4xl mb-4">🌾</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">I'm a Farmer</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Learn about products, get technical support, or discuss custom solutions for your farm.</p>
+                    <a href="#farmer-form" class="inline-block bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-semibold text-sm transition-all duration-300">Contact Sales</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-4xl mb-4">🤝</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">I'm a Partner</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Explore partnership opportunities, integration, or collaboration possibilities.</p>
+                    <a href="#partner-form" class="inline-block bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-semibold text-sm transition-all duration-300">Get in Touch</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-4xl mb-4">📰</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">I'm in Media</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Interview requests, press inquiries, or media kit downloads.</p>
+                    <a href="#media-form" class="inline-block bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-semibold text-sm transition-all duration-300">Press Kit</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-4xl mb-4">🔧</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Need Support?</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Technical issues, product questions, or account help.</p>
+                    <a href="{{ url_for('pages.support') }}" class="inline-block bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-semibold text-sm transition-all duration-300">Get Support</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Forms -->
+    <section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Farmers Form -->
+                <div id="farmer-form" class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-secondary mb-6">For Farmers</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="form-label">Full Name</label>
+                            <input type="text" placeholder="Your name" required class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Email</label>
+                            <input type="email" placeholder="your@email.com" required class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" placeholder="+256 XXX XXX XXX" required class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Farm Location</label>
+                            <input type="text" placeholder="Region/Country" required class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Interested Product</label>
+                            <select required class="form-select">
+                                <option>Select product</option>
+                                <option>Solar Cooling</option>
+                                <option>Dairy Management System</option>
+                                <option>Eco-Sav Dryer</option>
+                                <option>Solar Thrive Products</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="form-label">Message</label>
+                            <textarea placeholder="Tell us about your farm and needs" rows="4" required class="form-textarea"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">Send Message</button>
+                        <p class="form-status text-sm text-center mt-2"></p>
+                    </form>
+                </div>
+
+                <!-- Partners Form -->
+                <div id="partner-form" class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-secondary mb-6">For Partners</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="form-label">Organization Name</label>
+                            <input type="text" placeholder="Your organization" required class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Contact Email</label>
+                            <input type="email" placeholder="contact@organization.com" required class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Contact Person</label>
+                            <input type="text" placeholder="Full name" required class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Partnership Type</label>
+                            <select required class="form-select">
+                                <option>Select type</option>
+                                <option>Distribution Partnership</option>
+                                <option>Integration Partnership</option>
+                                <option>Development Organization</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="form-label">Partnership Details</label>
+                            <textarea placeholder="Describe your partnership interest" rows="4" required class="form-textarea"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">Submit Inquiry</button>
+                        <p class="form-status text-sm text-center mt-2"></p>
+                    </form>
+                </div>
+
+                <!-- Media Form -->
+                <div id="media-form" class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-secondary mb-6">For Media</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="form-label">Full Name</label>
+                            <input type="text" placeholder="Your name" required class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Publication/Outlet</label>
+                            <input type="text" placeholder="Your publication" required class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Email</label>
+                            <input type="email" placeholder="your@email.com" required class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Story/Inquiry Topic</label>
+                            <input type="text" placeholder="What is your story about?" required class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Request Type</label>
+                            <select required class="form-select">
+                                <option>Select type</option>
+                                <option>Interview Request</option>
+                                <option>Press Kit Download</option>
+                                <option>Story Feedback</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="form-label">Details</label>
+                            <textarea placeholder="Tell us what you need" rows="4" required class="form-textarea"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">Send Request</button>
+                        <p class="form-status text-sm text-center mt-2"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-8">Follow Us</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="glass-card px-6 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all duration-300">Facebook</a>
+                <a href="#" class="glass-card px-6 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all duration-300">Twitter</a>
+                <a href="#" class="glass-card px-6 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all duration-300">LinkedIn</a>
+                <a href="#" class="glass-card px-6 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all duration-300">Instagram</a>
+                <a href="#" class="glass-card px-6 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all duration-300">YouTube</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const forms = document.querySelectorAll("form");
+    forms.forEach((form) => {
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const nameInput = form.querySelector("input[type='text']");
+            const emailInput = form.querySelector("input[type='email']");
+            const messageInput = form.querySelector("textarea") || form.querySelector("input[type='text']:last-child");
+
+            const payload = {
+                name: nameInput ? nameInput.value : "",
+                email: emailInput ? emailInput.value : "",
+                message: messageInput ? messageInput.value : "",
+            };
+
+            const status = form.querySelector(".form-status") || (() => {
+                const p = document.createElement("p");
+                p.className = "form-status";
+                form.appendChild(p);
+                return p;
+            })();
+
+            status.textContent = "Sending...";
+            status.className = "form-status text-sm text-center mt-2 text-gray-600";
+            try {
+                const res = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload),
+                });
+                const data = await res.json();
+                if (!res.ok) {
+                    status.textContent = data.error || "Message failed";
+                    status.className = "form-status text-sm text-center mt-2 text-red-600";
+                    return;
+                }
+                status.textContent = "Message sent!";
+                status.className = "form-status text-sm text-center mt-2 text-green-600";
+                form.reset();
+            } catch (err) {
+                status.textContent = "Message failed";
+                status.className = "form-status text-sm text-center mt-2 text-red-600";
+            }
+        });
+    });
+});
+</script>
+{% endblock %}

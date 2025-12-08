@@ -1,0 +1,59 @@
+<nav class="navbar fixed top-0 left-0 right-0 z-50 bg-white/75 backdrop-blur-xl shadow-md transition-all duration-300 py-4">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+        <div>
+            <a href="{{ url_for('pages.home') }}" class="block">
+                <img src="{{ url_for('static', filename='images/sav-logo.jpeg') }}" alt="Savanna Circuit Logo" class="h-10">
+            </a>
+        </div>
+        <ul class="hidden md:flex gap-8 items-center">
+            <li><a href="{{ url_for('pages.home') }}" class="nav-link font-medium text-gray-800 hover:text-primary {% if request.endpoint == 'pages.home' %}active text-primary-dark{% endif %}">Home</a></li>
+            <li><a href="{{ url_for('pages.about') }}" class="nav-link font-medium text-gray-800 hover:text-primary {% if request.endpoint == 'pages.about' %}active text-primary-dark{% endif %}">About</a></li>
+            <li><a href="{{ url_for('pages.products') }}" class="nav-link font-medium text-gray-800 hover:text-primary {% if request.endpoint == 'pages.products' %}active text-primary-dark{% endif %}">Products</a></li>
+            <li><a href="{{ url_for('pages.store') }}" class="nav-link font-medium text-gray-800 hover:text-primary {% if request.endpoint == 'pages.store' %}active text-primary-dark{% endif %}">Store</a></li>
+            <li><a href="{{ url_for('pages.impact') }}" class="nav-link font-medium text-gray-800 hover:text-primary {% if request.endpoint == 'pages.impact' %}active text-primary-dark{% endif %}">Impact</a></li>
+            <li><a href="{{ url_for('pages.contact') }}" class="nav-link font-medium text-gray-800 hover:text-primary {% if request.endpoint == 'pages.contact' %}active text-primary-dark{% endif %}">Contact</a></li>
+        </ul>
+        <button class="md:hidden text-2xl text-gray-800" id="hamburger-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="hidden md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl shadow-lg border-t border-gray-100" id="mobile-menu">
+        <ul class="flex flex-col p-4 gap-4">
+            <li><a href="{{ url_for('pages.home') }}" class="block font-medium text-gray-800 hover:text-primary py-2 {% if request.endpoint == 'pages.home' %}text-primary-dark{% endif %}">Home</a></li>
+            <li><a href="{{ url_for('pages.about') }}" class="block font-medium text-gray-800 hover:text-primary py-2 {% if request.endpoint == 'pages.about' %}text-primary-dark{% endif %}">About</a></li>
+            <li><a href="{{ url_for('pages.products') }}" class="block font-medium text-gray-800 hover:text-primary py-2 {% if request.endpoint == 'pages.products' %}text-primary-dark{% endif %}">Products</a></li>
+            <li><a href="{{ url_for('pages.store') }}" class="block font-medium text-gray-800 hover:text-primary py-2 {% if request.endpoint == 'pages.store' %}text-primary-dark{% endif %}">Store</a></li>
+            <li><a href="{{ url_for('pages.impact') }}" class="block font-medium text-gray-800 hover:text-primary py-2 {% if request.endpoint == 'pages.impact' %}text-primary-dark{% endif %}">Impact</a></li>
+            <li><a href="{{ url_for('pages.contact') }}" class="block font-medium text-gray-800 hover:text-primary py-2 {% if request.endpoint == 'pages.contact' %}text-primary-dark{% endif %}">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navbar = document.querySelector('.navbar');
+        
+        // Mobile menu toggle
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            hamburger.innerHTML = mobileMenu.classList.contains('hidden')
+                ? '<i class="fas fa-bars"></i>'
+                : '<i class="fas fa-times"></i>';
+        });
+        
+        // Navbar scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 40) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            lastScroll = currentScroll;
+        });
+    });
+</script>

@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+
+{% block title %}News & Stories - Savanna Circuit{% endblock %}
+
+{% block head_extra %}
+<style>
+    html { scroll-behavior: smooth; }
+    .about-tab-link.active { background: #a7cc40; color: white; }
+</style>
+{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-20 md:py-24 pt-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4">News & Stories</h1>
+            <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">Latest updates and inspirational stories from our community</p>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <section class="bg-white border-b sticky top-16 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-wrap gap-2 py-4 overflow-x-auto">
+                <a href="#updates" class="about-tab-link px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-primary text-white">Latest Updates</a>
+                <a href="#stories" class="about-tab-link px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700">Stories from the Field</a>
+                <a href="#press" class="about-tab-link px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700">Press & Media</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Updates -->
+    <section id="updates" class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-12">Latest Updates</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-secondary mb-2">New Solar Cooling Technology Launched</h3>
+                    <p class="text-sm text-gray-500 mb-3">November 28, 2025</p>
+                    <p class="text-gray-600 mb-4">We're thrilled to announce the launch of BMC Solar Gen 2, featuring advanced battery management and extended capacity.</p>
+                    <a href="#" class="inline-block text-primary hover:text-primary-dark font-semibold">Read More →</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-secondary mb-2">50,000 Farmers Milestone Achieved</h3>
+                    <p class="text-sm text-gray-500 mb-3">October 15, 2025</p>
+                    <p class="text-gray-600 mb-4">Savanna Circuit reaches half a million farmers and community members across Africa through its innovative solutions.</p>
+                    <a href="#" class="inline-block text-primary hover:text-primary-dark font-semibold">Read More →</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-secondary mb-2">Partnership with Global Development Bank</h3>
+                    <p class="text-sm text-gray-500 mb-3">September 1, 2025</p>
+                    <p class="text-gray-600 mb-4">Strategic partnership to expand financing options and reach more smallholder farmers across the continent.</p>
+                    <a href="#" class="inline-block text-primary hover:text-primary-dark font-semibold">Read More →</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-secondary mb-2">MaziwaPlus DMS v3.0 Released</h3>
+                    <p class="text-sm text-gray-500 mb-3">August 20, 2025</p>
+                    <p class="text-gray-600 mb-4">Major update with AI-powered insights, improved mobile experience, and new market integration features.</p>
+                    <a href="#" class="inline-block text-primary hover:text-primary-dark font-semibold">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories from the Field -->
+    <section id="stories" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-12">Stories from the Field</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-3xl mb-3">🌾</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">"My Dairy Dream is Now Reality"</h3>
+                    <p class="text-gray-600 mb-4">Samuel Kipchoge's journey from struggling dairy farmer to successful entrepreneur using Savanna Circuit solutions.</p>
+                    <a href="#" class="inline-block text-primary hover:text-primary-dark font-semibold">Read Story →</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-3xl mb-3">👩</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Women in Agriculture Initiative</h3>
+                    <p class="text-gray-600 mb-4">How 200 women in Uganda are transforming their communities through solar-powered agricultural technology.</p>
+                    <a href="#" class="inline-block text-primary hover:text-primary-dark font-semibold">Read Story →</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-3xl mb-3">🚀</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Youth Creating Jobs</h3>
+                    <p class="text-gray-600 mb-4">Young entrepreneurs are becoming community agents, spreading innovation and creating employment opportunities.</p>
+                    <a href="#" class="inline-block text-primary hover:text-primary-dark font-semibold">Read Story →</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-3xl mb-3">🌍</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Climate Action Through Agriculture</h3>
+                    <p class="text-gray-600 mb-4">How sustainable farming practices with Savanna Circuit solutions contribute to climate change mitigation.</p>
+                    <a href="#" class="inline-block text-primary hover:text-primary-dark font-semibold">Read Story →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Press & Media -->
+    <section id="press" class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-12">Press & Media</h2>
+            
+            <!-- Media Gallery -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-secondary mb-4">Interviews & Field Coverage</h3>
+                <p class="text-gray-600 mb-8">Explore our collection of field interviews, farmer testimonies, and impact documentation from across Africa.</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="text-4xl mb-4">🎥</div>
+                        <h4 class="text-lg font-bold text-secondary mb-2">Farmer Interview Series</h4>
+                        <p class="text-gray-600 text-sm mb-4">Documentary-style interviews with farmers using Savanna Circuit solutions.</p>
+                        <span class="text-xs text-primary-dark font-semibold">Video</span>
+                        <a href="#" class="block mt-2 text-primary hover:text-primary-dark font-semibold">Watch Videos →</a>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="text-4xl mb-4">📸</div>
+                        <h4 class="text-lg font-bold text-secondary mb-2">Field Photography</h4>
+                        <p class="text-gray-600 text-sm mb-4">High-quality images of installations, operations, and community impact.</p>
+                        <span class="text-xs text-primary-dark font-semibold">Photos</span>
+                        <a href="#" class="block mt-2 text-primary hover:text-primary-dark font-semibold">View Gallery →</a>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="text-4xl mb-4">📖</div>
+                        <h4 class="text-lg font-bold text-secondary mb-2">Success Stories</h4>
+                        <p class="text-gray-600 text-sm mb-4">In-depth case studies and testimonials from farmers and communities.</p>
+                        <span class="text-xs text-primary-dark font-semibold">Articles</span>
+                        <a href="#" class="block mt-2 text-primary hover:text-primary-dark font-semibold">Read Stories →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Press Kit -->
+            <div class="glass-card p-8 rounded-2xl mb-12">
+                <h3 class="text-2xl font-bold text-secondary mb-6">Press & Media Resources</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-bold text-secondary mb-3">📱 Media Inquiries</h4>
+                        <p class="text-gray-600 mb-2"><strong>Email:</strong> media@savanacircuit.com</p>
+                        <p class="text-gray-600 mb-2"><strong>Phone:</strong> +254 714 574 007</p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-secondary mb-3">📥 Download Media Kit</h4>
+                        <p class="text-gray-600 mb-4">Complete media kit with logos, photos, press releases, and brand guidelines.</p>
+                        <a href="#" class="inline-block bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-semibold text-sm">Download</a>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-secondary mb-3">📊 Company Fact Sheet</h4>
+                        <p class="text-gray-600 mb-4">Key facts and figures about Savanna Circuit.</p>
+                        <a href="#" class="inline-block bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-semibold text-sm">Download</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Press Coverage -->
+            <div>
+                <h3 class="text-2xl font-bold text-secondary mb-6">Recent Press Coverage</h3>
+                <div class="space-y-4">
+                    <div class="glass-card p-6 rounded-2xl">
+                        <p class="text-sm text-gray-500 mb-1">Featured in: Agricultural Technology Today</p>
+                        <p class="text-lg font-bold text-secondary mb-2">"How Solar Technology is Transforming African Agriculture"</p>
+                        <a href="#" class="text-primary hover:text-primary-dark font-semibold">Read Article →</a>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl">
+                        <p class="text-sm text-gray-500 mb-1">Interview: African Farmer Magazine</p>
+                        <p class="text-lg font-bold text-secondary mb-2">"Savanna Circuit: Empowering the Next Generation of Farmers"</p>
+                        <a href="#" class="text-primary hover:text-primary-dark font-semibold">Read Interview →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savanna Circuit Store - Premium Agricultural Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/sav-logo.jpeg" alt="Savanna Circuit Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../products.html" class="nav-link">Products</a></li>
+                <li class="nav-item"><a href="../impact.html" class="nav-link">Impact</a></li>
+                <li class="nav-item"><a href="../news.html" class="nav-link">News & Stories</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link active">Store</a></li>
+                <li class="nav-item"><a href="../support.html" class="nav-link">Support</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-subpage">
+        <h1>Savanna Circuit Store</h1>
+        <p>Premium agricultural solutions with flexible financing options</p>
+    </section>
+
+    <!-- Featured Products Slideshow -->
+    <section class="featured-slideshow">
+        <div class="slideshow-container">
+            <!-- Slide 1: Solar Cooling -->
+            <div class="slide fade">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h2>Solar Cooling Solutions</h2>
+                        <p>Advanced milk cooling technology powered by renewable energy. From entry-level to premium systems.</p>
+                        <a href="#solar-cooling" class="cta-button primary">Shop Now</a>
+                    </div>
+                    <div class="slide-icon">☀️❄️</div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Solar Thrive -->
+            <div class="slide fade">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h2>Solar Thrive Collection</h2>
+                        <p>Portable solar-powered water heating, cooling, and storage solutions for farmers on the move.</p>
+                        <a href="#solar-thrive" class="cta-button primary">Shop Now</a>
+                    </div>
+                    <div class="slide-icon">☀️💧</div>
+                </div>
+            </div>
+
+            <!-- Slide 3: MaziwaPlus DMS -->
+            <div class="slide fade">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h2>MaziwaPlus Dairy Management</h2>
+                        <p>Cloud-based software for complete dairy farm management, analytics, and market linkages.</p>
+                        <a href="#management-systems" class="cta-button primary">Shop Now</a>
+                    </div>
+                    <div class="slide-icon">💻📊</div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Eco-Sav Dryer -->
+            <div class="slide fade">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h2>Eco-Sav Dryer Systems</h2>
+                        <p>Solar-powered agricultural dryers for grains, herbs, and produce. Preserve harvest, add value.</p>
+                        <a href="#drying-systems" class="cta-button primary">Shop Now</a>
+                    </div>
+                    <div class="slide-icon">☀️🌾</div>
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <a class="prev" onclick="changeSlide(-1)">❮</a>
+            <a class="next" onclick="changeSlide(1)">❯</a>
+        </div>
+
+        <!-- Dot Navigation -->
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="section-container">
+            <h2>Shop by Category</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+                <button class="filter-btn" onclick="filterProducts('solar-cooling')">Solar Cooling</button>
+                <button class="filter-btn" onclick="filterProducts('solar-thrive')">Solar Thrive</button>
+                <button class="filter-btn" onclick="filterProducts('management-systems')">Management Systems</button>
+                <button class="filter-btn" onclick="filterProducts('drying-systems')">Drying Systems</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-showcase">
+        <div class="section-container">
+            <!-- Solar Cooling Section -->
+            <div id="solar-cooling" class="product-category">
+                <h3 class="category-title">Solar Cooling Solutions</h3>
+                <div class="products-grid">
+                    <!-- MaziwaPlus Prechillers 300-1000L -->
+                    <div class="product-card" data-category="solar-cooling">
+                        <div class="product-icon">☀️❄️</div>
+                        <h4>MaziwaPlus Prechillers 300-1000L</h4>
+                        <p class="product-spec">Entry-level hybrid milk chiller</p>
+                        <p class="product-price">KSH 249,900</p>
+                        <p class="product-description">Efficiently cools and stores milk with hybrid power options. Customizable from 300-1000L capacity.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/maziwaplus-prechiller-300.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary">Add to Cart</a>
+                        </div>
+                    </div>
+
+                    <!-- MaziwaPlus Prechillers Pro 200-2000L -->
+                    <div class="product-card" data-category="solar-cooling">
+                        <div class="product-icon">⭐☀️❄️</div>
+                        <h4>MaziwaPlus Prechillers Pro 200-2000L</h4>
+                        <p class="product-spec">Advanced hybrid milk chiller</p>
+                        <p class="product-price">KSH 499,900</p>
+                        <p class="product-description">Premium features for large farms. Enhanced efficiency with smart monitoring and analytics.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/maziwaplus-prechiller-pro.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary">Add to Cart</a>
+                        </div>
+                    </div>
+
+                    <!-- BMC Hybrid -->
+                    <div class="product-card" data-category="solar-cooling">
+                        <div class="product-icon">🔄❄️</div>
+                        <h4>BMC Hybrid Milk Cooler</h4>
+                        <p class="product-spec">Flexible solar + grid power</p>
+                        <p class="product-price">KSH 699,900</p>
+                        <p class="product-description">Versatile hybrid system combining solar and grid power. Perfect for inconsistent solar areas.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/bmc-hybrid.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary">Add to Cart</a>
+                        </div>
+                    </div>
+
+                    <!-- BMC Solar -->
+                    <div class="product-card" data-category="solar-cooling">
+                        <div class="product-icon">☀️🔋</div>
+                        <h4>BMC Solar Milk Cooler</h4>
+                        <p class="product-spec">100% solar-powered</p>
+                        <p class="product-price">KSH 849,900</p>
+                        <p class="product-description">Pure solar cooling with battery storage. Ideal for off-grid locations with maximum sustainability.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/bmc-solar.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary">Add to Cart</a>
+                        </div>
+                    </div>
+
+                    <!-- Eco-Sav Pasteurizer -->
+                    <div class="product-card" data-category="solar-cooling">
+                        <div class="product-icon">🔥☀️🥛</div>
+                        <h4>Eco-Sav Pasteurizer 100-500L</h4>
+                        <p class="product-spec">Solar-powered pasteurization</p>
+                        <p class="product-price">KSH 329,900</p>
+                        <p class="product-description">Professional milk pasteurization system powered by solar. Extends shelf life and meets safety standards.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/eco-sav-pasteurizer.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solar Thrive Section -->
+            <div id="solar-thrive" class="product-category">
+                <h3 class="category-title">Solar Thrive Collection</h3>
+                <div class="products-grid">
+                    <!-- Nomad Cans 10L -->
+                    <div class="product-card" data-category="solar-thrive">
+                        <div class="product-icon">🥫</div>
+                        <h4>Nomad Cans - 10L</h4>
+                        <p class="product-spec">Portable water container</p>
+                        <p class="product-price">KSH 3,990</p>
+                        <p class="product-description">Durable portable container for mobile operations. Lightweight and efficient for small-scale work.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/nomad-cans-10l.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary">Add to Cart</a>
+                        </div>
+                    </div>
+
+                    <!-- Nomad Cans 25L -->
+                    <div class="product-card" data-category="solar-thrive">
+                        <div class="product-icon">🥫🥫</div>
+                        <h4>Nomad Cans - 25L</h4>
+                        <p class="product-spec">Mid-capacity container</p>
+                        <p class="product-price">KSH 6,990</p>
+                        <p class="product-description">Perfect balance between capacity and portability for medium-scale farm operations.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/nomad-cans-25l.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary">Add to Cart</a>
+                        </div>
+                    </div>
+
+                    <!-- Nomad Cans 50L -->
+                    <div class="product-card" data-category="solar-thrive">
+                        <div class="product-icon">🥫🥫🥫</div>
+                        <h4>Nomad Cans - 50L</h4>
+                        <p class="product-spec">Heavy-duty container</p>
+                        <p class="product-price">KSH 9,990</p>
+                        <p class="product-description">High-capacity portable container for bulk operations. Industrial-grade construction for durability.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/nomad-cans-50l.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary">Add to Cart</a>
+                        </div>
+                    </div>
+
+                    <!-- Ice Water Dispenser -->
+                    <div class="product-card" data-category="solar-thrive">
+                        <div class="product-icon">💧❄️</div>
+                        <h4>IWD Ice Water Dispenser</h4>
+                        <p class="product-spec">Solar-powered cold water</p>
+                        <p class="product-price">KSH 129,900</p>
+                        <p class="product-description">Solar-powered chilled water for farms and communities. Improves worker comfort and animal welfare.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/iwd-ice-water-dispenser.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary">Add to Cart</a>
+                        </div>
+                    </div>
+
+                    <!-- Eco-Sav Bags -->
+                    <div class="product-card" data-category="solar-thrive">
+                        <div class="product-icon">👜</div>
+                        <h4>Eco-Sav Thermal Bags</h4>
+                        <p class="product-spec">Insulated transport bags</p>
+                        <p class="product-price">KSH 1,990</p>
+                        <p class="product-description">Durable thermal bags for temperature-sensitive product transport. Reusable and environmentally friendly.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/eco-sav-bags.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Management Systems Section -->
+            <div id="management-systems" class="product-category">
+                <h3 class="category-title">Management Systems</h3>
+                <div class="products-grid single-column">
+                    <!-- MaziwaPlus DMS -->
+                    <div class="product-card" data-category="management-systems">
+                        <div class="product-icon">💻📊</div>
+                        <h4>MaziwaPlus Dairy Management System</h4>
+                        <p class="product-spec">Cloud-based ERP platform</p>
+                        <p class="product-price">KSH 2,490/month</p>
+                        <p class="product-description">Comprehensive dairy farm management platform with real-time tracking, financial management, and market linkages.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/maziwaplus-dms.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary">Subscribe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drying Systems Section -->
+            <div id="drying-systems" class="product-category">
+                <h3 class="category-title">Drying Systems</h3>
+                <div class="products-grid single-column">
+                    <!-- Eco-Sav Dryer -->
+                    <div class="product-card" data-category="drying-systems">
+                        <div class="product-icon">☀️🌾</div>
+                        <h4>Eco-Sav Solar Dryer</h4>
+                        <p class="product-spec">Solar-powered agricultural dryer</p>
+                        <p class="product-price">KSH 329,900</p>
+                        <p class="product-description">Professional-grade solar dryer for grains, herbs, and produce. Extend storage life and add premium market value.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/eco-sav-dryer.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financing Options -->
+    <section class="financing-section">
+        <div class="section-container">
+            <h2>Flexible Financing Options</h2>
+            <p class="section-intro">We offer multiple payment plans to make our solutions accessible to all farmers.</p>
+            <div class="financing-grid">
+                <div class="financing-card">
+                    <h3>💳 Cooling as a Service (CaaS)</h3>
+                    <p>Pay monthly for cooling services without purchasing equipment upfront.</p>
+                    <a href="../contact.html" class="cta-button secondary">Learn More</a>
+                </div>
+                <div class="financing-card">
+                    <h3>📋 Lease Programs</h3>
+                    <p>Lease equipment with option to purchase, making solutions accessible to all.</p>
+                    <a href="../contact.html" class="cta-button secondary">Learn More</a>
+                </div>
+                <div class="financing-card">
+                    <h3>📊 Hybrid Financing</h3>
+                    <p>Customize payment plans tailored to your farm's needs and cash flow.</p>
+                    <a href="../contact.html" class="cta-button secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Savanna Circuit</h4>
+                <p>Empowering farmers through technology and innovation</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../products.html">Products</a></li>
+                    <li><a href="index.html">Store</a></li>
+                    <li><a href="../impact.html">Impact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../about.html#partners">Partners</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="../contact.html">Contact Us</a></li>
+                    <li><a href="../support.html">Support</a></li>
+                    <li><a href="../news.html">News</a></li>
+                    <li><a href="../careers.html">Careers</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-communications">
+            <div class="comm-left">
+                <img src="../images/footer-logo.jpeg" alt="Savanna Circuit communications" class="footer-comm-logo">
+            </div>
+            <div class="comm-center">
+                <p><strong>Tel:</strong> 0208000265</p>
+                <p><strong>Cel:</strong> +254714574007</p>
+                <p>Savanna Business Park, Off Kangundo road-Ruai, Nairobi</p>
+            </div>
+            <div class="comm-right">
+                <p><strong>SAVANNA CIRCUIT TECHNOLOGIES</strong></p>
+                <p>P.O.Box 5107-00200</p>
+                <p>www.sav-circuit.com</p>
+                <p>info@sav-circuit.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Savanna Circuit Technologies. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="store-script.js"></script>
+</body>
+</html>

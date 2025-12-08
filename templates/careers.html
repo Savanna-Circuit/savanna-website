@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+
+{% block title %}Careers - Savanna Circuit{% endblock %}
+
+{% block head_extra %}
+<style>
+    html { scroll-behavior: smooth; }
+    .about-tab-link.active { background: #a7cc40; color: white; }
+    .form-input, .form-select, .form-textarea { width: 100%; padding: 0.75rem 1rem; border: 2px solid #e5e7eb; border-radius: 0.75rem; transition: all 0.3s; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: #a7cc40; box-shadow: 0 0 0 3px rgba(167, 204, 64, 0.1); }
+</style>
+{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-20 md:py-24 pt-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4">Join Our Team</h1>
+            <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">Help us transform agriculture and empower farmers across Africa</p>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <section class="bg-white border-b sticky top-16 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-wrap gap-2 py-4 overflow-x-auto">
+                <a href="#why" class="about-tab-link px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-primary text-white">Why Work Here</a>
+                <a href="#roles" class="about-tab-link px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700">Open Roles</a>
+                <a href="#apply" class="about-tab-link px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700">Apply</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Work Here -->
+    <section id="why" class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-12">Why Work at Savanna Circuit</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-3xl mb-3">🌍</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Make Impact</h3>
+                    <p class="text-gray-600">Your work directly improves the lives of farmers and communities across Africa, creating measurable positive change.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-3xl mb-3">🚀</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Innovation</h3>
+                    <p class="text-gray-600">Work with cutting-edge technology, talented teams, and solve real-world problems in agriculture and sustainability.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-3xl mb-3">🌱</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Growth</h3>
+                    <p class="text-gray-600">Continuous learning opportunities, professional development, and career advancement in a rapidly growing organization.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-3xl mb-3">👥</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Great Culture</h3>
+                    <p class="text-gray-600">Collaborate with passionate, diverse teams united by a mission to transform African agriculture.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-3xl mb-3">💰</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Competitive Benefits</h3>
+                    <p class="text-gray-600">Competitive salary, health insurance, flexible work arrangements, and additional benefits.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-3xl mb-3">🌏</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Diverse Teams</h3>
+                    <p class="text-gray-600">Work with talented professionals from across Africa and the globe, bringing diverse perspectives and expertise.</p>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-2xl">
+                <h3 class="text-2xl font-bold text-secondary mb-4">Our Culture & Values</h3>
+                <p class="text-gray-700 mb-4">At Savanna Circuit, we believe in:</p>
+                <ul class="space-y-2">
+                    <li class="flex items-start gap-3"><strong class="text-primary-dark">Farmer-Centricity:</strong> <span class="text-gray-700">Everything we do is for the farmer</span></li>
+                    <li class="flex items-start gap-3"><strong class="text-primary-dark">Innovation:</strong> <span class="text-gray-700">Continuously improving products and processes</span></li>
+                    <li class="flex items-start gap-3"><strong class="text-primary-dark">Integrity:</strong> <span class="text-gray-700">Transparent and ethical in all dealings</span></li>
+                    <li class="flex items-start gap-3"><strong class="text-primary-dark">Collaboration:</strong> <span class="text-gray-700">Better together than alone</span></li>
+                    <li class="flex items-start gap-3"><strong class="text-primary-dark">Impact:</strong> <span class="text-gray-700">Measurable improvement in farmer livelihoods</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Roles -->
+    <section id="roles" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-12">Open Roles</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-secondary mb-2">Product Manager</h3>
+                    <p class="text-sm text-gray-500 mb-3">Full-time • Kampala, Uganda</p>
+                    <p class="text-gray-600 mb-4">Lead development and strategy for our agricultural technology products.</p>
+                    <a href="#apply" class="inline-block bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-semibold text-sm">Apply Now</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-secondary mb-2">Software Engineer</h3>
+                    <p class="text-sm text-gray-500 mb-3">Full-time • Remote/Kampala</p>
+                    <p class="text-gray-600 mb-4">Build cloud-based solutions for the MaziwaPlus platform.</p>
+                    <a href="#apply" class="inline-block bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-semibold text-sm">Apply Now</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-secondary mb-2">Field Support Engineer</h3>
+                    <p class="text-sm text-gray-500 mb-3">Full-time • Regional</p>
+                    <p class="text-gray-600 mb-4">Provide technical support and training to farmers in the field.</p>
+                    <a href="#apply" class="inline-block bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-semibold text-sm">Apply Now</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-secondary mb-2">Sales Representative</h3>
+                    <p class="text-sm text-gray-500 mb-3">Full-time • Multiple locations</p>
+                    <p class="text-gray-600 mb-4">Build relationships with farmers, partners, and distributors.</p>
+                    <a href="#apply" class="inline-block bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-semibold text-sm">Apply Now</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-secondary mb-2">Marketing Manager</h3>
+                    <p class="text-sm text-gray-500 mb-3">Full-time • Kampala</p>
+                    <p class="text-gray-600 mb-4">Develop marketing strategies and campaigns to reach farmers and partners.</p>
+                    <a href="#apply" class="inline-block bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-semibold text-sm">Apply Now</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-secondary mb-2">Data Analyst</h3>
+                    <p class="text-sm text-gray-500 mb-3">Full-time • Remote/Kampala</p>
+                    <p class="text-gray-600 mb-4">Analyze farmer data to drive insights and improve product decisions.</p>
+                    <a href="#apply" class="inline-block bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-semibold text-sm">Apply Now</a>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-2xl text-center">
+                <h3 class="text-2xl font-bold text-secondary mb-3">Open Application</h3>
+                <p class="text-gray-600 mb-4">Don't see a perfect fit? We're always looking for talented people passionate about agriculture and impact.</p>
+                <a href="#apply" class="inline-block bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-semibold">Submit Open Application</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section id="apply" class="py-16 md:py-24">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-8">Apply Now</h2>
+            <div class="glass-card p-8 rounded-2xl">
+                <form class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block font-semibold text-gray-700 mb-2">Full Name</label>
+                            <input type="text" placeholder="Your full name" required class="form-input">
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-gray-700 mb-2">Email</label>
+                            <input type="email" placeholder="your@email.com" required class="form-input">
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block font-semibold text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" placeholder="Your phone number" required class="form-input">
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-gray-700 mb-2">LinkedIn Profile</label>
+                            <input type="url" placeholder="https://linkedin.com/in/yourprofile" required class="form-input">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-gray-700 mb-2">Position Applying For</label>
+                        <select required class="form-select">
+                            <option>Select a position</option>
+                            <option>Product Manager</option>
+                            <option>Software Engineer</option>
+                            <option>Field Support Engineer</option>
+                            <option>Sales Representative</option>
+                            <option>Marketing Manager</option>
+                            <option>Data Analyst</option>
+                            <option>Open Application</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-gray-700 mb-2">Cover Letter</label>
+                        <textarea placeholder="Tell us about yourself and why you want to join Savanna Circuit" rows="6" required class="form-textarea"></textarea>
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-gray-700 mb-2">Upload CV/Resume</label>
+                        <input type="file" accept=".pdf,.doc,.docx" required class="form-input">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-gray-700 mb-2">Experience Level</label>
+                        <select required class="form-select">
+                            <option>Select level</option>
+                            <option>Entry Level (0-2 years)</option>
+                            <option>Mid Level (2-5 years)</option>
+                            <option>Senior (5+ years)</option>
+                        </select>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <input type="checkbox" id="agree" required class="w-4 h-4">
+                        <label for="agree" class="text-gray-700">I agree to be contacted regarding my application</label>
+                    </div>
+                    <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

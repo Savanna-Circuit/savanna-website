@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}Our Impact - Savanna Circuit{% endblock %}
+
+{% block head_extra %}
+<style>
+    html { scroll-behavior: smooth; }
+    .about-tab-link.active { background: #a7cc40; color: white; }
+</style>
+{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-20 md:py-24 pt-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4">Our Impact</h1>
+            <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">Transforming lives and livelihoods across Africa</p>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <section class="bg-white border-b sticky top-16 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-wrap gap-2 py-4 overflow-x-auto">
+                <a href="#overview" class="about-tab-link px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-primary text-white">Overview</a>
+                <a href="#themes" class="about-tab-link px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700">Impact Themes</a>
+                <a href="#reports" class="about-tab-link px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700">Reports & Downloads</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Overview -->
+    <section id="overview" class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-12 text-center">Impact Metrics</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-2xl text-center">
+                    <h3 class="text-4xl font-bold text-primary mb-3">50,000+</h3>
+                    <p class="text-gray-600">Farmers & Community Members Reached</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl text-center">
+                    <h3 class="text-4xl font-bold text-primary mb-3">$125M+</h3>
+                    <p class="text-gray-600">Economic Value Created</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl text-center">
+                    <h3 class="text-4xl font-bold text-primary mb-3">35%</h3>
+                    <p class="text-gray-600">Average Income Increase</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl text-center">
+                    <h3 class="text-4xl font-bold text-primary mb-3">15</h3>
+                    <p class="text-gray-600">Countries & Regions</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl text-center">
+                    <h3 class="text-4xl font-bold text-primary mb-3">10,000+</h3>
+                    <p class="text-gray-600">Jobs Created</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl text-center">
+                    <h3 class="text-4xl font-bold text-primary mb-3">250K</h3>
+                    <p class="text-gray-600">Tons CO₂ Avoided</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Themes -->
+    <section id="themes" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-12 text-center">Impact Themes</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="text-4xl mb-4">👩</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Youth & Women</h3>
+                    <p class="text-gray-600">Empowering young people and women with tools and opportunities to build successful agricultural enterprises</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="text-4xl mb-4">💼</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Jobs & Livelihoods</h3>
+                    <p class="text-gray-600">Creating meaningful employment and sustainable income opportunities across the value chain</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="text-4xl mb-4">🌾</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Agriculture & Food Systems</h3>
+                    <p class="text-gray-600">Building resilient, productive, and sustainable food systems that benefit farmers and communities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reports Section -->
+    <section id="reports" class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-12 text-center">Reports & Downloads</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-3xl mb-4">📊</div>
+                    <h3 class="text-lg font-bold text-secondary mb-3">Annual Impact Report 2024</h3>
+                    <p class="text-gray-600 text-sm mb-4">Comprehensive overview of our impact across all regions and programs</p>
+                    <a href="#" class="inline-block bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-semibold text-sm transition-all duration-300">Download PDF</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-3xl mb-4">📋</div>
+                    <h3 class="text-lg font-bold text-secondary mb-3">Program Brief: Solar Cooling</h3>
+                    <p class="text-gray-600 text-sm mb-4">Impact of solar cooling solutions on dairy farmer livelihoods</p>
+                    <a href="#" class="inline-block bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-semibold text-sm transition-all duration-300">Download PDF</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-3xl mb-4">📈</div>
+                    <h3 class="text-lg font-bold text-secondary mb-3">Case Studies Collection</h3>
+                    <p class="text-gray-600 text-sm mb-4">Stories and data from farmers transformed by our solutions</p>
+                    <a href="#" class="inline-block bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-semibold text-sm transition-all duration-300">Download PDF</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-3xl mb-4">🌍</div>
+                    <h3 class="text-lg font-bold text-secondary mb-3">Sustainability Report</h3>
+                    <p class="text-gray-600 text-sm mb-4">Environmental impact and carbon footprint reduction achievements</p>
+                    <a href="#" class="inline-block bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-semibold text-sm transition-all duration-300">Download PDF</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

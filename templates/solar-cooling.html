@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Solar Cooling Solutions - Savanna Circuit{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-20 md:py-24 pt-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4">Solar Cooling Solutions</h1>
+            <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">Hybrid milk chillers, solar pasteurizers, and cooling solutions powered by clean energy</p>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- MaziwaPlus Prechillers -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="text-5xl mb-4 text-center">❄️</div>
+                    <h2 class="text-2xl font-bold text-secondary mb-2">MaziwaPlus Prechillers</h2>
+                    <p class="text-gray-600 mb-4">Entry-level milk cooling solution</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Efficient milk cooling</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Hybrid electric/solar option</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Affordable pricing</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Easy maintenance</li>
+                    </ul>
+                    <a href="{{ url_for('pages.store') }}" class="inline-block w-full text-center bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">View in Store</a>
+                </div>
+
+                <!-- MaziwaPlus Prechillers Pro -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="text-5xl mb-4 text-center">❄️⭐</div>
+                    <h2 class="text-2xl font-bold text-secondary mb-2">MaziwaPlus Prechillers Pro</h2>
+                    <p class="text-gray-600 mb-4">Advanced milk cooling with premium features</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Larger capacity</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Enhanced solar efficiency</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Smart monitoring</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Extended warranty</li>
+                    </ul>
+                    <a href="{{ url_for('pages.store') }}" class="inline-block w-full text-center bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">View in Store</a>
+                </div>
+
+                <!-- BMC Hybrid -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="text-5xl mb-4 text-center">⚡❄️</div>
+                    <h2 class="text-2xl font-bold text-secondary mb-2">BMC Hybrid</h2>
+                    <p class="text-gray-600 mb-4">Flexible hybrid cooling system</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Solar + grid power combination</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> High capacity options</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Reliable performance</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Cost-effective operation</li>
+                    </ul>
+                    <a href="{{ url_for('pages.store') }}" class="inline-block w-full text-center bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">View in Store</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

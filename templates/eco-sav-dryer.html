@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Eco-Sav Dryer - Savanna Circuit{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-20 md:py-24 pt-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4">Eco-Sav Dryer</h1>
+            <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">Solar-powered agricultural dryer for sustainable food preservation</p>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-12">Overview & Use Cases</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-secondary mb-4">What It Does</h3>
+                    <p class="text-gray-700 leading-relaxed">The Eco-Sav Dryer is a solar-powered agricultural dryer that extends the shelf life of fruits, vegetables, grains, and other agricultural products while preserving nutritional value and quality.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-secondary mb-4">Perfect For</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Fruits & berries</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Vegetables & herbs</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Grains & legumes</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Spices & seasonings</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Coffee & cocoa beans</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specifications -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-12 text-center">Technical Specifications</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <h3 class="text-xl font-bold text-secondary mb-3">Capacity</h3>
+                    <p class="text-gray-600">50-200 kg per batch<br/>depending on model</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <h3 class="text-xl font-bold text-secondary mb-3">Temperature Control</h3>
+                    <p class="text-gray-600">30-90°C adjustable<br/>for various products</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <h3 class="text-xl font-bold text-secondary mb-3">Power Source</h3>
+                    <p class="text-gray-600">100% solar-powered<br/>with battery backup</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <h3 class="text-xl font-bold text-secondary mb-3">Drying Time</h3>
+                    <p class="text-gray-600">4-48 hours<br/>depending on product</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 md:py-24">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="glass-card p-8 rounded-2xl">
+                <h3 class="text-2xl font-bold text-secondary mb-4">Ready to Get Started?</h3>
+                <p class="text-gray-600 mb-6">Contact us to learn more about the Eco-Sav Dryer and how it can benefit your farm.</p>
+                <a href="{{ url_for('pages.contact') }}" class="inline-block bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

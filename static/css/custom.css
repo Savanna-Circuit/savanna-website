@@ -1,0 +1,148 @@
+/* ============================================
+   CUSTOM CSS - Only for effects Tailwind can't handle easily
+   ============================================
+   This file contains ONLY:
+   - Glassmorphism effects (backdrop-filter)
+   - Complex animations
+   - Video hero backgrounds
+   - Any unique effects that require custom CSS
+   ============================================ */
+
+/* ============================================
+   GLASSMORPHISM EFFECTS
+   ============================================ */
+.glass {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.glass-light {
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(255,255,255,0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.glass-card {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.9);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+}
+
+.glass-card:hover {
+    background: rgba(255,255,255,0.85);
+    box-shadow: 0 12px 40px rgba(167, 204, 64, 0.18);
+}
+
+/* ============================================
+   VIDEO HERO BACKGROUND
+   ============================================ */
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -2;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* ============================================
+   COMPLEX ANIMATIONS
+   ============================================ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+.animate-fade-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* ============================================
+   NAVBAR SCROLL EFFECT
+   ============================================ */
+.navbar.scrolled {
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(18px) saturate(120%);
+    -webkit-backdrop-filter: blur(18px) saturate(120%);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* ============================================
+   PRODUCT CARD HOVER EFFECTS
+   ============================================ */
+.product-img-container img {
+    transition: transform 0.5s ease;
+}
+
+.product-card-modern:hover .product-img-container img {
+    transform: scale(1.1);
+}
+
+.product-overlay {
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card-modern:hover .product-overlay {
+    opacity: 1;
+}
+
+/* ============================================
+   NAV LINK ACTIVE UNDERLINE
+   ============================================ */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #a7cc40;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+

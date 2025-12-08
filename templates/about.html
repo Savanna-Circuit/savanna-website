@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+
+{% block title %}Team - Savanna Circuit{% endblock %}
+
+{% block head_extra %}
+<style>
+    /* Smooth scroll behavior for anchor links */
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    /* Active tab styling */
+    .about-tab-link.active {
+        background: #a7cc40;
+        color: white;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-20 md:py-24 pt-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4">Team</h1>
+            <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">Empowering farmers through innovation, technology, and sustainable solutions</p>
+        </div>
+    </section>
+
+    <!-- About Navigation Tabs -->
+    <section class="bg-white border-b sticky top-16 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-wrap gap-2 py-4 overflow-x-auto">
+                <a href="#our-story" class="about-tab-link px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700">Our Story</a>
+                <a href="#mission" class="about-tab-link px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700">Mission</a>
+                <a href="#vision" class="about-tab-link px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700">Vision</a>
+                <a href="#values" class="about-tab-link px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700">Values</a>
+                <a href="#our-approach" class="about-tab-link px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700">Our Approach</a>
+                <a href="#team" class="about-tab-link px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700">Team</a>
+                <a href="#partners" class="about-tab-link px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700">Partners</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="our-story" class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-8">Our Story</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-secondary mb-3">Research (2017 - 2019)</h3>
+                    <p class="text-gray-600 leading-relaxed">Initial research and development focused on understanding the challenges faced by small-holder farmers and exploring innovative solutions for dairy management and solar cooling.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-secondary mb-3">First Model Deployment & Distribution (2020 - 2022)</h3>
+                    <p class="text-gray-600 leading-relaxed">Launched the first hybrid milk chiller model, began distribution to farmers, and established key partnerships for scaling impact across regions.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-secondary mb-3">Continued Partnerships & Improvements (2023 - To Date)</h3>
+                    <p class="text-gray-600 leading-relaxed">Expanded product offerings, deepened partnerships, and continuously improved technology and service delivery to maximize farmer impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-6">Mission</h2>
+            <p class="text-lg text-gray-700 leading-relaxed">To empower youth and smallholder farmers with innovative, sustainable agricultural solutions that increase productivity, improve livelihoods, and create economic opportunities.</p>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="py-16 md:py-24">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-6">Vision</h2>
+            <p class="text-lg text-gray-700 leading-relaxed">A thriving agricultural ecosystem where farmers have access to cutting-edge technology, quality products, and expert support to build sustainable, profitable farms.</p>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section id="values" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-8">Our Values</h2>
+            <ul class="space-y-4">
+                <li class="glass-card p-4 rounded-xl"><strong class="text-primary-dark">Innovation:</strong> <span class="text-gray-700">Continuous improvement in product and service delivery</span></li>
+                <li class="glass-card p-4 rounded-xl"><strong class="text-primary-dark">Sustainability:</strong> <span class="text-gray-700">Environmental and economic responsibility</span></li>
+                <li class="glass-card p-4 rounded-xl"><strong class="text-primary-dark">Farmer-Centric:</strong> <span class="text-gray-700">Solutions designed with farmer needs in mind</span></li>
+                <li class="glass-card p-4 rounded-xl"><strong class="text-primary-dark">Impact:</strong> <span class="text-gray-700">Measurable improvement in farmer livelihoods</span></li>
+                <li class="glass-card p-4 rounded-xl"><strong class="text-primary-dark">Integrity:</strong> <span class="text-gray-700">Transparent and ethical business practices</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Our Approach Section -->
+    <section id="our-approach" class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-8">Our Approach</h2>
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-4xl mb-4">🔧</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Technology</h3>
+                    <p class="text-gray-600">Cutting-edge solar, IoT, and cloud-based solutions designed for the African context and smallholder farmer needs.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-4xl mb-4">👥</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Service</h3>
+                    <p class="text-gray-600">Expert field support, training, and customer service that ensures farmers can maximize the value of our products.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Data</h3>
+                    <p class="text-gray-600">Data-driven insights that help farmers make better decisions and optimize their operations for maximum impact.</p>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-2xl">
+                <p class="text-lg text-gray-700 leading-relaxed">We work closely with farmers and partners to understand their challenges, co-develop solutions, and provide comprehensive support throughout their journey. Our integrated approach ensures that technology, service, and data work together to deliver measurable results.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-8">Team</h2>
+            <div class="glass-card p-8 rounded-2xl max-w-2xl">
+                <h3 class="text-2xl font-bold text-secondary mb-4">Leadership Team</h3>
+                <p class="text-gray-700 mb-6 leading-relaxed">Our experienced leadership brings together expertise in agriculture, technology, impact investing, and business development.</p>
+                <a href="#" class="inline-block text-primary hover:text-primary-dark font-semibold">Meet the Team →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-4">Partners & Collaborators</h2>
+            <p class="text-lg text-gray-600 mb-12 max-w-2xl">We work with leading organizations to amplify our impact across Africa.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-5xl mb-4">🌍</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Implementation Partners</h3>
+                    <p class="text-gray-600 text-sm">NGOs and development organizations that help us reach and serve farmers</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-5xl mb-4">💼</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Corporate Partners</h3>
+                    <p class="text-gray-600 text-sm">Companies working together to support sustainable agricultural development</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-5xl mb-4">🏛️</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Government Partners</h3>
+                    <p class="text-gray-600 text-sm">Ministry and government agencies aligned with our development goals</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-5xl mb-4">🎓</div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Academic Partners</h3>
+                    <p class="text-gray-600 text-sm">Universities and research institutions supporting innovation and learning</p>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-2xl text-center">
+                <h3 class="text-2xl font-bold text-secondary mb-4">Interested in Partnering?</h3>
+                <p class="text-gray-700 mb-6">We're always looking for organizations committed to transforming agriculture in Africa.</p>
+                <a href="{{ url_for('pages.contact') }}" class="inline-block bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+<script>
+    // Update active tab on scroll
+    document.addEventListener('DOMContentLoaded', () => {
+        const tabs = document.querySelectorAll('.about-tab-link');
+        const sections = document.querySelectorAll('section[id]');
+        
+        const updateActiveTab = () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.getAttribute('href') === `#${current}`) {
+                    tab.classList.add('active');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', updateActiveTab);
+        updateActiveTab();
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Store - Savanna Circuit{% endblock %}
+
+{% block head_extra %}
+<style>
+    .filter-btn.active {
+        background: #a7cc40;
+        color: white;
+    }
+    
+    .store-product-card {
+        transition: all 0.3s;
+    }
+    
+    .store-product-card:hover {
+        transform: translateY(-4px);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-20 md:py-24 pt-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4">Savanna Circuit Store</h1>
+            <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">Purchase innovative agricultural solutions with flexible payment options</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="bg-white border-b sticky top-16 z-40 shadow-sm py-4">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-wrap gap-3 items-center">
+                <h3 class="font-bold text-secondary mr-4">Filter by Category:</h3>
+                <button class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-primary text-white" data-category="all">All Products</button>
+                <button class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700" data-category="solar-cooling">Solar Cooling</button>
+                <button class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700" data-category="management-systems">Dairy Management</button>
+                <button class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700" data-category="drying-systems">Drying</button>
+                <button class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700" data-category="solar-thrive">Thrive Products</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <div id="products-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <div id="products-empty" class="text-center py-12 hidden">
+                <p class="text-gray-600 text-lg">No products available right now. Please check back soon.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart & Checkout -->
+    <section id="checkout" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-8">Your Cart</h2>
+            <div id="cart-items" class="mb-6"></div>
+            <div class="glass-card p-6 rounded-2xl mb-8">
+                <p class="text-xl font-bold text-secondary"><strong>Total:</strong> <span id="cart-total" class="text-primary">$0.00</span></p>
+                </div>
+            <div class="glass-card p-8 rounded-2xl">
+                <h3 class="text-2xl font-bold text-secondary mb-6">Checkout</h3>
+                <form id="checkout-form" class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input name="name" type="text" placeholder="Full Name" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none">
+                        <input name="email" type="email" placeholder="Email" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none">
+                </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input name="phone" type="tel" placeholder="Phone" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none">
+                        <input name="address" type="text" placeholder="Address" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none">
+                </div>
+                    <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">Place Order</button>
+                    <p id="checkout-status" class="text-sm text-center mt-2" aria-live="polite"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financing Options -->
+    <section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-12 text-center">Flexible Financing Options</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-2xl text-center">
+                    <h3 class="text-xl font-bold text-secondary mb-4">Cooling as a Service (CaaS)</h3>
+                    <p class="text-gray-600 mb-6">Pay monthly for cooling services instead of purchasing equipment upfront</p>
+                    <a href="{{ url_for('pages.contact') }}" class="inline-block bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">Learn More</a>
+            </div>
+                <div class="glass-card p-8 rounded-2xl text-center">
+                    <h3 class="text-xl font-bold text-secondary mb-4">Lease Programs</h3>
+                    <p class="text-gray-600 mb-6">Lease equipment with option to purchase, making solutions accessible to all farmers</p>
+                    <a href="{{ url_for('pages.contact') }}" class="inline-block bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">Learn More</a>
+            </div>
+                <div class="glass-card p-8 rounded-2xl text-center">
+                    <h3 class="text-xl font-bold text-secondary mb-4">Hybrid Financing</h3>
+                    <p class="text-gray-600 mb-6">Customize payment plans tailored to your farm's needs and cash flow</p>
+                    <a href="{{ url_for('pages.contact') }}" class="inline-block bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">Learn More</a>
+            </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/store.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Products - Savanna Circuit{% endblock %}
+
+{% block head_extra %}{% endblock %}
+
+{% block content %}
+    <!-- Header Section -->
+    <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-20 md:py-24 pt-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4 animate-fade-up">Our Solutions</h1>
+            <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto animate-fade-up" style="animation-delay: 0.1s">High-quality, durable, and efficient technology tailored for the African agricultural landscape.</p>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <!-- Filters -->
+        <div class="flex flex-wrap gap-3 mb-8 justify-center animate-fade-up" style="animation-delay: 0.2s">
+            <button class="filter-chip px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-primary text-white shadow-lg">All</button>
+            <button class="filter-chip px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700">Solar Cooling</button>
+            <button class="filter-chip px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700">Solar Drying</button>
+            <button class="filter-chip px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700">Storage</button>
+            <button class="filter-chip px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 hover:bg-gray-200 text-gray-700">Software</button>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-up" style="animation-delay: 0.3s">
+            <!-- Cooling -->
+            {% with title='MaziwaPlus Prechiller', category='Solar Cooling', price='249,900', description='300-1000L hybrid milk chiller.', image_url=url_for('static', filename='images/products/chiller.jpg') %}
+                {% include 'components/products/product_card.html' %}
+            {% endwith %}
+
+            {% with title='MaziwaPlus Pro', category='Solar Cooling', price='449,900', description='200-2000L high-capacity chiller.', image_url=url_for('static', filename='images/products/pro.jpg') %}
+                {% include 'components/products/product_card.html' %}
+            {% endwith %}
+
+            {% with title='BMC Hybrid', category='Solar Cooling', price='349,900', description='Hybrid solar/grid cooling system.', image_url=url_for('static', filename='images/products/bmc-hybrid.jpg') %}
+                {% include 'components/products/product_card.html' %}
+            {% endwith %}
+
+            <!-- Drying -->
+            {% with title='Eco-Sav Dryer', category='Solar Drying', price='185,900', description='Solar-powered agricultural dryer.', image_url=url_for('static', filename='images/products/dryer.jpg') %}
+                {% include 'components/products/product_card.html' %}
+            {% endwith %}
+
+            <!-- Storage -->
+            {% with title='Nomad Can 10L', category='Storage', price='8,900', description='Portable milk storage container.', image_url=url_for('static', filename='images/products/can-10.jpg') %}
+                {% include 'components/products/product_card.html' %}
+            {% endwith %}
+
+            {% with title='Nomad Can 50L', category='Storage', price='28,900', description='Large capacity milk transport can.', image_url=url_for('static', filename='images/products/can-50.jpg') %}
+                {% include 'components/products/product_card.html' %}
+            {% endwith %}
+
+            <!-- Software -->
+            {% with title='MaziwaPlus DMS', category='Software', price='49,900/yr', description='Dairy management ERP system.', image_url=url_for('static', filename='images/products/dms.jpg') %}
+                {% include 'components/products/product_card.html' %}
+            {% endwith %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Simple filter logic for demo purposes
+    document.querySelectorAll('.filter-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+            document.querySelectorAll('.filter-chip').forEach(c => {
+                c.classList.remove('bg-primary', 'text-white', 'shadow-lg');
+                c.classList.add('bg-gray-100', 'text-gray-700');
+            });
+            chip.classList.remove('bg-gray-100', 'text-gray-700');
+            chip.classList.add('bg-primary', 'text-white', 'shadow-lg');
+            // In a real app, this would filter the grid items
+        });
+    });
+</script>
+{% endblock %}

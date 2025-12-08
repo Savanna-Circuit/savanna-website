@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}MaziwaPlus Dairy Management System - Savanna Circuit{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-20 md:py-24 pt-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4">MaziwaPlus Dairy Management System</h1>
+            <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">Cloud-based ERP designed for dairy farmers and value chain actors</p>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="py-16 md:py-24">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-6 text-center">Transform Your Dairy Operations</h2>
+            <p class="text-lg text-gray-700 leading-relaxed text-center">MaziwaPlus DMS is a comprehensive dairy management platform that brings together production tracking, financial management, market linkages, and data analytics in one integrated system.</p>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-12 text-center">Key Features</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold text-secondary mb-4">Production Tracking</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-primary mt-1"></i> <span class="text-gray-600">Real-time milk production records</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-primary mt-1"></i> <span class="text-gray-600">Livestock health monitoring</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-primary mt-1"></i> <span class="text-gray-600">Feed management</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-primary mt-1"></i> <span class="text-gray-600">Performance analytics</span></li>
+                    </ul>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h3 class="text-xl font-bold text-secondary mb-4">Financial Management</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-primary mt-1"></i> <span class="text-gray-600">Income and expense tracking</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-primary mt-1"></i> <span class="text-gray-600">Profitability analysis</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-primary mt-1"></i> <span class="text-gray-600">Invoice generation</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-primary mt-1"></i> <span class="text-gray-600">Payment management</span></li>
+                    </ul>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-4xl mb-4">🌐</div>
+                    <h3 class="text-xl font-bold text-secondary mb-4">Market Linkages</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-primary mt-1"></i> <span class="text-gray-600">Connect to buyers</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-primary mt-1"></i> <span class="text-gray-600">Access market prices</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-primary mt-1"></i> <span class="text-gray-600">Direct sales platform</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-primary mt-1"></i> <span class="text-gray-600">Order management</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 md:py-24">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="glass-card p-8 rounded-2xl">
+                <h3 class="text-2xl font-bold text-secondary mb-4">Start Using MaziwaPlus DMS Today</h3>
+                <p class="text-gray-600 mb-6">Get started with a free trial or contact us for a demo.</p>
+                <div class="flex gap-4 justify-center">
+                    <a href="{{ url_for('pages.store') }}" class="inline-block bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">View in Store</a>
+                    <a href="{{ url_for('pages.contact') }}" class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">Request Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
