@@ -7,45 +7,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <link href="fonts.googleapis.com" rel="stylesheet">
+
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">
-                        <img src="C:\Users\SAVANNA CIRCUIT\FRONT END\images\sav logo (2).jpeg" alt="Savanna Circuit Logo">
-                <span class="site-title"> SAVANNA CIRCUIT</span>
-                    </a>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
-                <li class="nav-item"><a href="impact.html" class="nav-link">Impact</a></li>
-                <li class="nav-item"><a href="news.html" class="nav-link">News & Stories</a></li>
-                <li class="nav-item"><a href="support.html" class="nav-link">Support</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
-                <li class="nav-item"><a href="store-app/index.html" class="cta-button primary" nav-cta >Buy</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <div id="Header"></div>
 
     <!-- Hero Section -->
-    <section class="hero-subpage">
+<section class="hero-modern">
+    <!-- Background image now replaces the video -->
+    <div class="hero-background">
+        <img src="../images/hero 2.JPG" alt="News and Stories background" class="bg-media" loading="lazy">
+    </div>
+
+    <!-- The glass card remains the same -->
+    <div class="hero-lead-card">
         <h1>Get in Touch</h1>
         <p>We'd love to hear from you. Let's talk about how we can help your farm thrive.</p>
-    </section>
+    </div>
+</section>
 
     <!-- Contact Information -->
     <section class="contact-info-section">
         <div class="section-container">
             <div class="contact-info-grid">
                 <div class="contact-info-card">
-                    <h3>📍 Our Location</h3>
+                    <h3> Our Location</h3>
                      <address>
                         <span class="address-line">
                         <a href="https://goo.gl/maps/8NZGZXvDicZS7rgp9"target="_blank"><span class="address-text">Savanna Circuit Technologies</span></a> 
@@ -58,16 +44,22 @@
                     
                 </div>
                 <div class="contact-info-card">
-                    <h3>📞 Phone</h3>
+                    <h3> Phone</h3>
                     <p>Main: +254 714 574 007<br/>
                     WhatsApp: +254 714 574 007<br/>
                     Hours: Mon-Fri 8AM-5PM GMT+3</p>
                 </div>
                 <div class="contact-info-card">
-                    <h3>📧 Email</h3>
+                    <h3> Email</h3>
                     <p>General: info@savanacircuit.com<br/>
                     Sales: sales@savanacircuit.com<br/>
                     Support: support@savanacircuit.com</p>
+                </div>
+                  <div class="contact-method">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="browh" class="bi bi-chat" viewBox="0 0 20 10"><path d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105"/></svg>
+                         Live Chat</h3>
+                    <p>Available 9:00 AM - 5:00 PM</p>
+                    <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20some%20support%20for%20my%20equipment." target="_blank" rel="noopener" class="cta-button primary">Start Chat</a>
                 </div>
             </div>
         </div>
@@ -79,22 +71,22 @@
             <h2>How Can We Help?</h2>
             <div class="routes-grid">
                 <div class="route-card">
-                    <h3>🌾 I'm a Farmer</h3>
+                    <h3> I'm a Farmer</h3>
                     <p>Learn about products, get technical support, or discuss custom solutions for your farm.</p>
-                    <a href="#farmer-form" class="cta-button primary">Contact Sales</a>
+                    <a href="#contact-section" class="cta-button primary">Contact Sales</a>
                 </div>
                 <div class="route-card">
-                    <h3>🤝 I'm a Partner</h3>
+                    <h3> I'm a Partner</h3>
                     <p>Explore partnership opportunities, integration, or collaboration possibilities.</p>
-                    <a href="#partner-form" class="cta-button primary">Get in Touch</a>
+                    <a href="#contact-section" class="cta-button primary">Get in Touch</a>
                 </div>
                 <div class="route-card">
-                    <h3>📰 I'm in Media</h3>
+                    <h3> I'm in Media</h3>
                     <p>Interview requests, press inquiries, or media kit downloads.</p>
-                    <a href="#media-form" class="cta-button primary">Press Kit</a>
+                    <a href="#contact-section" class="cta-button primary">Press Kit</a>
                 </div>
                 <div class="route-card">
-                    <h3>🔧 Need Support?</h3>
+                    <h3> Need Support?</h3>
                     <p>Technical issues, product questions, or account help.</p>
                     <a href="support.html" class="cta-button primary">Get Support</a>
                 </div>
@@ -107,205 +99,91 @@
         <div class="section-container">
             <div class="forms-grid">
                 <!-- Farmers Form -->
-                <div id="farmer-form" class="form-container">
-                    <h3>For Farmers</h3>
-                    <form>
-                        <div class="form-group">
-                            <label>Full Name</label>
-                            <input type="text" placeholder="Your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" placeholder="your@email.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Phone Number</label>
-                            <input type="tel" placeholder="+256 XXX XXX XXX" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Farm Location</label>
-                            <input type="text" placeholder="Region/County" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Interested Product</label>
-                            <select required>
-                                <option>Select product</option>
-                                <option>Solar Thrive Products</option>
-                                <option>Solar Cooling</option>
-                                <option>Dairy Management System</option>
-                                <option>Eco-Sav Dryer</option>
-                                
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Message</label>
-                            <textarea placeholder="Tell us about your farm and needs" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="cta-button primary">Send Message</button>
-                    </form>
-                </div>
+           <div id = "contact-section" class="contact-form-container">
+           <h3>Submit Contact Ticket</h3>
+            <form class="contact-form">
+           <!-- Category Selection Group -->
+           <div class="form-group">
+                 <label for="category-select">Contact Category</label>
+             <select id="category-select" required>
+              <option value="">Select Category</option>
+              <option value="Farmer">Farmer</option>
+              <option value="Partner">Partner</option>
+              <option value="Media">Media</option>
+              <option value="Distributor">Distributor</option>
+             <option value="Other">Other</option>
+           </select>
+           </div>
 
-                <!-- Partners Form -->
-                <div id="partner-form" class="form-container">
-                    <h3>For Partners</h3>
-                    <form>
-                        <div class="form-group">
-                            <label>Organization Name</label>
-                            <input type="text" placeholder="Your organization" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Contact Email</label>
-                            <input type="email" placeholder="contact@organization.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Contact Person</label>
-                            <input type="text" placeholder="Full name" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Partnership Type</label>
-                            <select required>
-                                <option>Select type</option>
-                                <option>Distribution Partnership</option>
-                                <option>Integration Partnership</option>
-                                <option>Development Organization</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Partnership Details</label>
-                            <textarea placeholder="Describe your partnership interest" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="cta-button primary">Submit Inquiry</button>
-                    </form>
-                </div>
+           <!-- Always Visible Fields -->
+           <div class="form-group">
+             <label>Your Name</label>
+             <input type="text" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="+254 *********" required>
+           </div>
 
-                <!-- Media Form -->
-                <div id="media-form" class="form-container">
-                    <h3>For Media</h3>
-                    <form>
-                        <div class="form-group">
-                            <label>Full Name</label>
-                            <input type="text" placeholder="Your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Publication/Outlet</label>
-                            <input type="text" placeholder="Your publication" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" placeholder="your@email.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Story/Inquiry Topic</label>
-                            <input type="text" placeholder="What is your story about?" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Request Type</label>
-                            <select required>
-                                <option>Select type</option>
-                                <option>Interview Request</option>
-                                <option>Press Kit Download</option>
-                                <option>Story Feedback</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Details</label>
-                            <textarea placeholder="Tell us what you need" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="cta-button primary">Send Request</button>
-                    </form>
+    <!-- Category Specific Fields Containers -->
+    <!-- Farmer/Distributor Fields (Products) -->
+    <div id="farmer-fields" class="category-specific form-group">
+      <label>Product</label>
+      <select required>
+        <option>Select your product</option>
+        <option>Solar Cooling</option>
+        <option>Solar Thrive</option>
+        <option>MaziwaPlus DMS</option>
+        <option>Eco-Sav Dryer</option>
+        <option>cooling as a service</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <!-- Partner Fields -->
+    <div id="partner-fields" class="category-specific form-group">
+      <label>Partnership Models</label>
+      <select required>
+        <option>Select a Model</option>
+        <option>Distribution Partnership</option>
+        <option>Integration Partnership</option>
+        <option>Development Organization</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <!-- Media Fields -->
+    <div id="media-fields" class="category-specific form-group">
+      <label>Media Request</label>
+      <select required>
+        <option>Select type</option>
+        <option>Interview Request</option>
+        <option>Press Kit Download</option>
+        <option>Story Feedback</option>
+        <option>Other</option>
+      </select>
+    </div>
+    
+    <!-- Always Visible Fields (Contact Description) -->
+    <div class="form-group">
+      <label>Contact Description</label>
+      <textarea placeholder="Describe your issue in detail" rows="5" required></textarea>
+    </div>
+
+    <button type="submit" class="cta-button primary">Submit Ticket</button>
+  </form>
+</div>
                 </div>
             </div>
-        </div>
+        </div>                                  
     </section>
-
-    <!-- Social Media 
-    <section class="social-section">
-        <div class="section-container">
-            <h2>Follow Us</h2>
-            <div class="social-links-large">
-                <a href="#" class="social-link">Facebook</a>
-                <a href="#" class="social-link">Twitter</a>
-                <a href="#" class="social-link">LinkedIn</a>
-                <a href="#" class="social-link">Instagram</a>
-                <a href="#" class="social-link">YouTube</a>
-            </div>
-        </div>
-    </section> -->
-
-   <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Savanna Circuit</h4>
-                <p>Empowering farmers through technology and innovation</p>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="store.html">Store</a></li>
-                    <li><a href="impact.html">Impact</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                    
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="about.html#partners">Partners</a></li>
-                    <li><a href="https://sav-circuit.com/privacy-policy/">Privacy Policy</a></li>
-                    <li><a href="https://sav-circuit.com/terms-of-operations/">Terms of Service</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Follow Us</h4>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/savannacircuit/" aria-label="Facebook" class="social-facebook" target="_blank" rel="noopener">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07C2 17.1 5.66 21.24 10.44 22v-7.01H7.9v-2.92h2.54V9.41c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.92h-2.34V22C18.34 21.24 22 17.1 22 12.07z"/></svg>
-                    </a>
-                    <a href="https://www.linkedin.com/company/savanna-circuit-technologies/about/" aria-label="LinkedIn" class="social-linkedin" target="_blank" rel="noopener">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3A2.94 2.94 0 0 1 22 6v12a2.94 2.94 0 0 1-3 3H5a2.94 2.94 0 0 1-3-3V6a2.94 2.94 0 0 1 3-3h14Zm-9.54 16V10.5H7.06V19h2.4Zm-1.2-9.81a1.39 1.39 0 1 0 0-2.78 1.39 1.39 0 0 0 0 2.78ZM20 19v-5.2c0-2.8-1.49-4.1-3.47-4.1a3 3 0 0 0-2.72 1.49h-.06V10.5h-2.4V19h2.4v-4.48c0-1.18.21-2.32 1.69-2.32s1.5 1.36 1.5 2.4V19H20Z"/></svg>
-                    </a>
-                    <a href="https://www.instagram.com/savannacircuit/" aria-label="Instagram" class="social-instagram" target="_blank" rel="noopener">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.2 2.4.4.6.2 1 .4 1.4.8.4.4.6.8.8 1.4.2.5.3 1.2.4 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.9-.4 2.4-.2.6-.4 1-.8 1.4-.4.4-.8.6-1.4.8-.5.2-1.2.3-2.4.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.2-2.4-.4-.6-.2-1-.4-1.4-.8-.4-.4-.6-.8-.8-1.4-.2-.5-.3-1.2-.4-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.9.4-2.4.2-.6.4-1 .8-1.4.4-.4.8-.6 1.4-.8.5-.2 1.2-.3 2.4-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.7.1-1 .1-1.6.2-2 .4-.5.2-.8.4-1.1.7-.3.3-.5.6-.7 1.1-.2.4-.3 1-.4 2-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1 .2 1.6.4 2 .2.5.4.8.7 1.1.3.3.6.5 1.1.7.4.2 1 .3 2 .4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1-.1 1.6-.2 2-.4.5-.2.8-.4 1.1-.7.3-.3.5-.6.7-1.1.2-.4.3-1 .4-2 .1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1-.2-1.6-.4-2-.2-.5-.4-.8-.7-1.1-.3-.3-.6-.5-1.1-.7-.4-.2-1-.3-2-.4-1.2-.1-1.6-.1-4.7-.1Zm0 3.5a6.5 6.5 0 1 1 0 13 6.5 6.5 0 0 1 0-13Zm0 2.2a4.3 4.3 0 1 0 0 8.6 4.3 4.3 0 0 0 0-8.6Zm5.3-3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/></svg>
-                    </a>
-                    <a href="https://twitter.com/sav_circuittech" aria-label="X (Twitter)" class="social-x" target="_blank" rel="noopener">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.53 3h3.13l-6.84 7.82L22 21h-6.7l-5.23-6.82L3.9 21H.75l7.3-8.34L1 3h6.86l4.73 6.2L17.53 3Zm-1.17 16.2h1.73L7.72 4.68H5.86L16.36 19.2Z"/></svg>
-                    </a>
-                    <a href="https://api.whatsapp.com/send/?phone=+254714574007&text=Hello,%20From%20SCT%20Website." aria-label="WhatsApp" class="social-whatsapp" target="_blank" rel="noopener">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A10.5 10.5 0 0 0 3.8 17.9L2 22l4.3-1.7A10.5 10.5 0 1 0 20.5 3.5Zm-8.4 16.6c-1.8 0-3.5-.6-4.9-1.7l-.3-.2-2.9 1.1 1.1-2.8-.2-.3a8.5 8.5 0 1 1 7.2 4.9Zm4.9-6.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-1.8-.9-3-1.6-4.2-3.6-.3-.4 0-.5.2-.7.2-.2.3-.3.4-.5.2-.2.1-.4 0-.6-.1-.2-.7-1.6-.9-2.2-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 3s1.2 3.5 1.3 3.7c.2.2 2.3 3.6 5.7 5 2.1.9 2.9 1 3.9.8.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4 0-.1-.1-.2-.3-.3Z"/></svg>
-                    </a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h4>Contact</h4>
-                <address>
-                    <span class="address-line">
-                        <a href="https://goo.gl/maps/8NZGZXvDicZS7rgp9"target="_blank"><span class="address-text">Savanna Circuit Technologies</span></a> 
-                        <svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.7 2 6 4.7 6 8c0 4.6 6 12 6 12s6-7.4 6-12c0-3.3-2.7-6-6-6Zm0 8.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 5.5 12 5.5s2.5 1.1 2.5 2.5S13.4 10.5 12 10.5Z"/></svg>
-                        
-                    </span><br>
-                    P.O. Box 5107-00200, Nairobi, Kenya
-                </address>
-                <ul class="contact-list">
-                    <li>Tel: <a href="tel:0208000265">020 800 0265</a></li>
-                    <li>Mobile: <a href="tel:+254714574007">+254 714 574 007</a></li>
-                    <li>Email: <a href="mailto:info@sav-circuit.com">info@sav-circuit.com</a></li>
-                
-                </ul>
-            </div>
-        </div>
-        
-
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 Savanna Circuit Technologies. All rights reserved.|created by TechVannah</p>
-        </div>
-    </footer>
+ 
+    <!--Footer-->
+  <div id="footer-placeholder"></div>
 
     <script src="script.js"></script>
 </body>

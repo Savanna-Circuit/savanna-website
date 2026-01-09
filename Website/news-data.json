@@ -1,0 +1,162 @@
+{
+  "latestUpdates": [
+    {
+      "title": "New Solar Cooling Technology Launched",
+      "date": "November 28, 2025",
+      "description": "We're thrilled to announce the launch of BMC Solar Gen 2, featuring advanced battery management and extended capacity.",
+      "link": "#"
+    },
+    {
+      "title": "50,000 Farmers Milestone Achieved",
+      "date": "October 15, 2025",
+      "description": "Savanna Circuit reaches half a million farmers and community members across Africa through its innovative solutions.",
+      "link": "#"
+    },
+    {
+      "title": "Partnership with Global Development Bank",
+      "date": "September 1, 2025",
+      "description": "Strategic partnership to expand financing options and reach more smallholder farmers across the continent.",
+      "link": "#"
+    },
+    {
+      "title": "MaziwaPlus DMS v3.0 Released",
+      "date": "August 20, 2025",
+      "description": "Major update with AI-powered insights, improved mobile experience, and new market integration features.",
+      "link": "#"
+    }
+  ],
+  "stories": [
+    {
+      "icon": "cow",
+      "title": "\"My Dairy Dream is Now Reality\"",
+      "description": "Samuel Kipchoge's journey from struggling dairy farmer to successful entrepreneur using Savanna Circuit solutions.",
+      "link": "#"
+    },
+    {
+      "icon": "users",
+      "title": "Women in Agriculture Initiative",
+      "description": "How 200 women in Dunga Beach are transforming their communities through solar-powered agricultural technology.",
+      "link": "#"
+    },
+    {
+      "icon": "dollar-sign",
+      "title": "Youth Creating Jobs",
+      "description": "Young entrepreneurs are becoming community agents, spreading innovation and creating employment opportunities.",
+      "link": "#"
+    },
+    {
+      "icon": "leaf",
+      "title": "Climate Action Through Agriculture",
+      "description": "How sustainable farming practices with Savanna Circuit solutions contribute to climate change mitigation.",
+      "link": "#"
+    }
+  ],
+  "pressCoverage": [
+    {
+      "source": "Featured in: Agricultural Technology Today",
+      "title": "\"How Solar Technology is Transforming African Agriculture\"",
+      "link": "https://youtu.be/rtTIu04v_GY"
+    },
+    {
+      "source": "Interview: African Farmer Magazine",
+      "title": "\"Savanna Circuit: Empowering the Next Generation of Farmers\"",
+      "link": "https://youtu.be/rtTIu04v_GY"
+    },
+    {
+      "source": "Featured in: Global Tech Initiative",
+      "title": "\"Innovation for Climate: Solar Solutions in Agriculture\"",
+      "link": "https://youtu.be/rtTIu04v_GY"
+    }
+  ],
+  "mediaGallery": [
+    {
+      "type": "video-card",
+      "icon": "video",
+      "title": "Farmer Interview Series",
+      "description": "Documentary-style interviews with farmers using Savanna Circuit solutions in their daily operations.",
+      "mediaType": "Video",
+      "link": "https://youtu.be/WlPYid5naXo",
+      "linkText": "Watch Videos →"
+    },
+    {
+      "type": "photo-card",
+      "icon": "camera",
+      "title": "Field Photography",
+      "description": "High-quality images of installations, operations, and community impact from our field projects.",
+      "mediaType": "Photos",
+      "link": "https://drive.google.com/drive/folders/12U_4YYB0Keqn2iG2X1Lsp1FnKycbRuae?usp=drive_link",
+      "linkText": "View Gallery →"
+    },
+    {
+      "type": "story-card-media",
+      "icon": "book",
+      "title": "Success Stories",
+      "description": "In-depth case studies and testimonials from farmers and communities we've helped transform.",
+      "mediaType": "Articles",
+      "link": "https://drive.google.com/drive/folders/1wSUOsbJD7vsybyBX4oXb5QSb8QYj9tmh?usp=drive_link",
+      "linkText": "Read Stories →"
+    },
+    {
+      "type": "training-card",
+      "icon": "users",
+      "title": "Training & Workshops",
+      "description": "Photos and videos from farmer training programs and community workshops across regions.",
+      "mediaType": "Content",
+      "link": "https://drive.google.com/drive/folders/1ffEmFaLN0ESqAa_zUTVNRIqhTmDfxz-8?usp=drive_link",
+      "linkText": "Explore →"
+    },
+    {
+      "type": "impact-card",
+      "icon": "chart",
+      "title": "Impact Reports",
+      "description": "Comprehensive documentation of environmental, social, and economic impact from our programs.",
+      "mediaType": "Reports",
+      "link": "https://docs.google.com/document/d/1s9tEWnBuKRyLPGHV-qR5hyvJT1RKNYSYZQf5f-qSGx0/edit?usp=sharing",
+      "linkText": "Download →"
+    },
+    {
+      "type": "demo-card",
+      "icon": "presentation",
+      "title": "Product Demonstrations",
+      "description": "Live demonstrations, installation pictures, and product feature videos for media coverage.",
+      "mediaType": "Videos",
+      "link": "https://docs.google.com/document/d/1s9tEWnBuKRyLPGHV-qR5hyvJT1RKNYSYZQf5f-qSGx0/edit?usp=sharing",
+      "linkText": "View Demos →"
+    }
+  ],
+  "pressKit": {
+    "inquiries": {
+      "title": "Media Inquiries",
+      "description": "For press inquiries, interviews, media requests, or collaboration opportunities:",
+      "email": "info@savanacircuit.com",
+      "phone": "+254 714 574 007",
+      "address": "Savanna Business Park, Nairobi",
+      "mapLink": "https://goo.gl/maps/8NZGZXvDicZS7rgp9"
+    },
+    "mediaKit": {
+      "title": "📥 Download Media Kit",
+      "description": "Complete media kit with:",
+      "items": [
+        "Company logos (high-res)",
+        "Executive photos",
+        "Product imagery",
+        "Press releases",
+        "Brand guidelines"
+      ],
+      "link": "#",
+      "buttonText": "Download Media Kit"
+    },
+    "factSheet": {
+      "title": "📊 Company Fact Sheet",
+      "description": "Key facts and figures about Savanna Circuit:",
+      "facts": [
+        "Founded: 2017",
+        "Operating Countries: 6",
+        "Farmers Impacted: 500,000+",
+        "Products: 11+ Solutions"
+      ],
+      "link": "#",
+      "buttonText": "Download Fact Sheet"
+    }
+  }
+}
