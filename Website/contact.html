@@ -21,14 +21,51 @@
 
     <!-- The glass card remains the same -->
     <div class="hero-lead-card">
-        <h1>Get in Touch</h1>
-        <p>We'd love to hear from you. Let's talk about how we can help your farm thrive.</p>
+        <h1>Contact Us</h1>
+        <p>We're here to help you get the most out of your Savanna Circuit solutions</p>
     </div>
 </section>
 
-    <!-- Contact Information -->
-    <section class="contact-info-section">
+    <!-- Support Navigation -->
+    <section class="about-nav">
+        <div class="about-nav-container">
+            <a href="#technical" class="about-tab-link active">Technical Support</a>
+            <a href="#contact-support" class="about-tab-link">Contact Support</a>
+        </div>
+    </section>
+
+    <!-- Technical Support -->
+    <section id="technical" class="support-section">
         <div class="section-container">
+            <h2>Technical Support</h2>
+            <div class="support-content">
+                <p>Get help with setup, troubleshooting, and optimization of your equipment and software.</p>   
+                <h3>Troubleshooting Common Issues</h3>
+                <div class="faq-section">
+                    <details class="faq-item">
+                        <summary>How long do the bags keep contents cold?</summary>
+                        <p>With properly loaded glycol ladder packs, EcoSav Bags maintain cold conditions for 8–12 hours depending on ambient temperatures and handling.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What can I dry besides grains?</summary>
+                        <p>Almost anything - fruits, vegetables, herbs, fish, leather, coffee, spices. Temperature-adjustable design accommodates different products' requirements.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Does the mobile app work offline?</summary>
+                        <p>Yes. Field users can capture records offline and the app auto-syncs when connectivity is restored.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How do I contact support?</summary>
+                        <p>You can reach our support team via email at support@savannacircuit.com, phone at +254 700 000 000, or through the contact form on this page.</p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Information -->
+    <section id="contact-support" class="support-section">
+        <div class="section-container">
+                <h2>Contact  our Support team </h2>
             <div class="contact-info-grid">
                 <div class="contact-info-card">
                     <h3> Our Location</h3>
@@ -88,21 +125,19 @@
                 <div class="route-card">
                     <h3> Need Support?</h3>
                     <p>Technical issues, product questions, or account help.</p>
-                    <a href="support.html" class="cta-button primary">Get Support</a>
+                    <a href="#contact-section" class="cta-button primary">Get Support</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Forms -->
-    <section class="contact-forms-section">
+    <section class="support-forms-section">
         <div class="section-container">
             <div class="forms-grid">
-                <!-- Farmers Form -->
-           <div id = "contact-section" class="contact-form-container">
+           <div id = support-section" class="suppport-form-container">
            <h3>Submit Contact Ticket</h3>
-            <form class="contact-form">
-           <!-- Category Selection Group -->
+            <form class="support-form">
            <div class="form-group">
                  <label for="category-select">Contact Category</label>
              <select id="category-select" required>
@@ -170,17 +205,16 @@
     
     <!-- Always Visible Fields (Contact Description) -->
     <div class="form-group">
-      <label>Contact Description</label>
+      <label>Description</label>
       <textarea placeholder="Describe your issue in detail" rows="5" required></textarea>
     </div>
 
     <button type="submit" class="cta-button primary">Submit Ticket</button>
-  </form>
-</div>
-                </div>
-            </div>
-        </div>                                  
-    </section>
+    </form>
+          </div>
+    </div>
+</section>
+        
  
     <!--Footer-->
   <div id="footer-placeholder"></div>

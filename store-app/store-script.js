@@ -47,12 +47,36 @@ class ShoppingCart {
 }
 
 class UserAuth {
-    constructor() { this.currentUser = this.loadUser(); }
-    loadUser() { const saved = localStorage.getItem('savanna_user'); return saved ? JSON.parse(saved) : null; }
-    saveUser(user) { localStorage.setItem('savanna_user', JSON.stringify(user)); this.currentUser = user; this.updateUserIcon(); }
-    signIn(name, password) { if (name && password.length >= 6) { const user = { name: name,email: `${name.toLowerCase()}@example.com` }; this.saveUser(user); return true; } return false; }
-    signUp(name, password) { if (name && password.length >= 6) { const user = { name:name, email: `${name.toLowerCase()}@example.com` }; this.saveUser(user); return true; } return false; }
-    signOut() { localStorage.removeItem('savanna_user'); this.currentUser = null; this.updateUserIcon(); }
+    constructor() { this.currentUser = null; this.loadCurrentUser(); }
+    loadUsers() { const saved = localStorage.getItem('savanna_users'); return saved ? JSON.parse(saved) : []; }
+    saveUsers(users) { localStorage.setItem('savanna_users', JSON.stringify(users)); }
+    loadCurrentUser() { const saved = localStorage.getItem('savanna_current_user'); this.currentUser = saved ? JSON.parse(saved) : null; }
+    saveCurrentUser() { localStorage.setItem('savanna_current_user', JSON.stringify(this.currentUser)); }
+    signIn(username, password) {
+        const users = this.loadUsers();
+        const user = users.find(u => u.username === username && u.password === password);
+        if (user) {
+            this.currentUser = { name: user.username, email: user.email };
+            this.saveCurrentUser();
+            this.updateUserIcon();
+            return true;
+        }
+        return false;
+    }
+    signUp(username, password) {
+        const users = this.loadUsers();
+        if (users.find(u => u.username === username)) {
+            return false; // username taken
+        }
+        const newUser = { username, password, email: `${username.toLowerCase()}@example.com` };
+        users.push(newUser);
+        this.saveUsers(users);
+        this.currentUser = { name: username, email: newUser.email };
+        this.saveCurrentUser();
+        this.updateUserIcon();
+        return true;
+    }
+    signOut() { localStorage.removeItem('savanna_current_user'); this.currentUser = null; this.updateUserIcon(); }
     isSignedIn() { return this.currentUser !== null; }
     updateUserIcon() {
         const signInBtn = document.getElementById('signInBtn'); if (!signInBtn) return;
@@ -158,7 +182,7 @@ const footerHTML = `
             </div>
         </div>
         <div class="footer-bottom">
-           <p>&copy; <span id="current-year"></span> Savanna Circuit Technologies. All rights reserved. | <a href="https://techvannah.com" target="_blank">Created by TechVannah</a></p>
+           <p>&copy; <span id="current-year"></span> Savanna Circuit Technologies. All rights reserved.</p>
         </div>
     </footer>
 `;
@@ -313,6 +337,8 @@ function createCartModal() {
                 ${cartIsEmpty ? `<button class="cta-button primary" onclick="this.closest('.modal-overlay').remove(); document.body.style.overflow='auto';">Continue Shopping</button>` :
                     `<button class="cta-button secondary" onclick="cart.clear(); this.closest('.modal-overlay').remove(); document.body.style.overflow='auto';">Clear Cart</button>
                      <button class="cta-button primary" onclick="proceedToCheckout()">Request Quote via WhatsApp</button>
+                     <button class="cta-button primary" onclick="buyFromKilimall()">Buy from Kilimall</button>
+                     <button class="cta-button primary" onclick="buyFromJumia()">Buy from Jumia</button>
                      `}
             </div>
         </div>
@@ -337,10 +363,10 @@ function proceedToCheckout() {
     ).join('\n'); 
 
     const message = encodeURIComponent(`Hello Savanna Circuit,\n\nI would like to request a quote for the following items:\n\n${items}\n\nName: ${userAuth.currentUser.name}`);    
-    const whatsappUrl = `wa.me{message}`;
+    const whatsappUrl = `https://wa.me/254714574007?text=${message}`;
     window.open(whatsappUrl, '_blank', 'noopener');
     setTimeout(() => {
-         if (confirm('Your qoute has been sent via WhatsApp. Would you like to clear your cart?')) { 
+         if (confirm('Your quote has been sent via WhatsApp. Would you like to clear your cart?')) { 
         cart.clear(); 
         document.querySelector('.modal-overlay').remove();
          document.body.style.overflow = 'auto'; 
@@ -359,7 +385,7 @@ function showSignInModal() {
             Sign In</h2><button class="modal-close" onclick="this.closest('.modal-overlay').remove(); document.body.style.overflow='auto';">&times;</button></div>
             <div class="modal-body">
                 <form id="signInForm" onsubmit="handleSignIn(event)">
-                    <div class="form-group"><label for="signInName">Name</label><input type="text" id="signInName" required placeholder="Your Name"></div>
+                    <div class="form-group"><label for="signInName">Username</label><input type="text" id="signInName" required placeholder="Your Username"></div>
                     <div class="form-group"><label for="signInPassword">Password</label><input type="password" id="signInPassword" required placeholder="Min. 6 characters" minlength="6"></div>
                     <button type="submit" class="cta-button primary full-width">Sign In</button>
                 </form>
@@ -387,7 +413,7 @@ function showSignUpModal() {
             Create Account</h2><button class="modal-close" onclick="this.closest('.modal-overlay').remove(); document.body.style.overflow='auto';">&times;</button></div>
             <div class="modal-body">
                 <form id="signUpForm" onsubmit="handleSignUp(event)">
-                    <div class="form-group"><label for="signUpName">Full Name</label><input type="text" id="signUpName" required placeholder="John Doe"></div>
+                    <div class="form-group"><label for="signUpName">Username</label><input type="text" id="signUpName" required placeholder="Choose a Username"></div>
                     <div class="form-group"><label for="signUpPassword">Password</label><input type="password" id="signUpPassword" required placeholder="Min. 6 characters" minlength="6"></div>
                     <button type="submit" class="cta-button primary full-width">Create Account</button>
                 </form>
@@ -402,7 +428,7 @@ function showSignUpModal() {
 function handleSignUp(event) {
     event.preventDefault(); const name = document.getElementById('signUpName').value; const password = document.getElementById('signUpPassword').value;
     if (userAuth.signUp(name, password)) { alert('Account created successfully! Welcome ' + name + '.'); document.querySelector('.modal-overlay').remove(); document.body.style.overflow = 'auto'; } 
-    else { alert('Error creating account. Please try again.'); }
+    else { alert('Username already taken. Please choose a different username.'); }
 }
 
 function showUserProfileModal() {
@@ -418,7 +444,7 @@ function showUserProfileModal() {
                     <h3>${userAuth.currentUser.name}</h3>
                 </div>
                 <div class="profile-actions">
-                    <button class="cta-button secondary full-width" onclick="handleViewCartFromProfile()"><!-- SVG HERE -->View Cart (${cart.getItemCount()} items)</button>
+                    <button class="cta-button secondary full-width" onclick="handleViewCartFromProfile()">View Cart (${cart.getItemCount()} items)</button>
                     <button class="cta-button secondary full-width" onclick="handleSignOut()"><!-- SVG HERE -->Sign Out</button>
                 </div>
             </div>
@@ -428,7 +454,17 @@ function showUserProfileModal() {
 }
 
 function handleSignOut() { if (confirm('Are you sure you want to sign out?')) { userAuth.signOut(); document.querySelector('.modal-overlay').remove(); document.body.style.overflow = 'auto'; alert('You have been signed out.'); } }
-function handleViewCartFromProfile() { document.querySelector('.profile-modal').closest('.modal-overlay').remove(); showCartModal(); }
+function buyFromKilimall() {
+    window.open('https://www.kilimall.com/', '_blank', 'noopener');
+    document.querySelector('.modal-overlay').remove();
+    document.body.style.overflow = 'auto';
+}
+
+function buyFromJumia() {
+    window.open('https://jumia.co.ke/', '_blank', 'noopener');
+    document.querySelector('.modal-overlay').remove();
+    document.body.style.overflow = 'auto';
+}
 function setupAddToCartButtons() {
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', function(e) {
