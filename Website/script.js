@@ -17,15 +17,14 @@ function activateNavLink() {
             link.classList.add("active");
         }
     });
-} 
+}
 
+// Mobile Hamburger Menu
 function initHamburger() {
     const hamburger = document.getElementById("hamburger");
     const navMenu = document.querySelector(".nav-menu");
 
-    // 1. Handle the toggle when clicking the hamburger icon
-    hamburger.addEventListener("click", (event) => {
-        event.stopPropagation(); 
+    hamburger.addEventListener("click", () => {
         navMenu.classList.toggle("active");
     });
 
@@ -41,50 +40,71 @@ function initHamburger() {
     });
 }
 
-
-// Slideshow Functionality
-let slideIndex = 1;
-
-function changeSlide(n) {
-    showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-    const slides = document.getElementsByClassName("slide");
-    const dots = document.getElementsByClassName("dot");
-
-    if (n > slides.length) {
-        slideIndex = 1;
-    }
-    if (n < 1) {
-        slideIndex = slides.length;
+document.addEventListener("DOMContentLoaded", () => {
+    // Accordion for Solar Thrive Section
+    var acc = document.getElementsByClassName("thrive-accordion-button");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
     }
 
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].classList.remove("fade");
-    }
-    for (let i = 0; i < dots.length; i++) {
-        dots[i].classList.remove("active");
-    }
+    // Product card display logic
+    const accordionItems = document.querySelectorAll('.thrive-accordion-content li');
 
-    slides[slideIndex - 1].classList.add("fade");
-    dots[slideIndex - 1].classList.add("active");
-}
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.li-header');
+        if (header) {
+            header.addEventListener('click', (e) => {
+                e.stopPropagation();
+                
+                const isActive = item.classList.contains('active');
+                
+                // Close other items
+                accordionItems.forEach(other => {
+                    if (other !== item) other.classList.remove('active');
+                });
+                
+                // Toggle current
+                if (!isActive) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+                
+                // Update parent height
+                const panel = item.closest('.thrive-accordion-content');
+                if (panel && panel.style.maxHeight) {
+                    setTimeout(() => {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }, 10);
+                }
+            });
+        }
+    });
 
-// Initialize slideshow
-document.addEventListener('DOMContentLoaded', function() {
-    showSlides(slideIndex);
-    
-    // Auto-advance slides every 5 seconds
-    setInterval(() => {
-        changeSlide(1);
-    }, 5000);
+    // Savings Calculator Logic
+    const calcBtn = document.getElementById('calcSavingsBtn');
+    if (calcBtn) {
+        calcBtn.addEventListener('click', () => {
+            const tradPrice = parseFloat(document.getElementById('tradCost').value) || 0;
+            const iwdPrice = parseFloat(document.getElementById('iwdCost').value) || 0;
+            const qty = parseFloat(document.getElementById('waterQty').value) || 0;
+            
+            const savings = (tradPrice - iwdPrice) * qty;
+            
+            const resultDiv = document.getElementById('savingsResult');
+            resultDiv.innerHTML = `Total Daily Savings: KSh ${savings.toLocaleString()}`;
+        });
+    }
 });
-
+ 
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
@@ -232,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const hasComma = originalText.includes(',');
 
             let startTimestamp = null;
-            const duration = 2000; // Animation lasts 2 seconds
+            const duration = 2000; 
 
             const step = (timestamp) => {
                 if (!startTimestamp) startTimestamp = timestamp;
@@ -259,6 +279,62 @@ document.addEventListener("DOMContentLoaded", () => {
         const track = document.querySelector('.partners-track');
         if (track) track.innerHTML = track.innerHTML + track.innerHTML; 
       })();
+
+//workflow logic
+{
+    const initWorkflow = () => {
+        const workflowOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const workflowObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Adds a slight delay for each card to create a staggered effect
+                    setTimeout(() => {
+                        entry.target.classList.add('is-visible');
+                    }, index * 100); 
+                    
+                    workflowObserver.unobserve(entry.target);
+                }
+            });
+        }, workflowOptions);
+
+        const cards = document.querySelectorAll('.seamless-card');
+        cards.forEach(card => workflowObserver.observe(card));
+    };
+
+    // Run when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initWorkflow);
+    } else {
+        initWorkflow();
+    }
+}
+
+//PRODUCT CATALOGUE
+{
+  const downloadLink = document.querySelector('.download-btn');
+
+  if (downloadLink) {
+    downloadLink.addEventListener('click', function(e) {
+      const originalText = this.querySelector('.btn-text').textContent;
+      const btnText = this.querySelector('.btn-text');
+
+      btnText.textContent = "Starting Download...";
+      this.style.pointerEvents = "none";
+      this.style.opacity = "0.8";
+
+      setTimeout(() => {
+        btnText.textContent = originalText;
+        this.style.pointerEvents = "auto";
+        this.style.opacity = "1";
+      }, 3000);
+    });
+  }
+}
+
 
 //FOOTER
 const footerHTML = `
@@ -325,7 +401,7 @@ const footerHTML = `
             </div>
            </div>
             <div class="footer-bottom">
-               <p>&copy; 2025 Savanna Circuit Technologies. All rights reserved. | <a href="https://techvannah.com" target="_blank">Created by TechVannah</a></p>
+               <p>&copy; 2025 Savanna Circuit Technologies. All rights reserved.</p>
 
         </div>
     </footer>
@@ -421,7 +497,7 @@ const productsData = {
     'iwd-ice-water-dispenser': {
         title: 'Ice Water Dispenser (IWD)',
         image: '../images/IWD.jpg',
-        summary: 'The Stationary Ice Water Dispenser is a digitally controlled, solar-powered chilling system that produces and stores food-grade glycol-cooled water. This chilled water is used to cool milk, fish, and other perishables through closed-loop cold packs (ladder packs or thermocores). It acts as a mini cold chain anchor for farmers, fisherfolk, and vendors with limited access to full refrigeration.',
+        summary: 'This is a digitally controlled, solar-powered chilling system that produces and stores food-grade glycol-cooled water. This chilled water is used to cool milk, fish, and other perishables through closed-loop cold packs (ladder packs or thermocores). It acts as a mini cold chain anchor for farmers, fisherfolk, and vendors with limited access to full refrigeration.',
         link: '../store-app/products-detailed/iwd-ice-water-dispenser.html'
     },
     'eco-sav-bags': {
@@ -738,3 +814,29 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => console.error('Error loading press kit:', error));
     }
 });
+
+// Close Floating Pop-ups
+function closePopup(id) {
+    const popup = document.getElementById(id);
+    if (popup) {
+        popup.style.display = 'none';
+        if (id === 'newsletterPopup') {
+            const icon = document.getElementById('newsletterIcon');
+            if (icon) icon.style.display = 'block';
+        }
+    }
+}
+
+// Newsletter Subscription
+function subscribeNewsletter(event) {
+    event.preventDefault();
+    const email = event.target.querySelector('input[type="email"]').value;
+    if (email) {
+        alert(`Thank you for subscribing! We'll send updates to ${email}`);
+        event.target.reset();
+        closePopup('newsletterPopup');
+    } else {
+        alert('Please enter a valid email address.');
+    }
+}
+
