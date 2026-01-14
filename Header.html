@@ -1,0 +1,65 @@
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <a href="index.html" class="logo-link" aria-label="Savanna Circuit Website Home">
+                <img src="../images/sav-logo-long.png" alt="Savanna Circuit Logo" class="logo-image">
+            </a>
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+            <li class="nav-item"><a href="impact.html" class="nav-link">Impact & stories</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="..\store-app\index.html" class="cta-button primary nav-cta-buy">Buy</a>
+            </li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- Floating Pop-ups -->
+<div class="floating-popup whatsapp-popup" id="whatsappPopup">
+    <a href="https://api.whatsapp.com/send/?phone=+254714574007&text=Hello,%20From%20SCT%20Website." target="_blank" rel="noopener" title="Chat on WhatsApp" aria-label="WhatsApp" class="social-whatsapp">
+        <span class="whatsapp-icon">
+            <svg viewBox="0 0 24 24" height="1.5em" width="1.5em" fill="#6c3f18" aria-hidden="true"><path d="M20.5 3.5A10.5 10.5 0 0 0 3.8 17.9L2 22l4.3-1.7A10.5 10.5 0 1 0 20.5 3.5Zm-8.4 16.6c-1.8 0-3.5-.6-4.9-1.7l-.3-.2-2.9 1.1 1.1-2.8-.2-.3a8.5 8.5 0 1 1 7.2 4.9Zm4.9-6.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-1.8-.9-3-1.6-4.2-3.6-.3-.4 0-.5.2-.7.2-.2.3-.3.4-.5.2-.2.1-.4 0-.6-.1-.2-.7-1.6-.9-2.2-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 3s1.2 3.5 1.3 3.7c.2.2 2.3 3.6 5.7 5 2.1.9 2.9 1 3.9.8.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4 0-.1-.1-.2-.3-.3Z"/></svg>
+        </span>
+    </a>
+</div>
+
+<div class="floating-popup call-popup" id="callPopup">
+    <a href="tel:+257714574007" title="Call Us">
+        <span class="call-icon">
+            <svg viewBox="0 0 24 24" height="1.5em" width="1.5em" fill="#6c3f18" aria-hidden="true"><path d="M22 16.92v3a2.99 2.99 0 0 1-3.29 3 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.08 4.29 2.99 2.99 0 0 1 5 1h3a3 3 0 0 1 3 2.72c.13 1.21.37 2.39.7 3.5a3 3 0 0 1-.45 3.11L10.1 11a16 16 0 0 0 6 6l1.67-1.67a3 3 0 0 1 3.11-.45c1.11.33 2.29.57 3.5.7a3 3 0 0 1 2.72 3z"/></svg>
+        </span>
+    </a>
+</div>
+
+<!-- Newsletter Modal -->
+<div id="newsletterPopupModal" class="newsletter-popup-modal" style="display: none;">
+    <div class="newsletter-popup-content">
+        <span class="close-newsletter-popup" id="closeNewsletterPopup">&times;</span>
+        <h3>Subscribe to Our Newsletter</h3>
+        <p>Get the latest updates on our products, impact, and stories from the field.</p>
+        <form id="newsletterForm">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit" class="cta-button primary">Subscribe</button>
+        </form>
+    </div>
+</div>
+
+<!-- Floating Newsletter Icon -->
+<div class="floating-popup newsletter-icon-popup" id="newsletterIcon" style="display: none;">
+    <a href="#" title="Subscribe to Newsletter" id="openNewsletterPopup">
+        <span class="mail-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.5em" width="1.5em" fill="#6c3f18" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </span>
+    </a>
+</div>
