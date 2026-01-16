@@ -106,15 +106,6 @@
       "linkText": "Explore →"
     },
     {
-      "type": "impact-card",
-      "icon": "chart",
-      "title": "Impact Reports",
-      "description": "Comprehensive documentation of environmental, social, and economic impact from our programs.",
-      "mediaType": "Reports",
-      "link": "https://docs.google.com/document/d/1s9tEWnBuKRyLPGHV-qR5hyvJT1RKNYSYZQf5f-qSGx0/edit?usp=sharing",
-      "linkText": "Download →"
-    },
-    {
       "type": "demo-card",
       "icon": "presentation",
       "title": "Product Demonstrations",
@@ -132,31 +123,36 @@
       "phone": "+254 714 574 007",
       "address": "Savanna Business Park, Nairobi",
       "mapLink": "https://goo.gl/maps/8NZGZXvDicZS7rgp9"
-    },
-    "mediaKit": {
-      "title": "📥 Download Media Kit",
-      "description": "Complete media kit with:",
-      "items": [
-        "Company logos (high-res)",
-        "Executive photos",
-        "Product imagery",
-        "Press releases",
-        "Brand guidelines"
-      ],
-      "link": "#",
-      "buttonText": "Download Media Kit"
-    },
-    "factSheet": {
-      "title": "📊 Company Fact Sheet",
-      "description": "Key facts and figures about Savanna Circuit:",
-      "facts": [
-        "Founded: 2017",
-        "Operating Countries: 6",
-        "Farmers Impacted: 500,000+",
-        "Products: 11+ Solutions"
-      ],
-      "link": "#",
-      "buttonText": "Download Fact Sheet"
     }
-  }
+  },
+  "reports": [
+    {
+      "title": "Annual Impact Report 2024",
+      "description": "Comprehensive overview of our impact across all regions and programs",
+      "link": "#",
+      "buttonText": "Download PDF",
+      "icon": "report"
+    },
+    {
+      "title": "Program Brief: Solar Cooling",
+      "description": "Impact of solar cooling solutions on dairy farmer livelihoods",
+      "link": "#",
+      "buttonText": "Download PDF",
+      "icon": "brief"
+    },
+    {
+      "title": "Case Studies Collection",
+      "description": "Stories and data from farmers transformed by our solutions",
+      "link": "#",
+      "buttonText": "Download PDF",
+      "icon": "case-study"
+    },
+    {
+      "title": "Sustainability Report",
+      "description": "Environmental impact and carbon footprint reduction achievements",
+      "link": "#",
+      "buttonText": "Download PDF",
+      "icon": "leaf"
+    }
+  ]
 }

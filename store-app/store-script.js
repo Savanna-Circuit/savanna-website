@@ -1,6 +1,22 @@
 // Store JavaScript - Enhanced with Cart, Search, Checkout, and User Profile Functionality
 // This file powers the storefront UI and e-commerce features
 
+// Dynamic Stylesheet Fix for Nested Pages
+(function() {
+    // This script runs on all store pages. It checks if we are on a nested product detail page.
+    if (window.location.pathname.includes('/products-detailed/')) {
+        // If so, it dynamically adds the correct relative path to the stylesheet.
+        // This prevents the "MIME type mismatch" error without needing to edit every product HTML file.
+        const correctPath = '../styles.css';
+        if (!document.querySelector(`link[href="${correctPath}"]`)) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = correctPath;
+            document.head.appendChild(link);
+        }
+    }
+})();
+
 // CORE DATA & CLASSES 
 
 
@@ -108,7 +124,14 @@ async function loadHeader() {
     const response = await fetch(headerUrl);
     if (!response.ok)
       throw new Error("Network response was not ok: " + response.statusText);
-    const headerHtml = await response.text();
+    let headerHtml = await response.text();
+
+    // Fix relative paths for nested product pages before injecting HTML
+    if (window.location.pathname.includes('/products-detailed/')) {
+        headerHtml = headerHtml.replace(/href="styles\.css"/g, 'href="../styles.css"');
+        headerHtml = headerHtml.replace(/src="script\.js"/g, 'src="../script.js"');
+    }
+
     const headerPlaceholder = document.getElementById("header-placeholder");
     if (headerPlaceholder) {
       headerPlaceholder.innerHTML = headerHtml;
@@ -122,6 +145,7 @@ async function loadHeader() {
           logoLink.href = '../Website/index.html';
         }
       }
+      initThemeToggle();
     } else {
       console.error("Error: Header placeholder div not found.");
     }
@@ -198,6 +222,98 @@ function loadFooter() {
     } else { console.error('Target element #footer-placeholder not found. Footer could not be loaded.'); }
 }
 
+// Newsletter Popup Logic
+let newsletterInitialized = false;
+
+function initNewsletterPopup(retryCount = 0) {
+    if (newsletterInitialized) {
+        console.log("Newsletter popup already initialized, skipping");
+        return;
+    }
+    
+    const modal = document.getElementById("newsletterPopupModal");
+    const closeBtn = document.getElementById("closeNewsletterPopup");
+    const icon = document.getElementById("newsletterIcon");
+    const openBtn = document.getElementById("openNewsletterPopup");
+    const form = document.getElementById("newsletterForm");
+
+    const allFound = modal && closeBtn && icon && openBtn && form;
+    
+    if (!allFound) {
+        if (retryCount === 0) {
+            console.log("Attempting to find newsletter elements... (Attempt 1/40)");
+        }
+        
+        if (retryCount >= 40) {
+            console.error("✗ Newsletter popup elements NOT found after 40 retries (6 seconds)");
+            return;
+        }
+        
+        setTimeout(() => {
+            initNewsletterPopup(retryCount + 1);
+        }, 150);
+        return;
+    }
+
+    newsletterInitialized = true;
+    console.log("✓ Newsletter popup initialized successfully");
+    
+    // Check session storage to see if previously closed
+    const isClosed = sessionStorage.getItem("newsletterClosed");
+
+    // Close Modal Action
+    const closeModal = () => {
+        modal.style.display = "none";
+        icon.style.display = "block";
+        sessionStorage.setItem("newsletterClosed", "true");
+        console.log("Newsletter modal closed");
+    };
+
+    if (!isClosed) {
+        // Show modal after 3 seconds
+        setTimeout(() => {
+            if (modal) {
+                modal.style.display = "flex";
+                console.log("Newsletter modal displayed after 3s");
+            }
+        }, 3000);
+    } else {
+        // If closed previously, show the icon immediately
+        icon.style.display = "block";
+        console.log("Newsletter icon displayed (was previously closed)");
+    }
+
+    // Close button click
+    closeBtn.addEventListener("click", closeModal);
+
+    // Open Modal Action from icon click
+    openBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        modal.style.display = "flex";
+        icon.style.display = "none";
+    });
+
+    // Close on outside click (clicking the modal background)
+    modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Handle Form Submit
+    if (form) {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const emailInput = form.querySelector('input[type="email"]');
+            if (emailInput && emailInput.value) {
+                console.log("Newsletter subscription received for:", emailInput.value);
+                alert("Thank you for subscribing!");
+                emailInput.value = ""; // Clear the input
+                closeModal();
+            }
+        });
+    }
+}
 
 // D. Main Storefront Logic (runs after header/footer are loaded)
 
@@ -208,6 +324,11 @@ let userAuth;
     // Wait for the header AND footer HTML to be injected into the page
     await loadHeader();
     loadFooter(); 
+
+    // Initialize newsletter popup
+    setTimeout(() => {
+        initNewsletterPopup();
+    }, 200);
 
     // Initialize instances AFTER the header/footer elements are in the DOM
     cart = new ShoppingCart();
@@ -485,15 +606,20 @@ function setupFilterButtons() {
 }
 
 function filterProducts(category) {
-    const categories = document.querySelectorAll('.product-category');
-    if (category === 'all') { categories.forEach(cat => { cat.style.display = 'block'; }); } 
-    else {
-        categories.forEach(cat => { cat.style.display = 'none'; });
-        if (category === 'solar-cooling') { document.getElementById('solar-cooling').style.display = 'block'; } 
-        else if (category === 'solar-thrive') { document.getElementById('solar-thrive').style.display = 'block'; } 
-        else if (category === 'management-systems') { document.getElementById('management-systems').style.display = 'block'; } 
-        else if (category === 'drying-systems') { document.getElementById('drying-systems').style.display = 'block'; }
+    const allCategories = document.querySelectorAll('.product-category');
+
+    if (category === 'all') {
+        allCategories.forEach(cat => {
+            cat.style.display = 'block';
+        });
+    } else {
+        allCategories.forEach(cat => {
+            // Compare the element's ID with the category passed from the button's onclick.
+            // Using toUpperCase() on both makes the comparison case-insensitive and robust.
+            cat.style.display = (cat.id.toUpperCase() === category.toUpperCase()) ? 'block' : 'none';
+        });
     }
+
     const productsSection = document.querySelector('.products-showcase');
     if (productsSection) productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
@@ -541,5 +667,109 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, observerOptions);
 
-  observer.observe(document.querySelector('.hero-subpage'));
+  const heroSubpage = document.querySelector('.hero-subpage');
+  if (heroSubpage) {
+    observer.observe(heroSubpage);
+  }
 });
+
+// Newsletter Popup Logic
+function initNewsletterPopup(retryCount = 0) {
+    const modal = document.getElementById("newsletterPopupModal");
+    const closeBtn = document.getElementById("closeNewsletterPopup");
+    const icon = document.getElementById("newsletterIcon");
+    const openBtn = document.getElementById("openNewsletterPopup");
+    const form = document.getElementById("newsletterForm");
+
+    if (!modal || !closeBtn || !icon || !openBtn) {
+        if (retryCount > 20) return; // Stop retrying after approx 4 seconds
+        setTimeout(() => {
+            initNewsletterPopup(retryCount + 1);
+        }, 200);
+        return;
+    }
+
+    // Check session storage to see if previously closed
+    const isClosed = sessionStorage.getItem("newsletterClosed");
+    sessionStorage.removeItem("newsletterClosed");
+    console.log("Newsletter Popup Status:", isClosed ? "Closed previously (Icon mode)" : "Active (Will show in 3s)");
+
+    if (!isClosed) {
+        // Show modal after 3 seconds
+        setTimeout(() => {
+            modal.style.display = "flex";
+        }, 3000);
+    } else {
+        // If closed previously, show the icon
+        icon.style.display = "block";
+    }
+
+    // Close Modal Action
+    const closeModal = () => {
+        modal.style.display = "none";
+        icon.style.display = "block";
+        sessionStorage.setItem("newsletterClosed", "true");
+    };
+
+    closeBtn.addEventListener("click", closeModal);
+
+    // Open Modal Action
+    openBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        modal.style.display = "flex";
+        icon.style.display = "none";
+    });
+
+    // Close on outside click
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Handle Form Submit
+    if (form) {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert("Thank you for subscribing!");
+            closeModal();
+        });
+    }
+}
+document.addEventListener("DOMContentLoaded", () => {
+    initNewsletterPopup();
+});
+//DARK-LIGHT THEME TOGGLE LOGIC
+function initThemeToggle() {
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const sunIcon = document.querySelector('.sun-icon');
+    const moonIcon = document.querySelector('.moon-icon');
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        if(sunIcon && moonIcon) {
+             sunIcon.style.display = 'block';
+             moonIcon.style.display = 'none';
+        }
+    }
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            if(sunIcon && moonIcon) {
+                sunIcon.style.display = newTheme === 'dark' ? 'block' : 'none';
+                moonIcon.style.display = newTheme === 'dark' ? 'none' : 'block';
+            }
+        });
+    }
+}
