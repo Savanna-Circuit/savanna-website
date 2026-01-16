@@ -3,11 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the Savanna Circuit team. View open roles and help us transform agriculture and empower farmers across Africa.">
+    <meta name="keywords" content="careers, jobs in Kenya, agricultural technology jobs, Savanna Circuit careers">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sav-circuit.com/careers.html">
+    <meta property="og:title" content="Careers - Savanna Circuit">
+    <meta property="og:description" content="Join the Savanna Circuit team. View open roles and help us transform agriculture.">
+    <meta property="og:image" content="../images/sav-logo-long.png">
+
     <title>Careers - Savanna Circuit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <link href="fonts.googleapis.com" rel="stylesheet">
+    <noscript>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="careers.html">Careers</a>
+        </nav>
+    </noscript>
 
     <!-- Navigation -->
     <div id="Header"></div>
@@ -84,56 +102,12 @@
     <section id="roles" class="careers-section">
         <div class="section-container">
             <h2>Open Roles</h2>
-            <div class="jobs-grid">
-                <div class="job-card">
-                    <h3>Field Agent</h3>
-                    <p class="job-type">Full-time • Kenya </p>
-                    <p>support for our agricultural technology products. Experience with product sales and support in the agriculture sector preferred.</p>
-                    <a href="#apply" class="cta-button primary">Apply Now</a>
-                </div>
+            <div class="jobs-grid" id="jobs-container">
+                <!-- Jobs will be loaded dynamically from jobs.json -->
+                <p>Loading open roles...</p>
         </div>
         </div>
     </section> 
-                <!--<div class="job-card">
-                    <h3>Software Engineer</h3>
-                    <p class="job-type">Full-time • Remote/Kampala</p>
-                    <p>Build cloud-based solutions for the MaziwaPlus platform. Strong backend development skills and experience with cloud infrastructure required.</p>
-                    <a href="#apply" class="cta-button primary">Apply Now</a>
-                </div>
-                
-                <div class="job-card">
-                    <h3>Field Support Engineer</h3>
-                    <p class="job-type">Full-time • Regional</p>
-                    <p>Provide technical support and training to farmers in the field. Strong communication and problem-solving skills essential.</p>
-                    <a href="#apply" class="cta-button primary">Apply Now</a>
-                </div>
-                <div class="job-card">
-                    <h3>Sales Representative</h3>
-                    <p class="job-type">Full-time • Multiple locations</p>
-                    <p>Build relationships with farmers, partners, and distributors. Previous sales experience and agriculture knowledge preferred.</p>
-                    <a href="#apply" class="cta-button primary">Apply Now</a>
-                </div>
-                <div class="job-card">
-                    <h3>Marketing Manager</h3>
-                    <p class="job-type">Full-time • Kampala</p>
-                    <p>Develop marketing strategies and campaigns to reach farmers and partners. Digital marketing experience required.</p>
-                    <a href="#apply" class="cta-button primary">Apply Now</a>
-                </div>
-                <div class="job-card">
-                    <h3>Data Analyst</h3>
-                    <p class="job-type">Full-time • Remote/Kampala</p>
-                    <p>Analyze farmer data to drive insights and improve product decisions. SQL, Python, and data visualization skills needed.</p>
-                    <a href="#apply" class="cta-button primary">Apply Now</a>
-                </div>
-            </div>
-
-            <div class="openapplication">
-                <h3>Open Application</h3>
-                <p>Don't see a perfect fit? We're always looking for talented people passionate about agriculture and impact.</p>
-                <a href="#apply" class="cta-button primary">Submit Open Application</a>
-            </div>
-        </div>
-    </section> -->
 
     <!-- Application Form -->
     <section id="apply" class="careers-section alternate-bg">
@@ -212,5 +186,31 @@
   <div id="footer-placeholder"></div>
   
     <script src="script.js"></script>
+    <script>
+        // Dynamic Job Loader
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('jobs.json')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('jobs-container');
+                    if (data.length > 0) {
+                        container.innerHTML = data.map(job => `
+                            <div class="job-card">
+                                <h3>${job.title}</h3>
+                                <p class="job-type">${job.type}</p>
+                                <p>${job.description}</p>
+                                <a href="${job.applyLink}" class="cta-button primary">Apply Now</a>
+                            </div>
+                        `).join('');
+                    } else {
+                        container.innerHTML = '<p>No open positions at this time.</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading jobs:', error);
+                    document.getElementById('jobs-container').innerHTML = '<p>Unable to load job listings.</p>';
+                });
+        });
+    </script>
 </body>
 </html>

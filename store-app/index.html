@@ -3,11 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Savanna Circuit Store - Premium Agricultural Solutions</title>
-     <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Shop premium solar cooling and agricultural solutions at Savanna Circuit Store. Find milk,Fish chillers, dryers, and dairy management systems.">
+    <meta name="keywords" content="solar cooling, milk and Fish chillers, dairy equipment, agriculture technology, Kenya, Savanna Circuit">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sav-circuit.com/store-app/">
+    <meta property="og:title" content="Savanna Circuit Store - Premium Agricultural Solutions">
+    <meta property="og:description" content="Shop premium solar cooling and agricultural solutions at Savanna Circuit Store. Find milk chillers, dryers, and dairy management systems.">
+    <meta property="og:image" content="../images/logo.png">
+
+    <title>Savanna Circuit Store - Premium Agricultural Solutions</title>  
+    <!-- Preconnect for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <link href="fonts.googleapis.com" rel="stylesheet">
+    <!-- Fallback for search engines that don't run JavaScript -->
+    <noscript>
+        <nav>
+            <a href="../Website/index.html">Home</a>
+            <a href="../Website/products.html">Products</a>
+            <a href="index.html">Store</a>
+            <a href="../Website/about.html">About Us</a>
+        </nav>
+    </noscript>
 
     <!-- Header -->
   <div id="header-placeholder"></div>
@@ -35,10 +57,9 @@
             <div class="filter-buttons">
                 <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
                 <button class="filter-btn" onclick="filterProducts('solar-cooling')">Solar Cooling</button>
-                <button class="filter-btn" onclick="filterProducts('SOLAR-THRIVE')">SOLAR-THRIVE</button>
-                <button class="filter-btn" onclick="filterProducts('Dairy-Management-systems')">Dairy Management Systems</button>
+                <button class="filter-btn" onclick="filterProducts('SOLAR-THRIVE')">SOLAR THRIVE</button>
                 <button class="filter-btn" onclick="filterProducts('drying-systems')">Drying Systems</button>
-                <button class="filter-btn" onclick="filterProducts('drying-systems')">Financing Options</button>
+                <button class="filter-btn" onclick="filterProducts('Financing-Options')">Financing Options</button>
             </div>
         </div>
     </section>
@@ -115,8 +136,24 @@
                             <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20Eco-Sav%20Thermal%20Bags" target="_blank" rel="noopener" class="cta-button secondary">Request Quote</a>
                         </div>
                     </div>
+               
+
+                            <!-- Product: MaziwaPlus Dairy Management System -->
+                <div class="product-card" data-category="SOLAR_THRIVE">
+                        <img class="product-image" loading="lazy" src="../images/M+%20DMS.png" alt="MaziwaPlus Dairy Management System">
+                        <h4>MaziwaPlus Dairy Management System</h4>
+                        <p class="product-spec">Cloud-based ERP platform</p>
+                        <p class="product-description">Comprehensive dairy  management platform with real-time tracking, financial management, and market linkages.</p>
+                        <div class="product-actions">
+                            <a href="products-detailed/maziwaplus-dms.html" class="cta-button secondary">Learn More</a>
+                            <a href="#" class="cta-button primary add-to-cart" data-product="MaziwaPlus DMS">Subscribe</a>
+                            <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20MaziwaPlus%20Dairy%20Management%20System" target="_blank" rel="noopener" class="cta-button secondary">Request Quote</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
             <!-- Solar Cooling Section: cards rendered inline for now -->
             <div id="solar-cooling" class="product-category">
                 <h3 class="category-title">Solar Cooling Solutions</h3>
@@ -187,26 +224,27 @@
                     </div>
                 </div>
             </div>
-
-
-         
-            <!-- Management Systems Section: DMS SaaS subscription -->
-            <div id="Dairy-Management-systems" class="product-category">
-                <h3 class="category-title"> Dairy Management systems</h3>
-                <div class="products-grid single-column">
-                    <!-- Product: MaziwaPlus Dairy Management System -->
-                    <div class="product-card" data-category="Dairy-Management-systems">
-                        <img class="product-image" loading="lazy" src="../images/M+%20DMS.png" alt="MaziwaPlus Dairy Management System">
-                        <h4>MaziwaPlus Dairy Management System</h4>
-                        <p class="product-spec">Cloud-based ERP platform</p>
-                        <p class="product-description">Comprehensive dairy  management platform with real-time tracking, financial management, and market linkages.</p>
-                        <div class="product-actions">
-                            <a href="products-detailed/maziwaplus-dms.html" class="cta-button secondary">Learn More</a>
-                            <a href="#" class="cta-button primary add-to-cart" data-product="MaziwaPlus DMS">Subscribe</a>
-                            <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20MaziwaPlus%20Dairy%20Management%20System" target="_blank" rel="noopener" class="cta-button secondary">Request Quote</a>
-                        </div>
-                    </div>
+        
+            <!--financing-options-starts-here-->
+            <div id="Financing-Options" class="product-category">
+                <h3 class="category-title">Financing Options</h3>
+                <div class="products-grid">
+            <div class="product-card" data-category="Financing-options"> 
+                    <h3> Cooling as a Service (CaaS)</h3>
+                    <p>Pay monthly for cooling services without purchasing equipment upfront.</p>
+                    <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20to%20apply%20for%20cooling%20as%20a%20Service" target="_blank" rel="noopener" class="cta-button secondary secondary">Learn More</a>
                 </div>
+                <div class="product-card">
+                    <h3>Lease Programs</h3>
+                    <p>Lease equipment with option to purchase, making solutions accessible to all.</p>
+                    <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20to%20apply%20for%20lease%20programs" target="_blank" rel="noopener" class="cta-button secondary">Learn More</a>
+                </div>
+                <div class="product-card">
+                    <h3> Hybrid Financing</h3>
+                    <p>Customize payment plans tailored to your farm's needs and cash flow.</p>
+                   <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20to%20apply%20for%20Hybrid%20financing%20services" target="_blank" rel="noopener" class="cta-button secondary">Learn More</a>
+                </div>
+            </div>
             </div>
 
             <!-- Drying Systems Section: solar drying solutions -->
@@ -224,47 +262,6 @@
                             <a href="#" class="cta-button primary add-to-cart" data-product="Eco-Sav Solar Dryer">Add to Cart</a>
                             <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20Eco-Sav%20Solar%20Dryer" target="_blank" rel="noopener" class="cta-button secondary">Request Quote</a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Financing Options: plans and programs -->
-    <section class="financing-section">
-        <div class="section-container">
-            <h2>Flexible Financing Options</h2>
-            <p class="section-intro">We offer multiple payment plans to make our solutions accessible to all farmers.</p>
-            <div class="financing-grid">
-                <div class="financing-card">
-                    <h3> Cooling as a Service (CaaS)</h3>
-                    <p>Pay monthly for cooling services without purchasing equipment upfront.</p>
-                    <ul>
-                        <li>Includes installation, maintenance, and support</li>
-                        <li>Fixed monthly fee based on capacity and usage</li>
-                        <li>Ideal for cooperatives and aggregation centers</li>
-                    </ul>
-                    <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20to%20apply%20for%20cooling%20as%20a%20Service" target="_blank" rel="noopener" class="cta-button secondary secondary">Learn More</a>
-                </div>
-                <div class="financing-card">
-                    <h3>Lease Programs</h3>
-                    <p>Lease equipment with option to purchase, making solutions accessible to all.</p>
-                    <ul>
-                        <li>Low upfront cost with predictable monthly payments</li>
-                        <li>Option to own at end of term</li>
-                        <li>Flexible terms from 12–48 months</li>
-                    </ul>
-                    <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20to%20apply%20for%20lease%20programs" target="_blank" rel="noopener" class="cta-button secondary">Learn More</a>
-                </div>
-                <div class="financing-card">
-                    <h3> Hybrid Financing</h3>
-                    <p>Customize payment plans tailored to your farm's needs and cash flow.</p>
-                    <ul>
-                        <li>Mix of upfront + subscription or lease</li>
-                        <li>Structured for seasonality of income</li>
-                        <li>Available for both equipment and software</li>
-                    </ul>
-                   <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20to%20apply%20for%20Hybrid%20financing%20services" target="_blank" rel="noopener" class="cta-button secondary">Learn More</a>
                 </div>
             </div>
         </div>
