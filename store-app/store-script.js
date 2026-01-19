@@ -107,18 +107,10 @@ class UserAuth {
 async function loadHeader() {
   try {
     // Resolve header path relative to the running script so nested pages work
-    let headerUrl;
-    try {
-      if (document.currentScript && document.currentScript.src) {
-        headerUrl = new URL("header.html", document.currentScript.src).href;
-      }
-    } catch (e) {
-      headerUrl = null;
-    }
-
-    // Fallbacks: root-relative (works for typical static deployments), then relative
-    if (!headerUrl) {
-      headerUrl = "/store-app/header.html";
+    // Point to the store-app header
+    let headerUrl = "Header.html";
+    if (window.location.pathname.includes("/products-detailed/")) {
+        headerUrl = "../Header.html";
     }
 
     const response = await fetch(headerUrl);
