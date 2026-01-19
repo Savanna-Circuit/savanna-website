@@ -178,7 +178,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Scroll Animation for Elements
+// Scroll Animation for Elements - Optimized for Performance
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
@@ -198,10 +198,11 @@ document.querySelectorAll('.animate-on-scroll').forEach(el => {
     observer.observe(el);
 });
 
-// Dynamic Reveal Observer (Hide on exit, Show on enter)
+// Dynamic Reveal Observer (Hide on exit, Show on enter) - Optimized
 document.addEventListener("DOMContentLoaded", () => {
     const dynamicOptions = {
-        threshold: 0.15 
+        threshold: 0.15,
+        rootMargin: '50px 0px 50px 0px'
     };
 
     const dynamicObserver = new IntersectionObserver((entries) => {
@@ -538,12 +539,13 @@ function validateForm(form) {
     return isValid;
 }
 
-// Sticky Header on Scroll
+// Sticky Header on Scroll - Optimized with Throttling
 let lastScrollTop = 0;
+let ticking = false;
 
-window.addEventListener('scroll', function() {
+function updateNavbarShadow() {
     const navbar = document.querySelector('.navbar');
-    if (!navbar) return; // Exit if navbar isn't loaded yet
+    if (!navbar) return;
 
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
@@ -552,7 +554,15 @@ window.addEventListener('scroll', function() {
     } else {
         navbar.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.1)';
     }
-});
+    ticking = false;
+}
+
+window.addEventListener('scroll', function() {
+    if (!ticking) {
+        window.requestAnimationFrame(updateNavbarShadow);
+        ticking = true;
+    }
+}, { passive: true });
 
 // Log page load for analytics
 console.log('Homepage loaded successfully');
@@ -561,67 +571,67 @@ console.log('Homepage loaded successfully');
 const productsData = {
     'nomad-cans-10l': {
         title: 'Nomad Can 10L',
-        image: '../images/NOMAD 10 LTRS.png',
+        image: '../images/nomad 10.png',
         summary: 'Nomad Cans are patented, insulated food-grade containers designed for the safe transport of milk. Built for modular use with Ice Water Dispensers (IWD) or mobile trikes, these cans maintain optimal temperature using a chilled glycol thermocore insert.',
         link: '../store-app/products-detailed/nomad-cans-10l.html'
     },
     'nomad-cans-25l': {
         title: 'Nomad Cans 25L',
-        image: '../images/nomad 25.JPG',
+        image: '../images/Nomad 25.png',
         summary: 'The Nomad Cans 25L provides mid-range capacity for farm cooperatives and larger dairy operations. Its enhanced thermal insulation maintains milk quality during medium-distance transport.',
         link: '../store-app/products-detailed/nomad-cans-25l.html'
     },
     'nomad-cans-50l': {
         title: 'Nomad Cans 50L',
-        image: '../images/NOMAD CANS.jpeg',
+        image: '../images/NOMAD CANS.png',
         summary: 'The Nomad Cans 50L is engineered for large cooperatives and commercial dairy operations. Its premium thermal insulation and high capacity make it ideal for long-distance milk transport while maintaining quality and minimizing losses.',
         link: '../store-app/products-detailed/nomad-cans-50l.html'
     },
     'iwd-ice-water-dispenser': {
         title: 'Ice Water Dispenser (IWD)',
-        image: '../images/IWD.jpg',
+        image: '../images/IWD.png',
         summary: 'This is a digitally controlled, solar-powered chilling system that produces and stores food-grade glycol-cooled water. This chilled water is used to cool milk, fish, and other perishables through closed-loop cold packs (ladder packs or thermocores). It acts as a mini cold chain anchor for farmers, fisherfolk, and vendors with limited access to full refrigeration.',
         link: '../store-app/products-detailed/iwd-ice-water-dispenser.html'
     },
     'eco-sav-bags': {
         title: 'EcoSav Bags',
-        image: '../images/Eco-Sav bag.jpg',
+        image: '../images/Eco-Sav bag(1).png',
         summary: 'EcoSav Bags are durable, insulated carry packs designed for transporting fish and produce in cooled conditions. Used together with ladder packs filled with chilled glycol water from Ice Water Dispensers, they preserve freshness, reduce spoilage, and deliver high-quality products to market.',
         link: '../store-app/products-detailed/eco-sav-bags.html'
     },
     'maziwaplus-prechiller-300': {
         title: 'MaziwaPlus Prechillers 300-1000L',
-        image: '../images/M+ PRE CHILLER.JPG',
+        image: '../images/M+ PRE CHILLER.png',
         summary: 'The MaziwaPlus Prechillers is an entry-level hybrid milk chilling solution designed for small to medium-sized dairy operations. It efficiently cools and stores milk while reducing operational costs through intelligent solar integration.',
         link: '../store-app/products-detailed/maziwaplus-prechiller-300.html'
     },
     'maziwaplus-prechiller-pro': {
         title: 'MaziwaPlus Prechillers Pro 300-2000L',
-        image: '../images/pre chillers PRO.jpg',
+        image: '../images/pre chillers PRO.png',
         summary: 'The advanced MaziwaPlus Prechillers Pro features smart M+ DMS monitoring, superior temperature precision, and enhanced capacity range. Ideal for commercial dairy operations seeking maximum efficiency and real-time operational insights.',
         link: '../store-app/products-detailed/maziwaplus-prechiller-pro.html'
     },
     'bmc-hybrid': {
         title: 'Bulk Milk Chiller (Hybrid)',
-        image: '../images/HYBRID BMC.jpeg',
+        image: '../images/HYBRID BMC.png',
         summary: 'Designed for cooperative hubs and milk collection centers, Bulk Milk Chillers rapidly chill and store large volumes of milk, safeguarding quality from farm to processor. Powered by solar with hybrid backup options, they provide dependable, hygienic bulk milk handling in off-grid or grid-limited areas.',
         link: '../store-app/products-detailed/bmc-hybrid.html'
     },
     'bmc-solar': {
         title: 'Bulk Milk Chiller (Solar)',
-        image: '../images/SOLAR BMC.jpg',
+        image: '../images/SOLAR BMC.png',
         summary: 'Designed for cooperative hubs and milk collection centers, the solar-powered Bulk Milk Chiller rapidly chills and stores large volumes of milk, safeguarding quality from farm to processor. Optimized for off-grid reliability and seamless digital logging through MaziwaPlus DMS.',
         link: '../store-app/products-detailed/bmc-solar.html'
     },
     'eco-sav-pasteurizer': {
         title: 'EcoSav Pasteurisers',
-        image: '../images/PASTUERIZER.jpg',
+        image: '../images/PASTURERIZER.png',
         summary: 'EcoSav Pasteurisers enable safe, efficient milk processing, extending shelf life and meeting food safety standards. Built for small-scale and cooperative-level dairy production, they ensure high-quality pasteurised milk and dairy products ready for market.',
         link: '../store-app/products-detailed/eco-sav-pasteurizer.html'
     },
     'maziwaplus-dms': {
         title: 'MaziwaPlus DMS',
-        image: '../images/M+ DMS.png',
+        image: '../images/M+DMS.png',
         summary: 'MaziwaPlus DMS is a cloud-based, mobile-integrated platform for real-time monitoring, route management, and digital records across the dairy supply chain. It connects milk transporters, processors, quality officers, and administrators into a single, traceable ecosystem.',
         link: '../store-app/products-detailed/maziwaplus-dms.html'
     },
