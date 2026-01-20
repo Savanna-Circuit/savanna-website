@@ -568,7 +568,7 @@ function showUserProfileModal() {
 
 function handleSignOut() { if (confirm('Are you sure you want to sign out?')) { userAuth.signOut(); document.querySelector('.modal-overlay').remove(); document.body.style.overflow = 'auto'; alert('You have been signed out.'); } }
 function buyFromKilimall() {
-    window.open('https://www.kilimall.com/', '_blank', 'noopener');
+    window.open('https://www.kilimall.com/store/Savanna-Circuit-Tech-LTD', '_blank', 'noopener');
     document.querySelector('.modal-overlay').remove();
     document.body.style.overflow = 'auto';
 }
