@@ -1,0 +1,22 @@
+/* Website-specific Mobile Enhancements */
+
+@media screen and (max-width: 768px) {
+    .hero-modern h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-modern p {
+        font-size: 1rem;
+    }
+
+    /* Adjust spacing for mobile sections */
+    .seamless-workflow, .impact-highlights, .solutions-section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    /* Card adjustments */
+    .seamless-card, .solution-card {
+        padding: 1rem;
+    }
+}

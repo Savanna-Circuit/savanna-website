@@ -1,0 +1,30 @@
+{% extends "website/base.html" %}
+
+{% block title %}Careers - Savanna Circuit{% endblock %}
+
+{% block content %}
+<section class="hero-subpage">
+    <div class="section-container">
+        <h1>Join Our Team</h1>
+        <p>Help us revolutionize agriculture across Africa.</p>
+    </div>
+</section>
+
+<section class="careers-section">
+    <div class="section-container">
+        <h2>Open Positions</h2>
+        <div class="jobs-grid">
+            {% for job in jobs %}
+            <div class="job-card">
+                <h3>{{ job.title }}</h3>
+                <p class="job-type">{{ job.type }}</p>
+                <p>{{ job.description }}</p>
+                <a href="{{ job.applyLink }}" class="cta-button primary">Apply Now</a>
+            </div>
+            {% else %}
+            <p>No open positions at the moment. Please check back later!</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

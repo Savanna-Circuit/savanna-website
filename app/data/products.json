@@ -1,0 +1,185 @@
+{
+  "products": [
+    {
+      "id": "nomad-cans-10l",
+      "name": "Nomad Cans - 10L",
+      "category": "SOLAR-THRIVE",
+      "spec": "Portable Milk container",
+      "description": "Durable portable container for mobile operations. Lightweight and efficient for small-scale farmers.",
+      "image": "images/nomad 10.png",
+      "details": {
+        "summary": "Nomad Cans are patented, insulated food-grade containers designed for the safe transport of milk. Built for modular use with Ice Water Dispensers (IWD) or mobile trikes, these cans maintain optimal temperature using a chilled glycol thermocore insert.",
+        "specs": [
+          "Size: 10 Liters",
+          "Weight: 3.6 kg (with Thermocore)",
+          "Cooling Method: External contact with chilled glycol water inside thermocore",
+          "Material: Food-grade Aluminium, HDPE cladding, double-insulated body",
+          "Lid: Leak-proof, wide-mouth opening",
+          "Use Cases: On-farm cooling, decentralized collection, pre-cooled storage"
+        ],
+        "benefits": [
+          "Functional: Anti-spill, leak-proof, lockable design",
+          "Integrated Cooling: Solar-powered ecosystem; no external refrigeration needed",
+          "Sustainability: Carbon-neutral cooling vs. diesel refrigeration",
+          "Operational: Reduced spoilage; improved reliability over long distances"
+        ]
+      }
+    },
+    {
+      "id": "nomad-cans-25l",
+      "name": "Nomad Cans - 25L",
+      "category": "SOLAR-THRIVE",
+      "spec": "Mid-capacity container",
+      "description": "Perfect balance between capacity and portability for medium-scale farm operations.",
+      "image": "images/Nomad 25.png",
+      "details": {
+        "summary": "The Nomad Cans 25L provides mid-range capacity for farm cooperatives and larger dairy operations. Its enhanced thermal insulation maintains milk quality during medium-distance transport.",
+        "specs": [
+          "Size: 25 Liters",
+          "Material: Food-grade Aluminium, HDPE cladding",
+          "Cooling: Thermocore compatible"
+        ]
+      }
+    },
+    {
+      "id": "nomad-cans-50l",
+      "name": "Nomad Cans - 50L",
+      "category": "SOLAR-THRIVE",
+      "spec": "Heavy-duty container",
+      "description": "High-capacity portable container for bulk operations. Industrial-grade construction for durability.",
+      "image": "images/NOMAD CANS.png",
+      "details": {
+        "summary": "The Nomad Cans 50L is engineered for large cooperatives and commercial dairy operations. Its premium thermal insulation and high capacity make it ideal for long-distance milk transport while maintaining quality and minimizing losses.",
+        "specs": [
+          "Size: 50 Liters",
+          "Capacity: High bulk operations",
+          "Durability: Industrial-grade construction"
+        ]
+      }
+    },
+    {
+      "id": "iwd-ice-water-dispenser",
+      "name": "IWD Ice Water Dispenser",
+      "category": "SOLAR-THRIVE",
+      "spec": "Solar-powered cold water",
+      "description": "Solar-powered chilled water for farms and communities. Improves produce preservation and ensured low food spoilage .",
+      "image": "images/IWD.png",
+      "details": {
+        "summary": "This is a digitally controlled, solar-powered chilling system that produces and stores food-grade glycol-cooled water. This chilled water is used to cool milk, fish, and other perishables through closed-loop cold packs (ladder packs or thermocores).",
+        "specs": [
+          "Power: 100% Solar",
+          "Function: Produces chilled glycol water",
+          "Cooling: -30°C output"
+        ]
+      }
+    },
+    {
+      "id": "eco-sav-bags",
+      "name": "Eco-Sav Thermal Bags",
+      "category": "SOLAR-THRIVE",
+      "spec": "Insulated transport bags",
+      "description": "Durable thermal bags for temperature-sensitive product transport. Reusable and environmentally friendly.",
+      "image": "images/Eco-Sav bag(1).png",
+      "details": {
+        "summary": "EcoSav Bags are durable, insulated carry packs designed for transporting fish and produce in cooled conditions. Used together with ladder packs filled with chilled glycol water from Ice Water Dispensers, they preserve freshness, reduce spoilage, and deliver high-quality products to market.",
+        "specs": [
+          "Insulation: Multi-layer; 8–12 hours cold retention",
+          "Cooling Medium: Glycol ice ladder packs",
+          "Lining: Food-safe, waterproof inner lining"
+        ]
+      }
+    },
+    {
+      "id": "maziwaplus-dms",
+      "name": "MaziwaPlus Dairy Management System",
+      "category": "SOLAR-THRIVE",
+      "spec": "Cloud-based ERP platform",
+      "description": "Comprehensive dairy management platform with real-time tracking, financial management, and market linkages.",
+      "image": "images/M+DMS.png",
+      "details": {
+        "summary": "MaziwaPlus DMS is a cloud-based, mobile-integrated platform for real-time monitoring, route management, and digital records across the dairy supply chain. It connects milk transporters, processors, quality officers, and administrators into a single, traceable ecosystem.",
+        "specs": [
+          "Platform: Cloud + Android mobile",
+          "Offline: Works offline with auto-sync",
+          "Modules: Registry, Logs, Payments, Analytics"
+        ]
+      }
+    },
+    {
+      "id": "maziwaplus-prechiller-300",
+      "name": "MaziwaPlus Prechillers 300-1000L",
+      "category": "solar-cooling",
+      "spec": "Entry-level hybrid milk chiller",
+      "description": "Efficiently cools and stores milk with hybrid power options. Customizable from 300-1000L capacity.",
+      "image": "images/M+ PRE CHILLER.png"
+    },
+    {
+      "id": "maziwaplus-prechiller-pro",
+      "name": "MaziwaPlus Prechillers Pro 200-2000L",
+      "category": "solar-cooling",
+      "spec": "Advanced hybrid milk chiller",
+      "description": "Premium features for large farms and milk collection centers. Enhanced efficiency with smart monitoring and analytics.",
+      "image": "images/pre chillers PRO.png"
+    },
+    {
+      "id": "bmc-hybrid",
+      "name": "BMC Hybrid Milk Cooler",
+      "category": "solar-cooling",
+      "spec": "Flexible solar + grid power",
+      "description": "Versatile hybrid system combining solar and grid power. Perfect for inconsistent solar areas.",
+      "image": "images/HYBRID BMC.png",
+      "details": {
+        "summary": "Designed for cooperative hubs and milk collection centers, Bulk Milk Chillers rapidly chill and store large volumes of milk, safeguarding quality from farm to processor. Powered by solar with hybrid backup options, they provide dependable, hygienic bulk milk handling in off-grid or grid-limited areas.",
+        "specs": [
+          "Cooling Type: Glycol-based active chilling",
+          "Capacity: 200–2000L (customizable)",
+          "Power: Solar + grid/generator backup (hybrid)"
+        ]
+      }
+    },
+    {
+      "id": "bmc-solar",
+      "name": "BMC Solar Milk Cooler",
+      "category": "solar-cooling",
+      "spec": "100% solar-powered",
+      "description": "Pure solar cooling with battery storage. Ideal for off-grid locations with maximum sustainability.",
+      "image": "images/SOLAR BMC.png"
+    },
+    {
+      "id": "eco-sav-pasteurizer",
+      "name": "Eco-Sav Pasteurizer 100-500L",
+      "category": "solar-cooling",
+      "spec": "Solar-powered pasteurization",
+      "description": "Professional milk pasteurization system powered by solar. Extends shelf life and meets safety standards.",
+      "image": "images/PASTURERIZER.png"
+    },
+    {
+      "id": "eco-sav-solar-dryer",
+      "name": "Eco-Sav Solar Dryer",
+      "category": "drying-systems",
+      "spec": "Solar-powered agricultural dryer",
+      "description": "Professional-grade solar dryer for grains, herbs, and produce. Extend storage life and add premium market value.",
+      "image": "images/DRYER.webp"
+    }
+  ],
+  "financing": [
+    {
+      "id": "caas",
+      "name": "Cooling as a Service (CaaS)",
+      "description": "Pay monthly for cooling services without purchasing equipment upfront.",
+      "link": "https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20to%20apply%20for%20cooling%20as%20a%20Service"
+    },
+    {
+      "id": "lease",
+      "name": "Lease Programs",
+      "description": "Lease equipment with option to purchase, making solutions accessible to all.",
+      "link": "https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20to%20apply%20for%20lease%20programs"
+    },
+    {
+      "id": "hybrid-financing",
+      "name": "Hybrid Financing",
+      "description": "Customize payment plans tailored to your farm's needs and cash flow.",
+      "link": "https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20to%20apply%20for%20Hybrid%20financing%20services"
+    }
+  ]
+}

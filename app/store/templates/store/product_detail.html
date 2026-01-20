@@ -1,0 +1,99 @@
+{% extends "store/base.html" %}
+
+{% block title %}{{ product.name }} - Savanna Circuit Store{% endblock %}
+
+{% block content %}
+<nav class="breadcrumb">
+    <div class="section-container">
+        <a href="{{ url_for('store.index') }}">Store</a> / 
+        <a href="{{ url_for('store.index') }}#{{ product.category }}">{{ product.category|replace('-', ' ')|title }}</a> / 
+        {{ product.name }}
+    </div>
+</nav>
+
+<section class="hero-subpage">
+    <div class="hero-bg">
+        <img src="/shared/{{ product.image }}" alt="{{ product.name }}" class="bg-media">
+        <div class="overlay"></div>
+    </div>
+    <div class="hero-content glass-effect">
+        <h1 class="reveal-text">{{ product.name }}</h1>
+        <p class="fade-in">{{ product.spec }}</p>
+    </div>
+</section>
+
+<section class="product-details-full">
+    <div class="section-container">
+        <div class="product-main-grid">
+            <div class="product-image-section">
+                <div class="product-image-large">
+                    <img src="/shared/{{ product.image }}" alt="{{ product.name }}">
+                </div>
+
+                <div class="product-info-section">
+                    <h2>{{ product.name }}</h2>
+                    <div class="product-summary">
+                        <p>{{ product.details.summary if product.details else product.description }}</p>
+                    </div>
+                </div>
+
+                {% if product.details and product.details.specs %}
+                <div class="product-quick-specs">
+                    <h3>Quick Specs</h3>
+                    <ul>
+                        {% for spec in product.details.specs %}
+                        <li>{{ spec }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% if product.details and product.details.benefits %}
+<section class="product-description-full">
+    <div class="section-container">
+        <div class="description-grid">
+            <div class="description-column">
+                <h3>Superior Benefits</h3>
+                <ul class="specs-list">
+                    {% for benefit in product.details.benefits %}
+                    <li>{{ benefit }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<section class="product-cta">
+    <div class="section-container">
+        <h2>Ready to upgrade?</h2>
+        <div class="cta-buttons">
+            <a href="https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20{{ product.name }}" target="_blank" rel="noopener" class="cta-button primary large">Request Quote</a>
+            <button class="cta-button secondary large add-to-cart" data-product="{{ product.name }}">Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+{% if related %}
+<section class="related-products">
+    <div class="section-container">
+        <h2>Related Products</h2>
+        <div class="related-grid">
+            {% for rel in related %}
+            <div class="related-card">
+                <img class="product-image small" src="/shared/{{ rel.image }}" alt="{{ rel.name }}" loading="lazy">
+                <h4>{{ rel.name }}</h4>
+                <p>{{ rel.spec }}</p>
+                <a href="{{ url_for('store.product_detail', product_id=rel.id) }}" class="cta-button secondary">View Details</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}

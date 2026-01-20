@@ -1,0 +1,27 @@
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Shop Links</h4>
+            <ul>
+                <li><a href="{{ url_for('store.index') }}">Browse All</a></li>
+                <li><a href="{{ url_for('store.index') }}#solar-cooling">Solar Cooling</a></li>
+                <li><a href="{{ url_for('store.index') }}#SOLAR-THRIVE">Solar Thrive</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Support</h4>
+            <ul>
+                <li><a href="{{ url_for('website.contact') }}">Contact Sales</a></li>
+                <li><a href="#">Shipping Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Payment Options</h4>
+            <p>We accept local mobile money and flexible financing.</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Savanna Circuit Store. All rights reserved.</p>
+    </div>
+</footer>

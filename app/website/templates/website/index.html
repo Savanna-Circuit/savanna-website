@@ -1,0 +1,127 @@
+{% extends "website/base.html" %}
+
+{% block title %}Home - Savanna Circuit{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-modern animate-on-scroll">
+    <div class="hero-background">
+        <video autoplay muted loop playsinline class="bg-media">
+            <source src="/shared/images/hero.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="hero-lead-card">
+        <h1>Experts in <span class="highlight">Cold Chain</span> Fish & Dairy Solutions</h1>
+        <p>Savanna Circuit manufactures innovative, sustainable, and cost-effective Dairy and Fish solutions to empower youth, women and smallholder farmers.</p>
+    </div>
+
+    <div class="hero-workflow-carousel">
+        <div class="hero-workflow-title">OUR WORKFLOW:</div>
+        <div class="carousel-mask">
+            <div class="carousel-track">
+                <div class="carousel-item">Product Design</div>
+                <div class="carousel-item">Manufacturing & QC</div>
+                <div class="carousel-item">Distribution</div>
+                <div class="carousel-item">Training & Adoption</div>
+                <div class="carousel-item">Aftersales & Monitoring</div>
+                <!-- Duplicates for seamless loop -->
+                <div class="carousel-item">Product Design</div>
+                <div class="carousel-item">Manufacturing & QC</div>
+                <div class="carousel-item">Distribution</div>
+                <div class="carousel-item">Training & Adoption</div>
+                <div class="carousel-item">Aftersales & Monitoring</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Workflow Section -->
+<section class="seamless-workflow animate-on-scroll">
+    <div class="workflow-header">
+        <h2 class="section-title">Our End-to-End Process</h2>
+        <p class="section-subtitle">A comprehensive approach to delivering excellence at every stage.</p>
+    </div>
+    
+    <div class="seamless-track">
+        <div class="seamless-card reveal">
+            <div class="img-box">
+                <img src="/shared/images/manufacturing.png" alt="Design and Manufacturing" loading="lazy">
+            </div>
+            <div class="text-box">
+                <span class="num">01 & 02</span>
+                <h3>Design & Manufacturing</h3>
+                <p>Expert engineering, prototyping, and precision-led production with multi-stage quality checks.</p>
+            </div>
+        </div>
+
+        <div class="seamless-card reveal">
+            <div class="img-box">
+                <img src="/shared/images/(DISTRIBUTION) Glycol in Dunga.png" alt="Global Distribution" loading="lazy">
+            </div>
+            <div class="text-box">
+                <span class="num">03 & 04</span>
+                <h3>Distribution & Training</h3>
+                <p>Optimized logistics for delivery combined with on-site training and digital onboarding.</p>
+            </div>
+        </div>
+
+        <div class="seamless-card reveal">
+            <div class="img-box">
+                <img src="/shared/images/follow up and support.png" alt="Aftersales Support and Monitoring" loading="lazy">
+            </div>
+            <div class="text-box">
+                <span class="num">05</span>
+                <h3>Aftersales & Monitoring</h3>
+                <p>Continuous performance tracking and 24/7 technical support for long-term reliability.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Impact Highlights Section -->
+<section class="impact-highlights dynamic-reveal">
+    <h2>Our Impact</h2>
+    <div class="impact-grid">
+        <div class="impact-card">
+            <h3>50,000+</h3>
+            <p>Farmers Empowered</p>
+            <span><h3>100,000</h3></span>
+            <p>Liters of Milk Preserved Daily</p>
+        </div>
+        <div class="impact-card">
+            <h3>5,000+</h3>
+            <p>Jobs Created</p>
+            <span><h3>15+</h3></span>
+            <p>Counties & Regions</p>
+        </div>
+        <div class="impact-card">
+            <h3>15,000K</h3>
+            <p>Carbon Emissions Reduced (tons)</p>
+        </div>
+    </div>
+</section>
+
+<!-- Solutions & Journeys Section -->
+<section class="solutions-section dynamic-reveal" id="solutions">
+    <h2>Solutions</h2>
+    <div class="solutions-grid">
+        <div class="solution-card">
+            <h3>Our Farmers</h3>
+            <p>Access cutting-edge tools and resources to maximize your farm's potential.</p>
+            <div class="solution-ctas">
+                <a class="cta-button primary" href="{{ url_for('store.index') }}">Explore Products</a>
+                <a class="cta-button secondary" href="{{ url_for('website.contact') }}">Contact Sales</a>
+            </div>
+        </div>
+        <div class="solution-card">
+            <h3>Our Partners</h3>
+            <p>Join our network of organizations transforming agriculture a community at a time.</p>
+            <div class="solution-ctas">
+                <a class="cta-button primary" href="{{ url_for('website.about') }}#partners">Partner With Us</a>
+                <a class="cta-button secondary" href="{{ url_for('website.impact') }}">See Impact</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

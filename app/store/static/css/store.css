@@ -1,0 +1,104 @@
+/* Store-specific styles - Mobile First */
+
+.filter-section {
+    padding: var(--spacing-md) var(--spacing-sm);
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+
+@media (min-width: 768px) {
+    .filter-section {
+        padding: var(--spacing-md);
+    }
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    border: 1px solid var(--secondary);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.filter-btn.active {
+    background: var(--secondary);
+    color: white;
+}
+
+.products-showcase {
+    padding: var(--spacing-md) var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+    .products-showcase {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Stacked on mobile */
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+.product-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.product-image {
+    width: 100%;
+    height: 180px; /* Slightly smaller for mobile */
+    object-fit: contain;
+}
+
+@media (min-width: 768px) {
+    .product-image {
+        height: 200px;
+    }
+}
+
+/* Modal styles for cart/auth */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius);
+    max-width: 500px;
+    width: 95%; /* More width on mobile */
+}
+
+@media (min-width: 768px) {
+    .modal-content {
+        width: 90%;
+    }
+}

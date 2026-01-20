@@ -1,0 +1,21 @@
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <a href="{{ url_for('website.index') }}" class="logo-link">
+                <img src="/shared/images/sav-logo-long.png" alt="Savanna Circuit Logo">
+            </a>
+        </div>
+
+        <ul class="nav-menu">
+            <li><a href="{{ url_for('store.index') }}" class="nav-link {{ 'active' if request.endpoint == 'store.index' }}">Shop</a></li>
+            <li><a href="#" class="nav-link" id="cartBtn">Cart <span class="cart-count">0</span></a></li>
+            <li><a href="{{ url_for('website.index') }}" class="cta-button secondary">Back to Website</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>

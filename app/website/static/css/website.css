@@ -1,0 +1,115 @@
+/* Website-specific styles - Mobile First */
+
+.hero-modern {
+    height: 60vh; /* Shorter for mobile */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+    .hero-modern {
+        height: 80vh;
+    }
+}
+
+.seamless-workflow {
+    padding: var(--spacing-md) var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+    .seamless-workflow {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+}
+
+.seamless-track {
+    display: flex;
+    flex-direction: column; /* Stacked on mobile */
+    gap: 2rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .seamless-track {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+.seamless-card {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+}
+
+.img-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.text-box {
+    padding: 1.5rem;
+}
+
+.impact-highlights {
+    padding: var(--spacing-lg) var(--spacing-sm);
+    background: var(--dark);
+    color: white;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .impact-highlights {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .impact-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+.solutions-section {
+    padding: var(--spacing-lg) var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+    .solutions-section {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .solutions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+.solution-card {
+    padding: 2rem;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+}

@@ -1,0 +1,35 @@
+/* Shared Mobile-Specific Styles (Overrides and Enhancements for < 768px) */
+
+@media screen and (max-width: 768px) {
+    /* Mobile-only menu behavior could go here if managed by JS */
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 2rem;
+        box-shadow: var(--shadow-soft);
+        z-index: 999;
+    }
+
+    /* Better touch targets */
+    .nav-link, .cta-button {
+        padding: 0.8rem 1.2rem;
+    }
+
+    /* Stack footer sections more aggressively */
+    .footer-content {
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 2rem;
+    }
+
+    /* Reduce font sizes slightly for mobile if needed */
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+}

@@ -1,0 +1,22 @@
+/* Store-specific Mobile Enhancements */
+
+@media screen and (max-width: 768px) {
+    .products-showcase {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .product-card {
+        padding: 1rem;
+    }
+
+    .filter-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    /* Stack product detail info if needed */
+    .product-detail-container {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,48 @@
+{% extends "website/base.html" %}
+
+{% block title %}Our Impact - Savanna Circuit{% endblock %}
+
+{% block content %}
+<section class="hero-modern">
+    <div class="hero-background">
+        <video autoplay muted loop playsinline class="bg-media">
+            <source src="/shared/images/hero.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="hero-lead-card">
+        <h1>Our Impacts</h1>
+        <p>Transforming lives and livelihoods across Africa</p>
+    </div>
+</section>
+
+<section id="updates" class="news-section">
+    <div class="section-container">
+        <h2>Latest Updates</h2>
+        <div class="news-grid">
+            {% for update in data.latestUpdates %}
+            <div class="news-card">
+                <h3>{{ update.title }}</h3>
+                <p class="news-date">{{ update.date }}</p>
+                <p>{{ update.description }}</p>
+                <a href="{{ update.link }}" class="cta-button secondary">Read More</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="stories" class="news-section">
+    <div class="section-container">
+        <h2>Stories from the Field</h2>
+        <div class="stories-grid">
+            {% for story in data.stories %}
+            <div class="story-card">
+                <h3>{{ story.title }}</h3>
+                <p>{{ story.description }}</p>
+                <a href="{{ story.link }}" class="cta-button secondary">Read Story</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
