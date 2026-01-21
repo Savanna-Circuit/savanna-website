@@ -12,9 +12,10 @@
             <li><a href="{{ url_for('website.impact') }}" class="nav-link {{ 'active' if request.endpoint == 'website.impact' }}">Impact</a></li>
             <li><a href="{{ url_for('website.careers') }}" class="nav-link {{ 'active' if request.endpoint == 'website.careers' }}">Careers</a></li>
             <li><a href="{{ url_for('website.contact') }}" class="nav-link {{ 'active' if request.endpoint == 'website.contact' }}">Contact</a></li>
-            <li><a href="{{ url_for('store.index') }}" class="cta-button primary">Go to Store</a></li>
         </ul>
-
+        
+<a href="{{ url_for('store.index') }}" class="cta-button primary">Go to Store</a>
+        
         <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
