@@ -1,0 +1,63 @@
+<!-- Navigation Bar -->
+<header>
+    <nav class="navbar"> 
+        <div class="nav-container"> 
+            <div class="logo"> 
+                <a href="/index.html" class="logo-link" aria-label="Savanna Circuit Website Home">                
+                    <img src="/assets/images/sct-favicon.webp" alt="Savanna Circuit Logo" class="logo-image"> 
+                    <span class="site-title"> SAVANNA STORE</span> 
+                </a> 
+            </div> 
+            
+            <div class="icons" aria-label="User actions">
+                <div class="search-box icon" id="searchBox">
+                    <input type="text" id="searchInput" placeholder="Search products..." aria-label="Search products" />
+                    <div id="searchBtn" title="Search" role="button" tabindex="0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                        </svg>
+                    </div>
+                </div>               
+                <div class="icon" id="cartBtn" title="Cart" aria-label="Shopping Cart" role="button" tabindex="0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="black" class="bi bi-cart4" viewBox="0 0 16 16"><path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/></svg>
+                </div> 
+                <div class="icon" id="signInBtn" title="Sign In" aria-label="User Account" role="button" tabindex="0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="Black" class="bi bi-person-circle" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/></svg>
+                </div> 
+            </div>
+        </div> 
+    </nav>
+</header>
+
+<!-- Floating Pop-ups -->
+<div class="floating-popup whatsapp-popup" id="whatsappPopup">
+    <a href="https://api.whatsapp.com/send/?phone=+254714574007&text=Hello,%20From%20SCT%20Website." target="_blank" rel="noopener" title="Chat on WhatsApp" aria-label="WhatsApp" class="social-whatsapp popup-link">
+        <svg class="popup-svg" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><path d="M20.5 3.5A10.5 10.5 0 0 0 3.8 17.9L2 22l4.3-1.7A10.5 10.5 0 1 0 20.5 3.5Zm-8.4 16.6c-1.8 0-3.5-.6-4.9-1.7l-.3-.2-2.9 1.1 1.1-2.8-.2-.3a8.5 8.5 0 1 1 7.2 4.9Zm4.9-6.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-1.8-.9-3-1.6-4.2-3.6-.3-.4 0-.5.2-.7s .2 .4 .4 .5 .4 .5 .4 .5 .4 .5 .4 .5 .4 .5 .4 .5z"/></svg>
+    </a>
+</div>
+
+<div class="floating-popup call-popup" id="callPopup">
+    <a href="tel:+254714574007" title="Call Us" class="popup-link" aria-label="Call Us">
+        <svg class="popup-svg" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><path d="M22 16.92v3a2.99 2.99 0 0 1-3.29 3 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.08 4.29 2.99 2.99 0 0 1 5 1h3a3 3 0 0 1 3 2.72c.13 1.21.37 2.39.7 3.5a3 3 0 0 1-.45 3.11L10.1 11a16 16 0 0 0 6 6l1.67-1.67a3 3 0 0 1 3.11-.45c1.11.33 2.29.57 3.5.7a3 3 0 0 1 2.72 3z"/></svg>
+    </a>
+</div>
+
+<!-- Newsletter Modal -->
+<div id="newsletterPopupModal" class="newsletter-popup-modal" role="dialog" aria-labelledby="newsletter-title-store">
+    <div class="newsletter-popup-content">
+        <span class="close-newsletter-popup" id="closeNewsletterPopup" role="button" aria-label="Close">&times;</span>
+        <h3 id="newsletter-title-store">Subscribe to Our Newsletter</h3>
+        <p>Get the latest updates on our products, impact, and stories from the field.</p>
+        <form id="newsletterForm">
+            <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email" autocomplete="email" required aria-label="Email address">
+            <button type="submit" class="cta-button primary">Subscribe</button>
+        </form>
+    </div>
+</div>
+
+<!-- Floating Newsletter Icon -->
+<div class="floating-popup newsletter-icon-popup" id="newsletterIcon" style="display: none;">
+    <a href="#" title="Subscribe to Newsletter" id="openNewsletterPopup" class="popup-link" aria-label="Open newsletter subscription">
+        <svg class="popup-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    </a>
+</div>
