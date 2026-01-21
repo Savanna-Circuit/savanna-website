@@ -164,7 +164,7 @@ body {
     left: 0;
     width: 100%;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(5, 22, 122, 0.6);
     backdrop-filter: blur(5px);
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding: 15px 0;
@@ -210,183 +210,6 @@ body {
     backdrop-filter: none;
     flex-shrink: 0;
 }
-
-/* Solar Thrive Ecosystem Section */
-        .solar-thrive-section {
-            padding: 60px 5%;
-            background-color: #f9f9f9;
-            overflow: hidden; 
-        }
-
-        .thrive-grid-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-            align-items: center;
-        }
-
-        @media (min-width: 768px) {
-            .thrive-grid-container {
-                grid-template-columns: 1fr 1.5fr; 
-            }
-        }
-
-        .thrive-left-panel {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        /* Accordion styles */
-        .thrive-accordion-button {
-            background-color: #6c3f18;
-            color: white;
-            cursor: pointer;
-            padding: 18px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 18px;
-            transition: 0.4s;
-            border-radius: 5px;
-        }
-
-        .thrive-accordion-button:hover {
-            background-color: #523a28;
-        }
-
-        .thrive-accordion-content {
-            padding: 0 18px;
-            background-color: white;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            border: 1px solid #ddd;
-            border-top: none;
-            border-radius: 0 0 5px 5px;
-        }
-
-        .thrive-accordion-content ul {
-            list-style: none;
-            padding: 15px 0;
-            margin: 0;
-        }
-
-        .thrive-accordion-content li {
-            padding: 0;
-            border-bottom: 1px solid #eee;
-            display: block;
-        }
-        .thrive-accordion-content li:last-child {
-            border-bottom: none;
-        }
-        
-        .thrive-header {
-            text-transform: uppercase;
-            text-align: center;
-            margin-bottom: 30px;
-            color: #2c3e50;
-        }
-
-        .li-header {
-            padding: 15px 0;
-            cursor: pointer;
-            font-weight: 500;
-            display: block;
-            width: 100%;
-            transition: color 0.3s;
-        }
-        
-        .thrive-accordion-content li.active .li-header {
-            font-weight: 700;
-            color: #6c3f18;
-        }
-
-        .thrive-explanation {
-            text-align: left;
-            margin-bottom: 40px;
-            max-width: 900px;
-            margin: 0 auto 40px auto;
-        }
-
-        .thrive-explanation h3 {
-            color: #6c3f18;
-            margin-bottom: 10px;
-        }
-
-        .thrive-explanation p {
-            line-height: 1.6;
-        }
-
-        /* Hub and Spoke Diagram */
-        .hub-spoke-diagram {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            height: 400px;
-            margin: 0 auto;
-        }
-
-        .connecting-lines {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: 1;
-        }
-        .connecting-lines line { stroke:#ffffff; stroke-width: 1; }
-
-        .hub-item, .spoke-item {
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            width: 90px;
-            z-index: 2;
-        }
-
-        .hub-item img, .spoke-item img {
-            width: 200px;
-            height: 200PX;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            background-color: #fff;
-            border-radius: 50%;
-            padding: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin-bottom: 5px;
-        }
-
-        .hub-item span, .spoke-item span {
-            font-size: 14px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        /* Positioning the items */
-        #iwd { top: 50%; left: 50%; transform: translate(-50%, -50%); }
-        #nomad-can { top: 20%; left: 15%; transform: translate(-50%, -50%); }
-        #eco-sav { top: 80%; left: 15%; transform: translate(-50%, -50%); }
-        #maziwa-dms { top: 20%; left: 85%; transform: translate(-50%, -50%); }
-        #e-mobility { top: 80%; left: 85%; transform: translate(-50%, -50%); }
-
-        @media (max-width: 480px) {
-            .hub-spoke-diagram {
-                height: 320px;
-            }
-            .hub-item, .spoke-item {
-                width: 70px;
-            }
-            .hub-item span, .spoke-item span {
-                font-size: 11px;
-            }
-            /* Adjust vertical spacing for smaller height */
-            #nomad-can, #maziwa-dms { top: 15%; }
-            #eco-sav, #e-mobility { top: 85%; }
-        }
 
 /* New Thrive Ecosystem Grid Layout */
 .thrive-ecosystem-grid {
@@ -441,7 +264,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.1) 100%);
+    background: linear-gradient(to top, rgba(0, 3, 14, 0.9) 0%, rgba(109, 116, 223, 0.6) 40%, rgba(5, 14, 97, 0.1) 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -934,7 +757,7 @@ body {
 
 .whatsapp-popup {
     right: 20px;
-    background-color: #25D366;
+    background-color: #30f509;
 }
 
 .whatsapp-popup .popup-svg {
@@ -947,7 +770,7 @@ body {
 }
 
 .call-popup .popup-svg {
-    fill: navy;
+    fill: #30f509;
 }
 
 /* Newsletter Popup */
@@ -958,38 +781,22 @@ body {
 }
 
 .newsletter-icon-popup .popup-svg {
-    fill: #6c3f18;
-}
-
-.theme-toggle-popup {
-    left: 20px;
-    right: auto;
-    bottom: 90px;
-}
-
-.theme-toggle-popup button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    fill: #30f509;
 }
 
 .newsletter-popup-modal {
     display: none; 
     position: fixed;
     z-index: 9999; 
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.5);
-    align-items: center;
+    left: 20;
+    top: 90;
+    width:320px;
+    height: auto;
+    overflow: visible;
+    background-color: transparent;
+    align-items: flex-start;
     justify-content: center;
-    animation: fadeIn 0.3s;
+    animation: slideIn 0.3s ease-out;
 }
 
 .newsletter-popup-modal[style*="display: flex"] {
