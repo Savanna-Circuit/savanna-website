@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Savanna Circuit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <link href="fonts.googleapis.com" rel="stylesheet">
+    <!-- Navigation -->
+    <div id="Header"></div>
+    
+
+    <!-- Hero Section -->
+<section class="hero-modern">
+    <!-- Background is now 100% clear -->
+    <div class="hero-background">
+        <video autoplay muted loop playsinline class="bg-media">
+            <source src="../images/hero.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Content is inside a protective "Glass" card -->
+    <div class="hero-lead-card">
+        <h1>Specialists in <span class="highlight">Solar Cooling</span> & Dairy Solutions</h1>
+        <p>Savanna Circuit Technologies builds hybrid milk chillers and solar dryers to empower youth, women and smallholder farmers.</p>
+        <div class="hero-actions">
+            <a href="about.html" class="cta-button secondary">About Us</a>
+            <a href="../store-app/index.html" class="cta-button primary">Buy</a>
+        </div>
+    </div>
+</section>
+
+    <!-- Product Slideshow Section -->
+    <section class="product-slideshow">
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="../images/SOLAR THRIVE..jpg" alt="Solar Thrive" loading="lazy">
+                <div class="slide-content">
+                    <h2>Solar Thrive</h2>
+                    <p>Nomad Cans, Ice Water Dispenser, and Eco-Sav Bag — a last-mile market solutions</p>
+                    <div class="slide-buttons">
+                        <a href="../store-app/index.html" class="cta-button secondary">Buy</a>
+                        <a href="contact.html" class="cta-button secondary">Contact</a>
+                        <a href="contact.html#partner-form" class="cta-button secondary">Partner</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide fade">
+                <img src="../images/pre chillers PRO.jpg" alt="Solar Cooling" loading="lazy">
+                <div class="slide-content">
+                    <h2>Solar Cooling Solutions</h2>
+                    <p>Hybrid milk chillers and solar-powered cooling systems that preserves milk for longer hence reducing produce wastage</p>
+                    <div class="slide-buttons">
+                        <a href="../store-app/index.html" class="cta-button secondary">Buy</a>
+                        <a href="contact.html" class="cta-button secondary">Contact</a>
+                        <a href="contact.html#partner-form" class="cta-button primary">Partner</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide fade">
+                <img src="../images/M+ DMS.png" alt="MaziwaPlus DMS" loading="lazy">
+                <div class="slide-content">
+                    <h2>MaziwaPlus Dairy Management System</h2>
+                    <p>Cloud-based ERP for production tracking, financial management, and market linkages</p>
+                    <div class="slide-buttons">
+                        <a href="../store-app/index.html" class="cta-button secondary">Buy</a>
+                        <a href="contact.html" class="cta-button secondary">Contact</a>
+                        <a href="contact.html#partner-form" class="cta-button secondary">Partner</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide fade">
+                <img src="../images/DRYER.webp" alt="Eco-Sav Dryer" loading="lazy">
+                <div class="slide-content">
+                    <h2>Eco-Sav Solar Dryer</h2>
+                    <p>Solar-powered dehydrators designed to quickly and efficiently dry produce ensuring highest-quality results</p>
+                    <div class="slide-buttons">
+                        <a href="../store-app/index.html" class="cta-button secondary">Buy</a>
+                        <a href="contact.html" class="cta-button secondary">Contact</a>
+                        <a href="contact.html#partner-form" class="cta-button secondary">Partner</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+
+        <!-- Dots for slideshow -->
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </section>
+
+    <!-- Impact Highlights Section -->
+    <section class="impact-highlights">
+        <h2>Our Impact</h2>
+        <div class="impact-grid">
+            <div class="impact-card">
+                <h3>50,000+</h3>
+                <p>Farmers Empowered</p>
+            </div>
+            <div class="impact-card">
+                <h3>100,000</h3>
+                <p>Liters of Milk Preserved Daily</p>
+            </div>
+            <div class="impact-card">
+                <h3>5,000+</h3>
+                <p>Jobs Created</p>
+            </div>
+             <div class="impact-card">
+                    <h3>15+</h3>
+                    <p>Counties & Regions</p>
+                </div>
+            <div class="impact-card">
+                <h3>15,000K</h3>
+                <p>Carbon Emissions Reduced (tons)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Farmers Say</h2>
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"After MaziwaPlus we are able to collect milk from all our registered farmers with ease. We now have 1700 active farmers from a previous 250." </p>
+                <p class="testimonial-author">- CEO Mwafugha dairy</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"we have seen great improvements in volumes  and prices we fetch to processors after using Nomad cans ."</p>
+                <p class="testimonial-author">- chamareng' Samuel</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Eco-Sav bags enable me to preserve fish for longer and at a cost effective price.Increasing my sales while minimising on cost"</p>
+                <p class="testimonial-author">- petronilla Achieng, Dunga</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"we are able to dry our produce faster and effectively post havest, gives us a market advantage over tradition means ."</p>
+                <p class="testimonial-author">- Rice Farmers, Mwea</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions & Journeys Section -->
+    <section class="solutions-section" id="solutions">
+        <h2>Solutions</h2>
+        <div class="solutions-grid">
+            <div class="solution-card">
+                <h3>For Farmers</h3>
+                <p>Access cutting-edge tools and resources to maximize your farm's potential.</p>
+                <ul class="solution-steps">
+                    <li>Learn about solutions on the homepage</li>
+                    <li>Compare options on Products</li>
+                    <li>Proceed to buy or contact sales</li>
+                </ul>
+                <div class="solution-ctas">
+                    <a class="cta-button primary" href="products.html">Explore Products</a>
+                    <a class="cta-button secondary" href="contact.html">Contact Sales</a>
+                </div>
+            </div>
+            <div class="solution-card">
+                <h3>For Partners</h3>
+                <p>Join our network of organizations transforming agriculture a community at a time.</p>
+                <ul class="solution-steps">
+                    <li>Review company overview and impact</li>
+                    <li>See partnership areas and benefits</li>
+                    <li>Reach out to start engagement</li>
+                </ul>
+                <div class="solution-ctas">
+                    <a class="cta-button primary" href="about.html#partners">Partner With Us</a>
+                    <a class="cta-button secondary" href="impact.html">See Impact</a>
+                </div>
+            </div>
+            <div class="solution-card">
+                <h3>For Distributors</h3>
+                <p>Discover our full range of innovative agricultural solutions.</p>
+                <ul class="solution-steps">
+                    <li>Review our product specifications</li>
+                    <li>See the impact our products have on farmers</li>
+                     <li>Contact us to discuss further</li>
+                    <li> become a Distributor</li>
+                </ul>
+                <div class="solution-ctas">
+                    <a class="cta-button primary" href="products.html">View Products</a>
+                    <a class="cta-button secondary" href="contact.html#contact-form">Contact Us</a>
+                </div>
+            </div>
+             <div class="solution-card">
+                <h3>Explore career</h3>
+                <p>Join our team as we revolutionize agriculture across the country.</p>
+                <ul class="solution-steps">
+                    <li>learn more about sct on about</li>
+                    <li>Get to know what and how SCT works on about</li>
+                    <li>Check for open positions and apply</li>
+                </ul>
+                <div class="solution-ctas">
+                    <a class="cta-button primary" href="careers.html">View Open Roles</a>
+                    <a class="cta-button secondary" href="about.html">Why work With US</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!--Footer-->
+  <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
