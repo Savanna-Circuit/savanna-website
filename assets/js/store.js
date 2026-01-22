@@ -183,6 +183,15 @@ const footerHTML = `
                     <a href="api.whatsapp.com." aria-label="WhatsApp" class="social-whatsapp" target="_blank" rel="noopener">
                        <svg viewBox="0 0 24 24" height="1em" width="1em" aria-hidden="true"><path d="M20.5 3.5A10.5 10.5 0 0 0 3.8 17.9L2 22l4.3-1.7A10.5 10.5 0 1 0 20.5 3.5Zm-8.4 16.6c-1.8 0-3.5-.6-4.9-1.7l-.3-.2-2.9 1.1 1.1-2.8-.2-.3a8.5 8.5 0 1 1 7.2 4.9Zm4.9-6.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-1.8-.9-3-1.6-4.2-3.6-.3-.4 0-.5.2-.7.2-.2.3-.3.4-.5.2-.2.1-.4 0-.6-.1-.2-.7-1.6-.9-2.2-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 3s1.2 3.5 1.3 3.7c.2.2 2.3 3.6 5.7 5 2.1.9 2.9 1 3.9.8.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4 0-.1-.1-.2-.3-.3Z"/></svg></a>
                 </div>
+                    <h4 class="certified-by-title">Certified By</h4>
+                <div class="certifications">
+                    <a href="https://www.kebs.org/" target="_blank" rel="noopener">
+                        <img src="../images/kebs-seeklogo.png" alt="KEBS Certified">
+                    </a>
+                    <a href="https://www.goodmarket.global/" target="_blank" rel="noopener">
+                        <img src="../images/good-market-approved-logo-new.png" alt="Good Market Certified">
+                    </a>
+                </div>
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
@@ -238,6 +247,14 @@ function initNewsletterPopup(retryCount = 0) {
         
         if (retryCount >= 40) {
             console.error("✗ Newsletter popup elements NOT found after 40 retries (6 seconds)");
+            console.error("Missing elements:", {
+                "newsletterPopupModal": !modal,
+                "closeNewsletterPopup": !closeBtn,
+                "newsletterIcon": !icon,
+                "openNewsletterPopup": !openBtn,
+                "newsletterForm": !form
+            });
+            console.info("Newsletter popup will not be available on this page.");
             return;
         }
         
@@ -248,17 +265,18 @@ function initNewsletterPopup(retryCount = 0) {
     }
 
     newsletterInitialized = true;
-    console.log("✓ Newsletter popup initialized successfully");
+    console.log("✓ Newsletter popup initialized successfully at retry count:", retryCount);
     
     // Check session storage to see if previously closed
     const isClosed = sessionStorage.getItem("newsletterClosed");
+    console.log("Newsletter status:", isClosed ? "Previously closed (will show icon)" : "First time (will show modal in 3s)");
 
     // Close Modal Action
     const closeModal = () => {
         modal.style.display = "none";
         icon.style.display = "block";
         sessionStorage.setItem("newsletterClosed", "true");
-        console.log("Newsletter modal closed");
+        console.log("Newsletter modal closed, icon displayed");
     };
 
     if (!isClosed) {
@@ -283,6 +301,7 @@ function initNewsletterPopup(retryCount = 0) {
         e.preventDefault();
         modal.style.display = "flex";
         icon.style.display = "none";
+        console.log("Newsletter modal reopened from icon");
     });
 
     // Close on outside click (clicking the modal background)
@@ -306,7 +325,6 @@ function initNewsletterPopup(retryCount = 0) {
         });
     }
 }
-
 // D. Main Storefront Logic (runs after header/footer are loaded)
 
 let cart;
@@ -669,103 +687,3 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Newsletter Popup Logic
-function initNewsletterPopup(retryCount = 0) {
-    const modal = document.getElementById("newsletterPopupModal");
-    const closeBtn = document.getElementById("closeNewsletterPopup");
-    const icon = document.getElementById("newsletterIcon");
-    const openBtn = document.getElementById("openNewsletterPopup");
-    const form = document.getElementById("newsletterForm");
-
-    if (!modal || !closeBtn || !icon || !openBtn) {
-        if (retryCount > 20) return; // Stop retrying after approx 4 seconds
-        setTimeout(() => {
-            initNewsletterPopup(retryCount + 1);
-        }, 200);
-        return;
-    }
-
-    // Check session storage to see if previously closed
-    const isClosed = sessionStorage.getItem("newsletterClosed");
-    sessionStorage.removeItem("newsletterClosed");
-    console.log("Newsletter Popup Status:", isClosed ? "Closed previously (Icon mode)" : "Active (Will show in 3s)");
-
-    if (!isClosed) {
-        // Show modal after 3 seconds
-        setTimeout(() => {
-            modal.style.display = "flex";
-        }, 3000);
-    } else {
-        // If closed previously, show the icon
-        icon.style.display = "block";
-    }
-
-    // Close Modal Action
-    const closeModal = () => {
-        modal.style.display = "none";
-        icon.style.display = "block";
-        sessionStorage.setItem("newsletterClosed", "true");
-    };
-
-    closeBtn.addEventListener("click", closeModal);
-
-    // Open Modal Action
-    openBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        modal.style.display = "flex";
-        icon.style.display = "none";
-    });
-
-    // Close on outside click
-    window.addEventListener("click", (event) => {
-        if (event.target === modal) {
-            closeModal();
-        }
-    });
-
-    // Handle Form Submit
-    if (form) {
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-            alert("Thank you for subscribing!");
-            closeModal();
-        });
-    }
-}
-document.addEventListener("DOMContentLoaded", () => {
-    initNewsletterPopup();
-});
-//DARK-LIGHT THEME TOGGLE LOGIC
-function initThemeToggle() {
-    const themeToggleBtn = document.getElementById('themeToggleBtn');
-    const sunIcon = document.querySelector('.sun-icon');
-    const moonIcon = document.querySelector('.moon-icon');
-    
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        if(sunIcon && moonIcon) {
-             sunIcon.style.display = 'block';
-             moonIcon.style.display = 'none';
-        }
-    }
-
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            
-            if(sunIcon && moonIcon) {
-                sunIcon.style.display = newTheme === 'dark' ? 'block' : 'none';
-                moonIcon.style.display = newTheme === 'dark' ? 'none' : 'block';
-            }
-        });
-    }
-}
