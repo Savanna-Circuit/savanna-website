@@ -951,6 +951,24 @@ body {
     color: #a6f509;
 }
 
+.certified-by-title {
+    margin-top: 1.5rem;
+}
+
+.certifications {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.certifications img {
+    height: 40px;
+    width: auto;
+    background: white;
+    padding: 2px;
+    border-radius: 4px;
+    object-fit: contain;
+}
 /* Removed legacy footer communications block styles */
 
 /* Responsive Design */
