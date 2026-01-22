@@ -1147,37 +1147,3 @@ function initTeamPage() {
         container.appendChild(details);
     });
 }
-// Theme Toggle Logic
-function initThemeToggle() {
-    const themeToggleBtn = document.getElementById('themeToggleBtn');
-    const sunIcon = document.querySelector('.sun-icon');
-    const moonIcon = document.querySelector('.moon-icon');
-    
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        if(sunIcon && moonIcon) {
-             sunIcon.style.display = 'block';
-             moonIcon.style.display = 'none';
-        }
-    }
-
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            
-            if(sunIcon && moonIcon) {
-                sunIcon.style.display = newTheme === 'dark' ? 'block' : 'none';
-                moonIcon.style.display = newTheme === 'dark' ? 'none' : 'block';
-            }
-        });
-    }
-}
