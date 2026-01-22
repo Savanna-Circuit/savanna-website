@@ -788,8 +788,9 @@ body {
     display: none; 
     position: fixed;
     z-index: 9999; 
-    left: 20;
-    top: 90;
+    left: 20px;
+    botton: 90px;
+    top: auto;
     width:320px;
     height: auto;
     overflow: visible;
@@ -805,11 +806,11 @@ body {
 
 .newsletter-popup-content {
     background-color: #fefefe;
-    margin: auto;
-    padding: 2rem;
+    margin: 0;
+    padding: 1,5rem;
     border: 1px solid #888;
-    width: 90%;
-    max-width: 500px;
+    width: 100%;
+    max-width: 100%;
     border-radius: 16px;
     position: relative;
     text-align: center;
@@ -2361,112 +2362,3 @@ body {
     }
 }
 
-/* Dark Mode Styles */
-[data-theme="dark"] body {
-    background-color: #121212;
-    color: #e0e0e0;
-}
-
-[data-theme="dark"] .navbar {
-    background-color: #1a1a1a;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-}
-
-[data-theme="dark"] .nav-link {
-    color: #ecf0f1;
-}
-
-[data-theme="dark"] .nav-link:hover,
-[data-theme="dark"] .nav-link.active {
-    color: #a6f509;
-}
-
-[data-theme="dark"] .hamburger span {
-    background-color: #ecf0f1;
-}
-
-/* Dark Mode Backgrounds */
-[data-theme="dark"] .solar-thrive-section,
-[data-theme="dark"] .savings-calculator-section,
-[data-theme="dark"] .testimonials,
-[data-theme="dark"] .solutions-section,
-[data-theme="dark"] .about-section,
-[data-theme="dark"] .products-showcase,
-[data-theme="dark"] .financing-section,
-[data-theme="dark"] .impact-overview-section,
-[data-theme="dark"] .impact-themes-section,
-[data-theme="dark"] .reports-section,
-[data-theme="dark"] .news-section,
-[data-theme="dark"] .support-section,
-[data-theme="dark"] .contact-info-section,
-[data-theme="dark"] .contact-routes-section,
-[data-theme="dark"] .social-section,
-[data-theme="dark"] .careers-section,
-[data-theme="dark"] .product-details-full,
-[data-theme="dark"] .product-description-full,
-[data-theme="dark"] .related-products,
-[data-theme="dark"] .faq-section,
-[data-theme="dark"] .about-nav {
-    background-color: #121212;
-    color: #b0b0b0;
-}
-
-[data-theme="dark"] .thrive-accordion-content,
-[data-theme="dark"] .calculator-container,
-[data-theme="dark"] .testimonial-card,
-[data-theme="dark"] .solution-card,
-[data-theme="dark"] .cta-card,
-[data-theme="dark"] .product-card,
-[data-theme="dark"] .financing-card,
-[data-theme="dark"] .theme-card,
-[data-theme="dark"] .report-card,
-[data-theme="dark"] .news-card,
-[data-theme="dark"] .press-section,
-[data-theme="dark"] .press-mention,
-[data-theme="dark"] .media-card,
-[data-theme="dark"] .story-card,
-[data-theme="dark"] .faq-item,
-[data-theme="dark"] .resource-card,
-[data-theme="dark"] .contact-method,
-[data-theme="dark"] .support-form-container,
-[data-theme="dark"] .contact-info-card,
-[data-theme="dark"] .route-card,
-[data-theme="dark"] .why-card,
-[data-theme="dark"] .career-culture,
-[data-theme="dark"] .job-card,
-[data-theme="dark"] .application-form-container,
-[data-theme="dark"] .content-block,
-[data-theme="dark"] .mvv-item,
-[data-theme="dark"] .approach-narrative,
-[data-theme="dark"] .team-member,
-[data-theme="dark"] .partners-carousel,
-[data-theme="dark"] .product-quick-specs,
-[data-theme="dark"] .financing-info,
-[data-theme="dark"] .related-card,
-[data-theme="dark"] .impact-grid{
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-    border-color: #333;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-}
-
-[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, 
-[data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6 {
-    color: #ffffff;
-}
-
-[data-theme="dark"] p, [data-theme="dark"] li, [data-theme="dark"] span {
-    color: #cccccc;
-}
-
-[data-theme="dark"] a {
-    color: #a6f509;
-}
-
-[data-theme="dark"] input,
-[data-theme="dark"] textarea,
-[data-theme="dark"] select {
-    background-color: #2d2d2d;
-    color: #ffffff;
-    border-color: #444;
-}
