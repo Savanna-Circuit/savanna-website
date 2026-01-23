@@ -201,7 +201,7 @@ const footerHTML = `
                 </address>
                 <ul class="contact-list">
                     <li>Tel: <a href="tel:0208000265">020 800 0265</a></li>
-                    <li>Mobile: <a href="tel:+254714574007">+254 714 574 007</a></li>
+                    <li>Mobile: <a href="tel:+254798710210">+254 798710210</a></li>
                     <li>Email: <a href="mailto:info@sav-circuit.com">info@sav-circuit.com</a></li>
                 </ul>
             </div>
@@ -494,7 +494,7 @@ function proceedToCheckout() {
     ).join('\n'); 
 
     const message = encodeURIComponent(`Hello Savanna Circuit,\n\nI would like to request a quote for the following items:\n\n${items}\n\nName: ${userAuth.currentUser.name}`);    
-    const whatsappUrl = `https://wa.me/254714574007?text=${message}`;
+    const whatsappUrl = `https://wa.me/254798710210?text=${message}`;
     window.open(whatsappUrl, '_blank', 'noopener');
     setTimeout(() => {
          if (confirm('Your quote has been sent via WhatsApp. Would you like to clear your cart?')) { 
@@ -571,7 +571,7 @@ function showUserProfileModal() {
             My Profile</h2><button class="modal-close" onclick="this.closest('.modal-overlay').remove(); document.body.style.overflow='auto';">&times;</button></div>
             <div class="modal-body">
                 <div class="profile-info">
-                    <div class="profile-avatar"><!-- SVG HERE --></div>
+                    <div class="profile-avatar">/div>
                     <h3>${userAuth.currentUser.name}</h3>
                 </div>
                 <div class="profile-actions">
