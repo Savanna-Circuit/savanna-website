@@ -1077,6 +1077,11 @@ const teamData = {
             role: "Manager Operations",
             description: "Coordinates day to day operations, production, and service excellence across regions.",
             image: "../images/TEAM.JPG"
+        },
+        {
+            role: "PSE (Production Sync Engineer)",
+            description: "Ensures synchronization between production schedules and engineering standards for operational efficiency.",
+            image: "../images/TEAM (2).JPG"
         }
     ],
     "Team": [
@@ -1098,11 +1103,6 @@ const teamData = {
         {
             role: "Production",
             description: "Ensures customers goods are produced at the highest quality possible with swiftness to assure continuous value from our products.",
-            image: "../images/TEAM (2).JPG"
-        },
-        {
-            role: "PSE (Production Sync Engineer)",
-            description: "Ensures synchronization between production schedules and engineering standards for operational efficiency.",
             image: "../images/TEAM (2).JPG"
         }
     ]
