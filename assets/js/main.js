@@ -466,7 +466,7 @@ const footerHTML = `
                     <a href="https://twitter.com/sav_circuittech" aria-label="X (Twitter)" class="social-x" target="_blank" rel="noopener">
                         <svg viewBox="0 0 24 24" height="1em" width="1em" aria-hidden="true"><path d="M17.53 3h3.13l-6.84 7.82L22 21h-6.7l-5.23-6.82L3.9 21H.75l7.3-8.34L1 3h6.86l4.73 6.2L17.53 3Zm-1.17 16.2h1.73L7.72 4.68H5.86L16.36 19.2Z"/></svg>
                     </a>
-                    <a href="https://api.whatsapp.com/send/?phone=+254714574007&text=Hello,%20From%20SCT%20Website." aria-label="WhatsApp" class="social-whatsapp" target="_blank" rel="noopener">
+                    <a href="https://api.whatsapp.com/send/?phone=+254798710210&text=Hello,%20From%20SCT%20Website." aria-label="WhatsApp" class="social-whatsapp" target="_blank" rel="noopener">
                         <svg viewBox="0 0 24 24" height="1em" width="1em" aria-hidden="true"><path d="M20.5 3.5A10.5 10.5 0 0 0 3.8 17.9L2 22l4.3-1.7A10.5 10.5 0 1 0 20.5 3.5Zm-8.4 16.6c-1.8 0-3.5-.6-4.9-1.7l-.3-.2-2.9 1.1 1.1-2.8-.2-.3a8.5 8.5 0 1 1 7.2 4.9Zm4.9-6.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-1.8-.9-3-1.6-4.2-3.6-.3-.4 0-.5.2-.7.2-.2.3-.3.4-.5.2-.2.1-.4 0-.6-.1-.2-.7-1.6-.9-2.2-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 3s1.2 3.5 1.3 3.7c.2.2 2.3 3.6 5.7 5 2.1.9 2.9 1 3.9.8.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4 0-.1-.1-.2-.3-.3Z"/></svg>
                     </a>
                 </div>
@@ -491,7 +491,7 @@ const footerHTML = `
                 </address>
                 <ul class="contact-list">
                     <li>Tel: <a href="tel:0208000265">020 800 0265</a></li>
-                    <li>Mobile: <a href="tel:+254714574007">+254 714 574 007</a></li>
+                    <li>Mobile: <a href="tel:+254798710210">+254 714 574 007</a></li>
                     <li>Email: <a href="mailto:info@sav-circuit.com">info@sav-circuit.com</a></li>
                 
                 </ul>
@@ -658,37 +658,37 @@ const productsData = {
         title: 'Cooling as a Service (CaaS)',
         image: '', // No image for financing
         summary: 'Pay monthly for cooling services without purchasing equipment upfront. Includes installation, maintenance, and support. Fixed monthly fee based on capacity and usage. Ideal for cooperatives and aggregation centers.',
-        link: 'https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20to%20apply%20for%20cooling%20as%20a%20Service'
+        link: 'https://wa.me/254798710210?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20to%20apply%20for%20cooling%20as%20a%20Service'
     },
     'lease': {
         title: 'Lease Programs',
         image: '',
         summary: 'Lease equipment with option to purchase, making solutions accessible to all. Low upfront cost with predictable monthly payments. Option to own at end of term. Flexible terms from 12–48 months.',
-        link: 'https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20to%20apply%20for%20lease%20programs'
+        link: 'https://wa.me/254798710210?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20to%20apply%20for%20lease%20programs'
     },
     'hybrid-financing': {
         title: 'Hybrid Financing',
         image: '',
         summary: 'Customize payment plans tailored to your farm\'s needs and cash flow. Mix of upfront + subscription or lease. Structured for seasonality of income. Available for both equipment and software.',
-        link: 'https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20to%20apply%20for%20Hybrid%20financing%20services'
+        link: 'https://wa.me/254798710210?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20to%20apply%20for%20Hybrid%20financing%20services'
     },
     'cup-filler-sealer': {
         title: 'Cup Filler & Sealer',
         image: '../images/cup-filler-sealer.png',
         summary: 'Semi/Automatic cup filling and sealing machine for dairy and beverage processing. Cup size: 50ml-1000ml. Professional-grade processing solution. From KES 520,000',
-        link: 'https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20Cup%20Filler%20%26%20Sealer'
+        link: 'https://wa.me/254798710210?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20Cup%20Filler%20%26%20Sealer'
     },
     'homogenizer': {
         title: 'Homogenizer',
         image: '../images/homogenizer.png',
         summary: 'Industrial homogenizer for dairy and beverage processing. Capacity: 100-2000L/h. Pressure Range: Up to 250 bar (adjustable). From KES 720,000',
-        link: 'https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20Homogenizer'
+        link: 'https://wa.me/254798710210?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20Homogenizer'
     },
     'pouch-filler-sealer': {
         title: 'Pouch Filler & Sealer',
         image: '../images/pouch-filler-sealer.png',
         summary: 'Semi/Automatic pouch filling and sealing machine for dairy and beverage processing. Pouch size: 50ml-1000ml. Professional packaging solution. From KES 1.82M',
-        link: 'https://wa.me/254714574007?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20Pouch%20Filler%20%26%20Sealer'
+        link: 'https://wa.me/254798710210?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20Pouch%20Filler%20%26%20Sealer'
     }
 };
 
