@@ -796,7 +796,7 @@ body {
     overflow: visible;
     background-color: transparent;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     animation: slideIn 0.3s ease-out;
 }
 
