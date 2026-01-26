@@ -592,67 +592,67 @@ const productsData = {
         title: 'Nomad Cans 25L',
         image: '../../assets/images/Nomad 25.png',
         summary: 'The Nomad Cans 25L provides mid-range capacity for farm cooperatives and larger dairy operations. Its enhanced thermal insulation maintains milk quality during medium-distance transport.',
-        link: '../store/products/nomad-cans-25l.html'
+        link: '../../store/products/nomad-cans-25l.html'
     },
     'nomad-cans-50l': {
         title: 'Nomad Cans 50L',
         image: '../../assets/images/NOMAD CANS.png',
         summary: 'The Nomad Cans 50L is engineered for large cooperatives and commercial dairy operations. Its premium thermal insulation and high capacity make it ideal for long-distance milk transport while maintaining quality and minimizing losses.',
-        link: '../store/products/nomad-cans-50l.html'
+        link: '../../store/products/nomad-cans-50l.html'
     },
     'iwd-ice-water-dispenser': {
         title: 'Ice Water Dispenser (IWD)',
         image: '../../assets/images/IWD.png',
         summary: 'This is a digitally controlled, solar-powered chilling system that produces and stores food-grade glycol-cooled water. This chilled water is used to cool milk, fish, and other perishables through closed-loop cold packs (ladder packs or thermocores). It acts as a mini cold chain anchor for farmers, fisherfolk, and vendors with limited access to full refrigeration.',
-        link: '../store/products/iwd-ice-water-dispenser.html'
+        link: '../../store/products/iwd-ice-water-dispenser.html'
     },
     'eco-sav-bags': {
         title: 'EcoSav Bags',
         image: '../../assets/images/Eco-Sav bag(1).png',
         summary: 'EcoSav Bags are durable, insulated carry packs designed for transporting fish and produce in cooled conditions. Used together with ladder packs filled with chilled glycol water from Ice Water Dispensers, they preserve freshness, reduce spoilage, and deliver high-quality products to market.',
-        link: '../store/products//eco-sav-bags.html'
+        link: '../../store/products//eco-sav-bags.html'
     },
     'maziwaplus-prechiller-300': {
         title: 'MaziwaPlus Prechillers 300-1000L',
         image: '../../assets/images/M+ PRE CHILLER.png',
         summary: 'The MaziwaPlus Prechillers is an entry-level hybrid milk chilling solution designed for small to medium-sized dairy operations. It efficiently cools and stores milk while reducing operational costs through intelligent solar integration.',
-        link: '../store/products/maziwaplus-prechiller-300.html'
+        link: '../../store/products/maziwaplus-prechiller-300.html'
     },
     'maziwaplus-prechiller-pro': {
         title: 'MaziwaPlus Prechillers Pro 300-2000L',
         image: '../../assets/images/pre chillers PRO.png',
         summary: 'The advanced MaziwaPlus Prechillers Pro features smart M+ DMS monitoring, superior temperature precision, and enhanced capacity range. Ideal for commercial dairy operations seeking maximum efficiency and real-time operational insights.',
-        link: '../store/products/maziwaplus-prechiller-pro.html'
+        link: '../../store/products/maziwaplus-prechiller-pro.html'
     },
     'bmc-hybrid': {
         title: 'Bulk Milk Chiller (Hybrid)',
         image: '../../assets/images/HYBRID BMC.png',
         summary: 'Designed for cooperative hubs and milk collection centers, Bulk Milk Chillers rapidly chill and store large volumes of milk, safeguarding quality from farm to processor. Powered by solar with hybrid backup options, they provide dependable, hygienic bulk milk handling in off-grid or grid-limited areas.',
-        link: '../store-app/products-detailed/bmc-hybrid.html'
+        link: '../../store/products/bmc-hybrid.html'
     },
     'bmc-solar': {
         title: 'Bulk Milk Chiller (Solar)',
         image: '../../assets/images/SOLAR BMC.png',
         summary: 'Designed for cooperative hubs and milk collection centers, the solar-powered Bulk Milk Chiller rapidly chills and stores large volumes of milk, safeguarding quality from farm to processor. Optimized for off-grid reliability and seamless digital logging through MaziwaPlus DMS.',
-        link: '../store/products/bmc-solar.html'
+        link: '../../store/products/bmc-solar.html'
     },
     'eco-sav-pasteurizer': {
         title: 'EcoSav Pasteurisers',
         image: '../../assets/images/PASTURERIZER.png',
         summary: 'EcoSav Pasteurisers enable safe, efficient milk processing, extending shelf life and meeting food safety standards. Built for small-scale and cooperative-level dairy production, they ensure high-quality pasteurised milk and dairy products ready for market.',
-        link: '../store/products/eco-sav-pasteurizer.html'
+        link: '../../store/products/eco-sav-pasteurizer.html'
     },
     'maziwaplus-dms': {
         title: 'MaziwaPlus DMS',
         image: '../../assets/images/M+DMS.png',
         summary: 'MaziwaPlus DMS is a cloud-based, mobile-integrated platform for real-time monitoring, route management, and digital records across the dairy supply chain. It connects milk transporters, processors, quality officers, and administrators into a single, traceable ecosystem.',
-        link: '../store/products/maziwaplus-dms.html'
+        link: '../../store/products/maziwaplus-dms.html'
     },
     'eco-sav-dryer': {
         title: 'Eco-Sav Dryer',
         image: '../../assets/images/DRYER.webp',
         summary: 'The Eco-Sav Dryer enables solar-powered drying of agricultural products - from grains to herbs, fruits to leather. Convert farm surplus into valuable dried products for premium markets.',
-        link: '../store/products/eco-sav-dryer.html'
+        link: '../../store/products/eco-sav-dryer.html'
     },
     'caas': {
         title: 'Cooling as a Service (CaaS)',
@@ -674,7 +674,7 @@ const productsData = {
     },
     'cup-filler-sealer': {
         title: 'Cup Filler & Sealer',
-        image: '../../ssets/images/cup-filler-sealer.png',
+        image: '../../assets/images/cup-filler-sealer.png',
         summary: 'Semi/Automatic cup filling and sealing machine for dairy and beverage processing. Cup size: 50ml-1000ml. Professional-grade processing solution. From KES 520,000',
         link: 'https://wa.me/254798710210?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20Cup%20Filler%20%26%20Sealer'
     },
@@ -686,7 +686,7 @@ const productsData = {
     },
     'pouch-filler-sealer': {
         title: 'Pouch Filler & Sealer',
-        image: '../images/Assets/pouch-filler-sealer.png',
+        image: '../images/assets/pouch-filler-sealer.png',
         summary: 'Semi/Automatic pouch filling and sealing machine for dairy and beverage processing. Pouch size: 50ml-1000ml. Professional packaging solution. From KES 1.82M',
         link: 'https://wa.me/254798710210?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20Pouch%20Filler%20%26%20Sealer'
     },
