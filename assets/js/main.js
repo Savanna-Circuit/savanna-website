@@ -584,61 +584,61 @@ console.log('Homepage loaded successfully');
 const productsData = {
     'nomad-cans-10l': {
         title: 'Nomad Can 10L',
-        image: '../../assets/images/nomad 10.png',
+        image: '../../assets/images/nomad-10.webp',
         summary: 'Nomad Cans are patented, insulated food-grade containers designed for the safe transport of milk. Built for modular use with Ice Water Dispensers (IWD) or mobile trikes, these cans maintain optimal temperature using a chilled glycol thermocore insert.',
         link: '../store/products/nomad-cans-10l.html'
     },
     'nomad-cans-25l': {
         title: 'Nomad Cans 25L',
-        image: '../../assets/images/Nomad 25.png',
+        image: '../../assets/images/Nomad-25.webp',
         summary: 'The Nomad Cans 25L provides mid-range capacity for farm cooperatives and larger dairy operations. Its enhanced thermal insulation maintains milk quality during medium-distance transport.',
         link: '../../store/products/nomad-cans-25l.html'
     },
     'nomad-cans-50l': {
         title: 'Nomad Cans 50L',
-        image: '../../assets/images/NOMAD CANS.png',
+        image: '../../assets/images/nomad-50l.webp',
         summary: 'The Nomad Cans 50L is engineered for large cooperatives and commercial dairy operations. Its premium thermal insulation and high capacity make it ideal for long-distance milk transport while maintaining quality and minimizing losses.',
         link: '../../store/products/nomad-cans-50l.html'
     },
     'iwd-ice-water-dispenser': {
         title: 'Ice Water Dispenser (IWD)',
-        image: '../../assets/images/IWD.png',
+        image: '../../assets/images/iwd.webp',
         summary: 'This is a digitally controlled, solar-powered chilling system that produces and stores food-grade glycol-cooled water. This chilled water is used to cool milk, fish, and other perishables through closed-loop cold packs (ladder packs or thermocores). It acts as a mini cold chain anchor for farmers, fisherfolk, and vendors with limited access to full refrigeration.',
         link: '../../store/products/iwd-ice-water-dispenser.html'
     },
     'eco-sav-bags': {
         title: 'EcoSav Bags',
-        image: '../../assets/images/Eco-Sav bag(1).png',
+        image: '../../assets/images/Eco-Sav-bag-1.webp',
         summary: 'EcoSav Bags are durable, insulated carry packs designed for transporting fish and produce in cooled conditions. Used together with ladder packs filled with chilled glycol water from Ice Water Dispensers, they preserve freshness, reduce spoilage, and deliver high-quality products to market.',
         link: '../../store/products//eco-sav-bags.html'
     },
     'maziwaplus-prechiller-300': {
         title: 'MaziwaPlus Prechillers 300-1000L',
-        image: '../../assets/images/M+ PRE CHILLER.png',
+        image: '../../assets/images/M-PRE-CHILLER.webp',
         summary: 'The MaziwaPlus Prechillers is an entry-level hybrid milk chilling solution designed for small to medium-sized dairy operations. It efficiently cools and stores milk while reducing operational costs through intelligent solar integration.',
         link: '../../store/products/maziwaplus-prechiller-300.html'
     },
     'maziwaplus-prechiller-pro': {
         title: 'MaziwaPlus Prechillers Pro 300-2000L',
-        image: '../../assets/images/pre chillers PRO.png',
+        image: '../../assets/images/pre-chillers-pro.webp',
         summary: 'The advanced MaziwaPlus Prechillers Pro features smart M+ DMS monitoring, superior temperature precision, and enhanced capacity range. Ideal for commercial dairy operations seeking maximum efficiency and real-time operational insights.',
         link: '../../store/products/maziwaplus-prechiller-pro.html'
     },
     'bmc-hybrid': {
         title: 'Bulk Milk Chiller (Hybrid)',
-        image: '../../assets/images/HYBRID BMC.png',
+        image: '../../assets/images/hybrid-bmc.webp',
         summary: 'Designed for cooperative hubs and milk collection centers, Bulk Milk Chillers rapidly chill and store large volumes of milk, safeguarding quality from farm to processor. Powered by solar with hybrid backup options, they provide dependable, hygienic bulk milk handling in off-grid or grid-limited areas.',
         link: '../../store/products/bmc-hybrid.html'
     },
     'bmc-solar': {
         title: 'Bulk Milk Chiller (Solar)',
-        image: '../../assets/images/SOLAR BMC.png',
+        image: '../../assets/images/solar-bmc.webp',
         summary: 'Designed for cooperative hubs and milk collection centers, the solar-powered Bulk Milk Chiller rapidly chills and stores large volumes of milk, safeguarding quality from farm to processor. Optimized for off-grid reliability and seamless digital logging through MaziwaPlus DMS.',
         link: '../../store/products/bmc-solar.html'
     },
     'eco-sav-pasteurizer': {
         title: 'EcoSav Pasteurisers',
-        image: '../../assets/images/PASTURERIZER.png',
+        image: '../../assets/images/paste',
         summary: 'EcoSav Pasteurisers enable safe, efficient milk processing, extending shelf life and meeting food safety standards. Built for small-scale and cooperative-level dairy production, they ensure high-quality pasteurised milk and dairy products ready for market.',
         link: '../../store/products/eco-sav-pasteurizer.html'
     },
