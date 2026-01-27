@@ -592,7 +592,7 @@ const productsData = {
     },
     'nomad-cans-25l': {
         title: 'Nomad Cans 25L',
-        image: '../../assets/images/Nomad-25.webp',
+        image: '../../assets/images/nomad-25.webp',
         summary: 'The Nomad Cans 25L provides mid-range capacity for farm cooperatives and larger dairy operations. Its enhanced thermal insulation maintains milk quality during medium-distance transport.',
         link: '../../store/products/nomad-cans-25l.html'
     },
@@ -610,13 +610,13 @@ const productsData = {
     },
     'eco-sav-bags': {
         title: 'EcoSav Bags',
-        image: '../../assets/images/Eco-Sav-bag-1.webp',
+        image: '../../assets/images/eco-Sav-bag-1.webp',
         summary: 'EcoSav Bags are durable, insulated carry packs designed for transporting fish and produce in cooled conditions. Used together with ladder packs filled with chilled glycol water from Ice Water Dispensers, they preserve freshness, reduce spoilage, and deliver high-quality products to market.',
         link: '../../store/products//eco-sav-bags.html'
     },
     'maziwaplus-prechiller-300': {
         title: 'MaziwaPlus Prechillers 300-1000L',
-        image: '../../assets/images/M-PRE-CHILLER.webp',
+        image: '../../assets/images/m-pre-chiller.webp',
         summary: 'The MaziwaPlus Prechillers is an entry-level hybrid milk chilling solution designed for small to medium-sized dairy operations. It efficiently cools and stores milk while reducing operational costs through intelligent solar integration.',
         link: '../../store/products/maziwaplus-prechiller-300.html'
     },
