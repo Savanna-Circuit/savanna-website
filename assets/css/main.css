@@ -16,6 +16,18 @@ h1, h2, h3, h4, h5, h6 {
     --radius: 16px;
 }
 
+/* SEO & Accessibility Utility */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -339,6 +351,13 @@ body {
     color: #6c3f18;
     font-weight: bold;
     min-height: 1.5em;
+}
+
+.calculator-disclaimer {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 1rem;
+    font-style: italic;
 }
 
 /* Calculator Accordion */
@@ -789,7 +808,7 @@ body {
     position: fixed;
     z-index: 9999; 
     left: 20px;
-    botton: 90px;
+    bottom: 90px;
     top: auto;
     width:320px;
     height: auto;
@@ -2361,4 +2380,3 @@ body {
         flex-direction: column;
     }
 }
-

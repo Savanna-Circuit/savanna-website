@@ -9,13 +9,14 @@ if (window.location.pathname.includes("/store/")) {
 
 console.log("Attempting to load header from:", headerPath);
 
-fetch(headerPath)
+const cacheBuster = '?v=' + new Date().getTime();
+fetch(headerPath + cacheBuster)
     .then(res => {
         if (!res.ok) {
             console.error(`Failed to load header: ${res.status} ${res.statusText}`);
             // Try fallback if we're in a subdirectory
             if (headerPath.startsWith("../")) {
-                 return fetch(headerPath.replace("../", ""));
+                 return fetch(headerPath.replace("../", "") + cacheBuster);
             }
             throw new Error(`Failed to load header: ${res.status}`);
         }
@@ -85,6 +86,8 @@ function initHamburger() {
         }
     });
 }
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     // Accordion for Solar Thrive Section
@@ -426,7 +429,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //FOOTER
 const footerHTML = `
-    <!-- Footer Start -->
+
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
@@ -473,10 +476,10 @@ const footerHTML = `
                     <h4 class="certified-by-title">Certified By</h4>
                 <div class="certifications">
                     <a href="https://www.kebs.org/" target="_blank" rel="noopener">
-                        <img src="../images/kebs-seeklogo.png" alt="KEBS Certified">
+                        <img src="../../assets/images/kebs-seeklogo.webp" alt="KEBS Certified">
                     </a>
                     <a href="https://www.goodmarket.global/" target="_blank" rel="noopener">
-                        <img src="../images/good-market-approved-logo-new.png" alt="Good Market Certified">
+                        <img src="../../assets/images/good-market-approved-logo-new.webp" alt="Good Market Certified">
                     </a>
                 </div>
             </div>
@@ -490,8 +493,7 @@ const footerHTML = `
                     P.O. Box 5107-00200, Nairobi, Kenya
                 </address>
                 <ul class="contact-list">
-                    <li>Tel: <a href="tel:0208000265">020 800 0265</a></li>
-                    <li>Mobile: <a href="tel:+254798710210">+254 714 574 007</a></li>
+                    <li>Mobile: <a href="tel:+254798710210">+254 798 710 210</a></li>
                     <li>Email: <a href="mailto:info@sav-circuit.com">info@sav-circuit.com</a></li>
                 
                 </ul>
@@ -502,7 +504,7 @@ const footerHTML = `
 
         </div>
     </footer>
-    <!-- Footer End -->
+    
 `;
 
 // Function to inject the footer HTML into the page.
@@ -638,19 +640,19 @@ const productsData = {
     },
     'eco-sav-pasteurizer': {
         title: 'EcoSav Pasteurisers',
-        image: '../../assets/images/paste',
+        image: '../../assets/images/pasturerizer.webp',
         summary: 'EcoSav Pasteurisers enable safe, efficient milk processing, extending shelf life and meeting food safety standards. Built for small-scale and cooperative-level dairy production, they ensure high-quality pasteurised milk and dairy products ready for market.',
         link: '../../store/products/eco-sav-pasteurizer.html'
     },
     'maziwaplus-dms': {
         title: 'MaziwaPlus DMS',
-        image: '../../assets/images/M+DMS.png',
+        image: '../../assets/images/m-dms.webp',
         summary: 'MaziwaPlus DMS is a cloud-based, mobile-integrated platform for real-time monitoring, route management, and digital records across the dairy supply chain. It connects milk transporters, processors, quality officers, and administrators into a single, traceable ecosystem.',
         link: '../../store/products/maziwaplus-dms.html'
     },
     'eco-sav-dryer': {
         title: 'Eco-Sav Dryer',
-        image: '../../assets/images/DRYER.webp',
+        image: '../../assets/images/dryer.webp',
         summary: 'The Eco-Sav Dryer enables solar-powered drying of agricultural products - from grains to herbs, fruits to leather. Convert farm surplus into valuable dried products for premium markets.',
         link: '../../store/products/eco-sav-dryer.html'
     },
@@ -674,20 +676,20 @@ const productsData = {
     },
     'cup-filler-sealer': {
         title: 'Cup Filler & Sealer',
-        image: '../../assets/images/cup-filler-sealer.png',
-        summary: 'Semi/Automatic cup filling and sealing machine for dairy and beverage processing. Cup size: 50ml-1000ml. Professional-grade processing solution. From KES 520,000',
+        image: '../../assets/images/cup-fillers.webp',
+        summary: 'Semi/Automatic cup filling and sealing machine for dairy and beverage processing. Cup size: 50ml-1000ml. Professional-grade processing solution.',
         link: 'https://wa.me/254798710210?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20Cup%20Filler%20%26%20Sealer'
     },
     'homogenizer': {
         title: 'Homogenizer',
-        image: '../../assets/images/homogenizer.png',
-        summary: 'Industrial homogenizer for dairy and beverage processing. Capacity: 100-2000L/h. Pressure Range: Up to 250 bar (adjustable). From KES 720,000',
+        image: '../../assets/images/homogenizer.webp',
+        summary: 'Industrial homogenizer for dairy and beverage processing. Capacity: 100-2000L/h. Pressure Range: Up to 250 bar (adjustable).',
         link: 'https://wa.me/254798710210?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20Homogenizer'
     },
     'pouch-filler-sealer': {
         title: 'Pouch Filler & Sealer',
-        image: '../images/assets/pouch-filler-sealer.png',
-        summary: 'Semi/Automatic pouch filling and sealing machine for dairy and beverage processing. Pouch size: 50ml-1000ml. Professional packaging solution. From KES 1.82M',
+        image: '../../assets/images/pouch-filler.webp',
+        summary: 'Semi/Automatic pouch filling and sealing machine for dairy and beverage processing. Pouch size: 50ml-1000ml. Professional packaging solution.',
         link: 'https://wa.me/254798710210?text=Hello%20Savanna%20Circuit,%20I%20would%20like%20a%20quote%20for%20Pouch%20Filler%20%26%20Sealer'
     },
 };
@@ -958,7 +960,38 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Newsletter Popup Logic
-let newsletterInitialized = false;
+function initThemeToggle() {
+    // Placeholder for theme toggle functionality
+    console.log("Theme toggle initialized");
+}
+
+// Fix: Inject Newsletter HTML if missing
+function injectNewsletterMarkup() {
+    if (document.getElementById('newsletterPopupModal')) return;
+    const div = document.createElement('div');
+    div.innerHTML = `
+        <div id="newsletterIcon" class="floating-popup newsletter-icon-popup" style="display:none;">
+            <a href="#" id="openNewsletterPopup" class="popup-link">
+                <svg class="popup-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
+        </div>
+        <div id="newsletterPopupModal" class="newsletter-popup-modal">
+            <div class="newsletter-popup-content">
+                <span id="closeNewsletterPopup" class="close-newsletter-popup">&times;</span>
+                <h3>Stay Updated</h3>
+                <p>Subscribe to our newsletter for the latest updates.</p>
+                <form id="newsletterForm">
+                    <label for="newsletter-email" class="visually-hidden">Email Address</label>
+                    <input type="email" id="newsletter-email" name="email" placeholder="Enter your email" required style="width:100%;padding:10px;margin-bottom:10px;border:1px solid #ddd;border-radius:4px;">
+                    <button type="submit" class="cta-button primary" style="width:100%;">Subscribe</button>
+                </form>
+            </div>
+        </div>`;
+    document.body.appendChild(div);
+}
+
+// Newsletter Popup Logic
+var newsletterInitialized = false;
 
 function initNewsletterPopup(retryCount = 0) {
     if (newsletterInitialized) {
@@ -966,6 +999,11 @@ function initNewsletterPopup(retryCount = 0) {
         return;
     }
     
+    // Fix: Try to inject markup if elements are missing
+    if (!document.getElementById("newsletterPopupModal")) {
+        injectNewsletterMarkup();
+    }
+
     const modal = document.getElementById("newsletterPopupModal");
     const closeBtn = document.getElementById("closeNewsletterPopup");
     const icon = document.getElementById("newsletterIcon");
