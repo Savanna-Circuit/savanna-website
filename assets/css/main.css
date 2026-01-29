@@ -44,6 +44,7 @@ body {
     color: #333;
     background-color: #f8f9fa;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 /* Navigation Bar */

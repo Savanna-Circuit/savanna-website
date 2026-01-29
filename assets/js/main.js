@@ -610,7 +610,7 @@ const productsData = {
     },
     'eco-sav-bags': {
         title: 'EcoSav Bags',
-        image: '../../assets/images/eco-Sav-bag-1.webp',
+        image: '../../assets/images/eco-sav-bag-1.webp',
         summary: 'EcoSav Bags are durable, insulated carry packs designed for transporting fish and produce in cooled conditions. Used together with ladder packs filled with chilled glycol water from Ice Water Dispensers, they preserve freshness, reduce spoilage, and deliver high-quality products to market.',
         link: '../../store/products//eco-sav-bags.html'
     },
@@ -1104,44 +1104,44 @@ const teamData = {
         {
             role: "Chief Executive Officer",
             description: "Provides strategic leadership, drives company vision, and leads partnerships.",
-            image: "../assets/images/ceo.webp"
+            image: "../../assets/images/ceo.webp"
         },
         {
             role: "Director of Operations",
             description: "Oversees product engineering, solar cooling R&D, and digital platforms.",
-            image: "../assets/images/director-operations-1.webp"
+            image: "../../assets/images/director-operations-1.webp"
         },
         {
             role: "Manager Operations",
             description: "Coordinates day to day operations, production, and service excellence across regions.",
-            image: "../assets/images/manager-operations.webp"
+            image: "../../assets/images/manager-operations.webp"
         },
         {
             role: "PSE (Production Sync Engineer)",
             description: "Ensures synchronization between production schedules and engineering standards for operational efficiency.",
-            image: "../assets/images/pse.webp"
+            image: "../../assets/images/pse.webp"
         }
     ],
     "Team": [
         {
             role: "Field Technicians",
             description: "Deploy and maintain systems, train users, and support our customers in the field.",
-            image: "../assets/images/team-2.webp"
+            image: "../../assets/images/team-2.webp"
         },
         {
             role: "Sales & Partnerships",
             description: "Builds relationships with farmers and partners to expand our impact.",
-            image: "../assets/images/team-2.webp"
+            image: "../../assets/images/team-2.webp"
         },
         {
             role: "Customer Support",
             description: "Ensures customers receive timely assistance and continuous value from our products.",
-            image: "../assets/images/team-2.webp"
+            image: "../../assets/images/team-2.webp"
         },
         {
             role: "Production",
             description: "Ensures customers goods are produced at the highest quality possible with swiftness to assure continuous value from our products.",
-            image: "../assets/images/team-2.webp"
+            image: "../../assets/images/team-2.webp"
         }
     ]
 };
