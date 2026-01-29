@@ -448,9 +448,9 @@ const footerHTML = `
                 <ul>
                     <li><a href="/about.html">About Us</a></li>
                     <li><a href="/about.html#partners">Partners</a></li>
-                    <li><a href="https://sav-circuit.com/privacy-policy/">Privacy Policy</a></li>
-                    <li><a href="https://sav-circuit.com/terms-of-operations/">Terms of Service</a></li>
-                    <li><a href="/products.html">Product Policy</a></li>
+                    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="/product-policy.html">Product Policy</a></li>
                     </li>
                 </ul>
             </div>
@@ -824,7 +824,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h3>${update.title}</h3>
                         <p class="news-date">${update.date}</p>
                         <p>${update.description}</p>
-                        <a href="${update.link}" class="cta-button secondary">Read More</a>
+                        <a href="${update.link}" class="cta-button secondary" target="_blank" rel="noopener noreferrer">Read More</a>
                     `;
                     updatesGrid.appendChild(card);
                 });
@@ -844,7 +844,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div style="margin-bottom: 1rem;">${storyIcons[story.icon]}</div>
                         <h3>${story.title}</h3>
                         <p>${story.description}</p>
-                        <a href="${story.link}" class="cta-button secondary">Read Story</a>
+                        <a href="${story.link}" class="cta-button secondary" target="_blank" rel="noopener noreferrer">Read Story</a>
                     `;
                     storiesGrid.appendChild(card);
                 });
@@ -863,7 +863,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     mention.innerHTML = `
                         <p class="press-source">${press.source}</p>
                         <p class="press-title">${press.title}</p>
-                        <a href="${press.link}" class="cta-link">Read Article →</a>
+                        <a href="${press.link}" class="cta-link" target="_blank" rel="noopener noreferrer">Read Article →</a>
                     `;
                     pressMentions.appendChild(mention);
                 });
@@ -884,7 +884,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h4>${item.title}</h4>
                         <p>${item.description}</p>
                         <span class="media-type">${item.mediaType}</span>
-                        <a href="${item.link}" class="media-link">${item.linkText}</a>
+                        <a href="${item.link}" class="media-link" target="_blank" rel="noopener noreferrer">${item.linkText}</a>
                     `;
                     mediaGallery.appendChild(card);
                 });
@@ -922,7 +922,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <ul class="media-kit-list">
                             ${pressKit.mediaKit.items.map(item => `<li>${item}</li>`).join('')}
                         </ul>
-                        <a href="${pressKit.mediaKit.link}" class="cta-button primary">${pressKit.mediaKit.buttonText}</a>
+                        <a href="${pressKit.mediaKit.link}" class="cta-button primary" target="_blank" rel="noopener noreferrer">${pressKit.mediaKit.buttonText}</a>
                     `;
                     pressContent.appendChild(mediaKitSection);
                 }
@@ -950,7 +950,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div style="margin-bottom: 1rem;">${reportIcons[report.icon]}</div>
                         <h3>${report.title}</h3>
                         <p>${report.description}</p>
-                        <a href="${report.link}" class="cta-button primary">${report.buttonText}</a>
+                        <a href="${report.link}" class="cta-button primary" target="_blank" rel="noopener noreferrer">${report.buttonText}</a>
                     `;
                     reportsGrid.appendChild(card);
                 });
@@ -1104,44 +1104,44 @@ const teamData = {
         {
             role: "Chief Executive Officer",
             description: "Provides strategic leadership, drives company vision, and leads partnerships.",
-            image: "../images/TEAM.JPG"
+            image: "../assets/images/ceo.webp"
         },
         {
             role: "Director of Operations",
             description: "Oversees product engineering, solar cooling R&D, and digital platforms.",
-            image: "../images/TEAM.JPG"
+            image: "../assets/images/director-operations-1.webp"
         },
         {
             role: "Manager Operations",
             description: "Coordinates day to day operations, production, and service excellence across regions.",
-            image: "../images/TEAM.JPG"
+            image: "../assets/images/manager-operations.webp"
         },
         {
             role: "PSE (Production Sync Engineer)",
             description: "Ensures synchronization between production schedules and engineering standards for operational efficiency.",
-            image: "../images/TEAM (2).JPG"
+            image: "../assets/images/pse.webp"
         }
     ],
     "Team": [
         {
             role: "Field Technicians",
             description: "Deploy and maintain systems, train users, and support our customers in the field.",
-            image: "../images/TEAM (2).JPG"
+            image: "../assets/images/team-2.webp"
         },
         {
             role: "Sales & Partnerships",
             description: "Builds relationships with farmers and partners to expand our impact.",
-            image: "../images/TEAM (2).JPG"
+            image: "../assets/images/team-2.webp"
         },
         {
             role: "Customer Support",
             description: "Ensures customers receive timely assistance and continuous value from our products.",
-            image: "../images/TEAM (2).JPG"
+            image: "../assets/images/team-2.webp"
         },
         {
             role: "Production",
             description: "Ensures customers goods are produced at the highest quality possible with swiftness to assure continuous value from our products.",
-            image: "../images/TEAM (2).JPG"
+            image: "../assets/images/team-2.webp"
         }
     ]
 };
@@ -1190,3 +1190,58 @@ function initTeamPage() {
         container.appendChild(details);
     });
 }
+
+// Careers Page Logic
+document.addEventListener('DOMContentLoaded', () => {
+    // Fit Check Logic
+    const checkBtn = document.getElementById('checkAnswersBtn');
+    const submissionDetails = document.getElementById('submission-details');
+    const errorMsg = document.getElementById('answerError');
+    const submitBtn = document.getElementById('finalSubmitBtn');
+
+    if (checkBtn && submissionDetails) {
+        checkBtn.addEventListener('click', () => {
+            const a1 = document.getElementById('answer1').value.trim();
+            const a2 = document.getElementById('answer2').value.trim();
+            const a3 = document.getElementById('answer3').value.trim();
+
+            if (a1 && a2 && a3) {
+                submissionDetails.style.display = 'block';
+                checkBtn.style.display = 'none';
+                if (errorMsg) errorMsg.style.display = 'none';
+                
+                // Prepare mailto link with answers
+                const subject = encodeURIComponent("Application - Savanna Circuit");
+                const body = encodeURIComponent(`1. The Nomad Factor:\n${a1}\n\n2. Future Fit:\n${a2}\n\n3. Availability:\n${a3}\n\n[Please attach your CV to this email]`);
+                if (submitBtn) submitBtn.href = `mailto:careers@sav-circuit.com?subject=${subject}&body=${body}`;
+            } else {
+                if (errorMsg) errorMsg.style.display = 'block';
+            }
+        });
+    }
+
+    // Dynamic Job Loader
+    const jobsContainer = document.getElementById('jobs-container');
+    if (jobsContainer) {
+        fetch('assets/data/jobs.json')
+            .then(response => response.json())
+            .then(data => {
+                if (data.length > 0) {
+                    jobsContainer.innerHTML = data.map(job => `
+                        <div class="job-card">
+                            <h3>${job.title}</h3>
+                            <p class="job-type">${job.type}</p>
+                            <p>${job.description}</p>
+                            <a href="${job.applyLink}" class="cta-button primary">Apply Now</a>
+                        </div>
+                    `).join('');
+                } else {
+                    jobsContainer.innerHTML = '<p>No open positions at this time.</p>';
+                }
+            })
+            .catch(error => {
+                console.error('Error loading jobs:', error);
+                jobsContainer.innerHTML = '<p>Unable to load job listings.</p>';
+            });
+    }
+});

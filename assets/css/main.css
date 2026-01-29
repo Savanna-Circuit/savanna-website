@@ -28,6 +28,10 @@ h1, h2, h3, h4, h5, h6 {
     border: 0;
 }
 
+.text-center {
+    text-align: center;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -221,6 +225,18 @@ body {
     white-space: nowrap;
     backdrop-filter: none;
     flex-shrink: 0;
+}
+
+.thrive-header-logo {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.thrive-header .thrive-header-logo {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* New Thrive Ecosystem Grid Layout */
@@ -1602,6 +1618,22 @@ body {
     margin-top: 1rem;
 }
 
+.product-card .catalogue-preview {
+    height: 250px;
+}
+
+.badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    margin-left: 8px;
+    background-color: var(--primary);
+    color: #333;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
 /* Financing Section */
 .financing-section {
     padding: 4rem 2rem;
@@ -2379,4 +2411,136 @@ body {
     .integration-flow {
         flex-direction: column;
     }
+}
+
+/* Policy Pages Styles */
+.policy-container {
+    max-width: 800px;
+    margin: 140px auto 60px; 
+    padding: 0 20px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.policy-container h1,
+.policy-container h2,
+.policy-container h3 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+.policy-container h1 {
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.policy-container h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.policy-container h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.policy-container ul {
+    margin-bottom: 20px;
+    padding-left: 40px;
+    list-style-position: outside;
+}
+
+.policy-container li {
+    margin-bottom: 10px;
+}
+
+/* Careers Page Specifics */
+.fit-check-section {
+    margin-top: 2rem;
+}
+
+.fit-check-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.question-block {
+    margin-bottom: 1.5rem;
+}
+
+.question-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.question-desc {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.question-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.submission-actions {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.answer-error {
+    color: #d9534f;
+    display: none;
+    margin-top: 10px;
+}
+
+.submission-details {
+    display: none;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.cv-drop-zone {
+    margin: 2rem auto;
+    max-width: 400px;
+    padding: 2rem;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.cv-drop-label {
+    color: #777;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.cv-file-input {
+    display: block;
+    margin: 0 auto;
+}
+
+.cv-note {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 0.5rem;
+}
+
+.submit-email-btn {
+    margin-top: 1rem;
+}
+
+.email-note {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #666;
 }

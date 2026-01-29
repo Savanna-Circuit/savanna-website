@@ -103,6 +103,82 @@ class UserAuth {
     }
 }
 
+// NEW: Centralized Product Data for Schema Generation
+const productDetails = {
+    'bmc-hybrid': {
+        name: "MaziwaPlus Bulk Milk Chiller (Hybrid)",
+        image: "../../assets/images/hybrid-bmc.webp",
+        description: "Designed for cooperative hubs and milk collection centers, Bulk Milk Chillers rapidly chill and store large volumes of milk. Powered by solar with hybrid backup options.",
+        sku: "BMC-HYBRID"
+    },
+    'bmc-solar': {
+        name: "MaziwaPlus Bulk Milk Chiller (Solar)",
+        image: "../../assets/images/solar-bmc1.webp",
+        description: "Designed for cooperative hubs and milk collection centers, the solar-powered Bulk Milk Chiller rapidly chills and stores large volumes of milk. Optimized for off-grid reliability.",
+        sku: "BMC-SOLAR"
+    },
+    'eco-sav-bags': {
+        name: "EcoSav Bags",
+        image: "../../assets/images/eco-sav-bag-1.webp",
+        description: "EcoSav Bags are durable, insulated carry packs designed for transporting fish and produce in cooled conditions using glycol ice ladder packs.",
+        sku: "ECO-SAV-BAGS"
+    },
+    'eco-sav-dryer': {
+        name: "Eco-Sav Dryer",
+        image: "../../assets/images/dryer.webp",
+        description: "The Eco-Sav Dryer enables solar-powered drying of agricultural products - from grains to herbs, fruits to leather. Convert farm surplus into valuable dried products.",
+        sku: "ECO-SAV-DRYER"
+    },
+    'eco-sav-pasteurizer': {
+        name: "EcoSav Pasteurisers",
+        image: "../../assets/images/pasturerizer.webp",
+        description: "EcoSav Pasteurisers enable safe, efficient milk processing, extending shelf life and meeting food safety standards. Built for small-scale and cooperative-level dairy production.",
+        sku: "ECO-SAV-PASTEURIZER"
+    },
+    'iwd-ice-water-dispenser': {
+        name: "Ice Water Dispenser (IWD)",
+        image: "../../assets/images/iwd.webp",
+        description: "The Stationary Ice Water Dispenser is a digitally controlled, solar-powered chilling system that produces and stores food-grade glycol-cooled water for cooling packs.",
+        sku: "IWD-DISPENSER"
+    },
+    'maziwaplus-dms': {
+        name: "MaziwaPlus DMS",
+        image: "../../assets/images/m-dms.webp",
+        description: "MaziwaPlus DMS is a cloud-based, mobile-integrated platform for real-time monitoring, route management, and digital records across the dairy supply chain.",
+        sku: "MP-DMS"
+    },
+    'maziwaplus-prechiller-300': {
+        name: "MaziwaPlus Prechillers 300-1000L",
+        image: "../../assets/images/m-pre-chiller.webp",
+        description: "The MaziwaPlus Prechillers is an entry-level hybrid milk chilling solution designed for small to medium-sized dairy operations.",
+        sku: "MP-PRECHILLER-300"
+    },
+    'maziwaplus-prechiller-pro': {
+        name: "MaziwaPlus Prechillers Pro 200-2000L",
+        image: "../../assets/images/pre-chillers-pro.webp",
+        description: "The advanced MaziwaPlus Prechillers Pro features smart M+ DMS monitoring, superior temperature precision, and enhanced capacity range.",
+        sku: "MP-PRECHILLER-PRO"
+    },
+    'nomad-cans-10l': {
+        name: "Nomad Cans 10L",
+        image: "../../assets/images/nomad-10.webp",
+        description: "Durable portable container for mobile operations. Lightweight and efficient for small-scale farmers.",
+        sku: "NOMAD-10L"
+    },
+    'nomad-cans-25l': {
+        name: "Nomad Cans 25L",
+        image: "../../assets/images/nomad-25.webp",
+        description: "The Nomad Cans 25L provides mid-range capacity for farm cooperatives and larger dairy operations. Its enhanced thermal insulation maintains milk quality during medium-distance transport.",
+        sku: "NOMAD-25L"
+    },
+    'nomad-cans-50l': {
+        name: "Nomad Cans 50L",
+        image: "../../assets/images/nomad-cans.webp",
+        description: "The Nomad Cans 50L is engineered for large cooperatives and commercial dairy operations. Its premium thermal insulation and high capacity make it ideal for long-distance milk transport.",
+        sku: "NOMAD-50L"
+    }
+};
+
 // Fix: Define initThemeToggle to prevent ReferenceError
 function initThemeToggle() {
     // Placeholder for theme toggle functionality
@@ -197,10 +273,10 @@ const footerHTML = `
                 <h4>Company</h4>
                 <ul>
                     <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/about.html#partners">Partners</a></li>
-                    <li><a href="https://sav-circuit.com/privacy-policy/">Privacy Policy</a></li>
-                    <li><a href="https://sav-circuit.com/terms-of-operations/">Terms of Service</a></li>
-                    <li><a href="/products.html">Product Policy</a></li>
+                    <li><a href="/index.html#partners">Partners</a></li>
+                    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="/product-policy.html">Product Policy</a></li>
                     </li>
                 </ul>
             </div>
@@ -368,11 +444,54 @@ function initNewsletterPopup(retryCount = 0) {
             if (emailInput && emailInput.value) {
                 console.log("Newsletter subscription received for:", emailInput.value);
                 alert("Thank you for subscribing!");
-                emailInput.value = ""; // Clear the input
+                emailInput.value = ""; 
                 closeModal();
             }
         });
     }
+}
+
+// NEW: Function to generate and inject product schema
+function generateProductSchema() {
+    if (!window.location.pathname.includes('/store/products/')) {
+        return;
+    }
+
+    const pathParts = window.location.pathname.split('/');
+    const fileName = pathParts.pop() || pathParts.pop(); 
+    const productKey = fileName.replace('.html', '');
+
+    const product = productDetails[productKey];
+    if (!product) {
+        console.warn(`Structured data not generated: No product found for key '${productKey}'`);
+        return;
+    }
+
+    const schema = {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": product.name,
+      "image": [ product.image ],
+      "description": product.description,
+      "brand": {
+        "@type": "Brand",
+        "name": "Savanna Circuit"
+      },
+      "sku": product.sku,
+      "offers": {
+        "@type": "Offer",
+        "url": window.location.href,
+        "priceCurrency": "KES",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition"
+      }
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(schema, null, 2);
+    document.head.appendChild(script);
+    console.log(`✓ Structured data for '${product.name}' injected.`);
 }
 // D. Main Storefront Logic (runs after header/footer are loaded)
 
@@ -383,6 +502,9 @@ let userAuth;
     // Wait for the header AND footer HTML to be injected into the page
     await loadHeader();
     loadFooter(); 
+
+    // NEW: Generate schema after page elements are loaded
+    generateProductSchema();
 
     // Initialize newsletter popup
     setTimeout(() => {
@@ -714,7 +836,7 @@ function showSlide(n) {
 }
 document.addEventListener("DOMContentLoaded", () => {
   const observerOptions = {
-    threshold: 0.2 // Trigger when 20% of the section is visible
+    threshold: 0.2
   };
 
   const observer = new IntersectionObserver((entries) => {
