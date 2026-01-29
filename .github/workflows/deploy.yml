@@ -1,0 +1,73 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - static-website  # Change this to your main branch name if different
+  workflow_dispatch:  # Allows manual triggering from GitHub UI
+
+jobs:
+  deploy:
+    name: Deploy to Production VPS
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Deploy to VPS via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          script_stop: true
+          script: |
+            echo "=== Starting deployment ==="
+            
+            # Navigate to project directory
+            cd ${{ secrets.PROJECT_PATH }} || { echo "Failed to navigate to project directory"; exit 1; }
+            echo "✓ Navigated to project directory: $(pwd)"
+            
+            # Pull latest changes
+            echo "=== Pulling latest changes from git ==="
+            git pull origin main || { echo "Failed to pull latest changes"; exit 1; }
+            echo "✓ Git pull successful"
+            
+            # Activate Python virtual environment
+            echo "=== Activating Python virtual environment ==="
+            source venv/bin/activate || { echo "Failed to activate virtual environment"; exit 1; }
+            echo "✓ Virtual environment activated"
+            
+            # Install/Update dependencies
+            echo "=== Installing/Updating Python dependencies ==="
+            pip install --upgrade pip
+            pip install -r requirements.txt || { echo "Failed to install requirements"; exit 1; }
+            echo "✓ Dependencies installed"
+            
+            # Run Alembic migrations
+            echo "=== Running database migrations ==="
+            alembic upgrade head || { echo "Failed to run database migrations"; exit 1; }
+            echo "✓ Database migrations completed"
+            
+            # Restart systemctl service
+            echo "=== Restarting systemctl service ==="
+            echo "${{ secrets.SSH_PASSWORD }}" | sudo -S systemctl restart ${{ secrets.SERVICE_NAME }} || { echo "Failed to restart service"; exit 1; }
+            echo "✓ Service restarted successfully"
+            
+            # Check service status
+            echo "=== Checking service status ==="
+            echo "${{ secrets.SSH_PASSWORD }}" | sudo -S systemctl is-active ${{ secrets.SERVICE_NAME }} || { echo "Service is not active!"; exit 1; }
+            echo "✓ Service is running"
+            
+            echo "=== Deployment completed successfully! ==="
+      
+      - name: Deployment Status
+        if: success()
+        run: echo "✅ Deployment to VPS completed successfully!"
+        
+      - name: Deployment Failed
+        if: failure()
+        run: echo "❌ Deployment to VPS failed. Check the logs above for details."
+
