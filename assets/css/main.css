@@ -694,6 +694,13 @@ body {
 
 .nav-cta-buy {
     animation: pulse-cta 1.0s infinite ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-cta-buy span {
+    font-size: 0.7em;
 }
 
 @keyframes pulse-cta {
@@ -2575,5 +2582,17 @@ body {
 .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; z-index: 2000; }
 .modal-content { background-color: #fff; padding: 2rem; border-radius: 8px; width: 90%; max-width: 500px; position: relative; max-height: 90vh; overflow-y: auto; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
 .close-modal { position: absolute; top: 10px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; color: #aaa; }
-.close-modal:hover { color: #000; }
+.close-modal:hover { color: #a6f509; }
 .discount-label { background-color: #e8f5e9; color: #2e7d32; padding: 10px; border-radius: 4px; margin: 15px 0; font-size: 0.9rem; border-left: 4px solid #2e7d32; }
+
+#bulkBuyModal h3 {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+#bulkBuyModal .modal-intro {
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+#bulkBuyModal .cta-button {
+    width: 100%;
+}
