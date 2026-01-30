@@ -511,6 +511,44 @@ function generateProductSchema() {
     document.head.appendChild(script);
     console.log(`✓ Structured data for '${product.name}' injected.`);
 }
+
+// Initialize Bulk Buy Modal Logic (Close & Submit)
+function initBulkBuyModal() {
+    const bulkBuyModal = document.getElementById('bulkBuyModal');
+    const closeBulkBuy = document.getElementById('closeBulkBuy');
+    const bulkBuyForm = document.getElementById('bulkBuyForm');
+
+    if (closeBulkBuy && bulkBuyModal) {
+        closeBulkBuy.addEventListener('click', () => {
+            bulkBuyModal.style.display = 'none';
+        });
+        
+        bulkBuyModal.addEventListener('click', (e) => {
+            if (e.target === bulkBuyModal) {
+                bulkBuyModal.style.display = 'none';
+            }
+        });
+    }
+
+    if (bulkBuyForm) {
+        bulkBuyForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(bulkBuyForm);
+            const data = Object.fromEntries(formData.entries());
+            
+            const subject = `Bulk Buy Request - ${data.organization}`;
+            const body = `Name: ${data.name}%0D%0AContact: ${data.contact}%0D%0AOrganization: ${data.organization}%0D%0ACounty: ${data.county}%0D%0AProduct: ${data.product}%0D%0AQuantity: ${data.quantity}`;
+            
+            window.location.href = `mailto:partnerships.sct@sav.com?subject=${subject}&body=${body}`;
+            
+            setTimeout(() => {
+                bulkBuyModal.style.display = 'none';
+                bulkBuyForm.reset();
+            }, 1000);
+        });
+    }
+}
+
 // D. Main Storefront Logic (runs after header/footer are loaded)
 
 let cart;
@@ -520,6 +558,9 @@ let userAuth;
     // Wait for the header AND footer HTML to be injected into the page
     await loadHeader();
     loadFooter(); 
+
+    // Initialize Bulk Buy Modal interactions
+    initBulkBuyModal();
 
     // NEW: Generate schema after page elements are loaded
     generateProductSchema();

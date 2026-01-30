@@ -28,6 +28,49 @@
         </div> 
     </nav>
 </header>
+<!-- Bulk Buy Modal -->
+<div id="bulkBuyModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+        <span class="close-modal" id="closeBulkBuy">&times;</span>
+        <h3>Bulk Order Request</h3>
+        <p class="modal-intro">Fill out the details below to request a quote.</p>
+        <form id="bulkBuyForm">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="name" required placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <label>Contact (Phone/Email)</label>
+                <input type="text" name="contact" required placeholder="Phone or Email">
+            </div>
+            <div class="form-group">
+                <label>Organization</label>
+                <input type="text" name="organization" required placeholder="Company/Organization">
+            </div>
+            <div class="form-group">
+                <label>County</label>
+                <input type="text" name="county" required placeholder="County">
+            </div>
+            <div class="form-group">
+                <label>Product</label>
+                <select name="product" required>
+                    <option value="">Select Product</option>
+                    <option value="Nomad Cans">Nomad Cans</option>
+                    <option value="Milk Chillers">Milk Chillers</option>
+                    <option value="Pasteurizers">Pasteurizers</option>
+                    <option value="Solar Dryers">Solar Dryers</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Quantity</label>
+                <input type="number" name="quantity" min="1" required placeholder="Number of units">
+            </div>
+            <p class="discount-label"><strong>Discount:</strong> 3+% discount for every order above 300 pcs</p>
+            <button type="submit" class="cta-button primary">Request Quote</button>
+        </form>
+    </div>
+</div>
 
 <!-- Floating Pop-ups -->
 <div class="floating-popup whatsapp-popup" id="whatsappPopup">
