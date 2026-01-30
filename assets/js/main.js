@@ -33,6 +33,7 @@ fetch(headerPath + cacheBuster)
                 initHamburger();
                 initNewsletterPopup();
                 initThemeToggle();
+                initBuyButton();
             }, 200);
         } else {
             console.warn("⚠ Header placeholder element (#Header) not found in page");
@@ -194,7 +195,9 @@ const observerOptions = {
 const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+            const animation = entry.target.dataset.animation || 'fadeInUp';
+            const delay = entry.target.dataset.delay || '0s';
+            entry.target.style.animation = `${animation} 0.6s ease-out ${delay} forwards`;
             observer.unobserve(entry.target);
         }
     });
@@ -350,6 +353,20 @@ document.addEventListener("DOMContentLoaded", () => {
             scrollObserver.observe(calculatorSection);
         }
     }
+
+    // Speak Up Form on speak-up-portal.html
+    const speakUpForm = document.getElementById('speakUpForm');
+    if (speakUpForm) {
+        speakUpForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const details = document.getElementById('complaint-details').value;
+            const subject = "Anonymous Speak Up Portal Submission";
+            const body = `The following anonymous complaint was submitted:\n\n${details}`;
+            window.location.href = `mailto:speakup@sav-circuit.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        });
+    }
+
+    initContactForms();
 });
 
       (function () {
@@ -448,10 +465,18 @@ const footerHTML = `
                 <ul>
                     <li><a href="/about.html">About Us</a></li>
                     <li><a href="/about.html#partners">Partners</a></li>
+                    <li><a href="#" id="footer-bulk-buy">Bulk Buy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Governance</h4>
+                <ul>
                     <li><a href="/privacy-policy.html">Privacy Policy</a></li>
                     <li><a href="/terms-of-service.html">Terms of Service</a></li>
                     <li><a href="/product-policy.html">Product Policy</a></li>
-                    </li>
+                    <li><a href="/ehs-policy.html">Environmental, Health & Safety Policy</a></li>
+                    <li><a href="/speak-up-portal.html">Speak Up Portal</a></li>
+                    
                 </ul>
             </div>
             <div class="footer-section">
@@ -494,8 +519,9 @@ const footerHTML = `
                 </address>
                 <ul class="contact-list">
                     <li>Mobile: <a href="tel:+254798710210">+254 798 710 210</a></li>
-                    <li>Email: <a href="mailto:info@sav-circuit.com">info@sav-circuit.com</a></li>
-                
+                    <li>General: <a href="mailto:info@sav-circuit.com">info@sav-circuit.com</a></li>
+                    <li>partners: <a href="mailto:partnerships.sct@sav.com">partnerships.sct@sav.com</a></li> 
+
                 </ul>
             </div>
            </div>
@@ -513,6 +539,15 @@ function loadFooter() {
 
     if (footerPlaceholder) {
         footerPlaceholder.innerHTML = footerHTML;
+        const footerBulkBuyBtn = document.getElementById('footer-bulk-buy');
+        if (footerBulkBuyBtn) {
+            footerBulkBuyBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const bulkBuyModal = document.getElementById('bulkBuyModal');
+                // Ensure the modal is available from the header
+                if (bulkBuyModal) bulkBuyModal.style.display = 'flex';
+            });
+        }
     } else {
         console.error('Target element #footer-placeholder not found. Footer could not be loaded.');
     }
@@ -704,7 +739,15 @@ document.addEventListener('DOMContentLoaded', function() {
             card.querySelector('.product-image').alt = data.title;
             card.querySelector('h4').textContent = data.title;
             card.querySelector('.product-description').textContent = data.summary;
-            card.querySelector('.product-actions a').href = data.link;
+            
+            const actionLink = card.querySelector('.product-actions a');
+            actionLink.href = data.link;
+
+            if (data.link.includes('wa.me')) {
+                actionLink.textContent = 'Speak to Sales';
+                actionLink.target = '_blank';
+                actionLink.rel = 'noopener';
+            }
         }
     });
 });
@@ -817,9 +860,10 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 const updatesGrid = document.getElementById('latest-updates-grid');
-                data.latestUpdates.forEach(update => {
+                data.latestUpdates.forEach((update, index) => {
                     const card = document.createElement('div');
-                    card.className = 'news-card';
+                    card.className = 'news-card animate-on-scroll';
+                    card.dataset.delay = `${index * 0.1}s`;
                     card.innerHTML = `
                         <h3>${update.title}</h3>
                         <p class="news-date">${update.date}</p>
@@ -827,6 +871,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <a href="${update.link}" class="cta-button secondary" target="_blank" rel="noopener noreferrer">Read More</a>
                     `;
                     updatesGrid.appendChild(card);
+                    observer.observe(card);
                 });
             })
             .catch(error => console.error('Error loading latest updates:', error));
@@ -837,9 +882,10 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 const storiesGrid = document.getElementById('stories-grid');
-                data.stories.forEach(story => {
+                data.stories.forEach((story, index) => {
                     const card = document.createElement('div');
-                    card.className = 'story-card';
+                    card.className = 'story-card animate-on-scroll';
+                    card.dataset.delay = `${index * 0.1}s`;
                     card.innerHTML = `
                         <div style="margin-bottom: 1rem;">${storyIcons[story.icon]}</div>
                         <h3>${story.title}</h3>
@@ -847,6 +893,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <a href="${story.link}" class="cta-button secondary" target="_blank" rel="noopener noreferrer">Read Story</a>
                     `;
                     storiesGrid.appendChild(card);
+                    observer.observe(card);
                 });
             })
             .catch(error => console.error('Error loading stories:', error));
@@ -857,15 +904,17 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 const pressMentions = document.getElementById('press-mentions');
-                data.pressCoverage.forEach(press => {
+                data.pressCoverage.forEach((press, index) => {
                     const mention = document.createElement('div');
-                    mention.className = 'press-mention';
+                    mention.className = 'press-mention animate-on-scroll';
+                    mention.dataset.delay = `${index * 0.1}s`;
                     mention.innerHTML = `
                         <p class="press-source">${press.source}</p>
                         <p class="press-title">${press.title}</p>
                         <a href="${press.link}" class="cta-link" target="_blank" rel="noopener noreferrer">Read Article →</a>
                     `;
                     pressMentions.appendChild(mention);
+                    observer.observe(mention);
                 });
             })
             .catch(error => console.error('Error loading press coverage:', error));
@@ -876,9 +925,10 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 const mediaGallery = document.getElementById('media-gallery');
-                data.mediaGallery.forEach(item => {
+                data.mediaGallery.forEach((item, index) => {
                     const card = document.createElement('div');
-                    card.className = 'media-card ' + item.type;
+                    card.className = 'media-card ' + item.type + ' animate-on-scroll';
+                    card.dataset.delay = `${index * 0.1}s`;
                     card.innerHTML = `
                         <div class="media-icon">${mediaIcons[item.icon]}</div>
                         <h4>${item.title}</h4>
@@ -887,6 +937,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <a href="${item.link}" class="media-link" target="_blank" rel="noopener noreferrer">${item.linkText}</a>
                     `;
                     mediaGallery.appendChild(card);
+                    observer.observe(card);
                 });
             })
             .catch(error => console.error('Error loading media gallery:', error));
@@ -901,7 +952,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Inquiries section
                 const inquiriesSection = document.createElement('div');
-                inquiriesSection.className = 'press-section';
+                inquiriesSection.className = 'press-section animate-on-scroll';
                 inquiriesSection.innerHTML = `
                     <h4>${pressKit.inquiries.title}</h4>
                     <p>${pressKit.inquiries.description}</p>
@@ -911,11 +962,12 @@ document.addEventListener('DOMContentLoaded', function() {
                         <a href="${pressKit.inquiries.mapLink}" target="_blank"><span class="address-text">${pressKit.inquiries.address}</span></a></p>
                 `;
                 pressContent.appendChild(inquiriesSection);
+                observer.observe(inquiriesSection);
 
                 // Media Kit section
                 if (pressKit.mediaKit) {
                     const mediaKitSection = document.createElement('div');
-                    mediaKitSection.className = 'press-section';
+                    mediaKitSection.className = 'press-section animate-on-scroll';
                     mediaKitSection.innerHTML = `
                         <h4>${pressKit.mediaKit.title}</h4>
                         <p>${pressKit.mediaKit.description}</p>
@@ -925,6 +977,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <a href="${pressKit.mediaKit.link}" class="cta-button primary" target="_blank" rel="noopener noreferrer">${pressKit.mediaKit.buttonText}</a>
                     `;
                     pressContent.appendChild(mediaKitSection);
+                    observer.observe(mediaKitSection);
                 }
             })
             .catch(error => console.error('Error loading press content:', error));
@@ -943,9 +996,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 };
 
                 reportsGrid.innerHTML = ''; 
-                data.reports.forEach(report => {
+                data.reports.forEach((report, index) => {
                     const card = document.createElement('div');
-                    card.className = 'report-card';
+                    card.className = 'report-card animate-on-scroll';
+                    card.dataset.delay = `${index * 0.1}s`;
                     card.innerHTML = `
                         <div style="margin-bottom: 1rem;">${reportIcons[report.icon]}</div>
                         <h3>${report.title}</h3>
@@ -953,6 +1007,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <a href="${report.link}" class="cta-button primary" target="_blank" rel="noopener noreferrer">${report.buttonText}</a>
                     `;
                     reportsGrid.appendChild(card);
+                    observer.observe(card);
                 });
             })
             .catch(error => console.error('Error loading reports:', error));
@@ -1109,7 +1164,7 @@ const teamData = {
         {
             role: "Director of Operations",
             description: "Oversees product engineering, solar cooling R&D, and digital platforms.",
-            image: "../../assets/images/director-operations-1.webp"
+            image: "../../assets/images/director-operations.webp"
         },
         {
             role: "Manager Operations",
@@ -1126,12 +1181,12 @@ const teamData = {
         {
             role: "Field Technicians",
             description: "Deploy and maintain systems, train users, and support our customers in the field.",
-            image: "../../assets/images/team-2.webp"
+            image: "../../assets/images/field-tech.webp"
         },
         {
             role: "Sales & Partnerships",
             description: "Builds relationships with farmers and partners to expand our impact.",
-            image: "../../assets/images/team-2.webp"
+            image: "../../assets/images/field-team.webp"
         },
         {
             role: "Customer Support",
@@ -1245,3 +1300,92 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 });
+
+// Buy Button Dropdown & Bulk Buy Logic
+function initBuyButton() {
+    const buyBtn = document.getElementById('buyBtn');
+    const buyOptions = document.getElementById('buyOptions');
+    const openBulkBuy = document.getElementById('openBulkBuy');
+    const bulkBuyModal = document.getElementById('bulkBuyModal');
+    const closeBulkBuy = document.getElementById('closeBulkBuy');
+    const bulkBuyForm = document.getElementById('bulkBuyForm');
+
+    if (buyBtn && buyOptions) {
+        buyBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            buyOptions.classList.toggle('show');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!buyBtn.contains(e.target) && !buyOptions.contains(e.target)) {
+                buyOptions.classList.remove('show');
+            }
+        });
+    }
+
+    if (openBulkBuy && bulkBuyModal) {
+        openBulkBuy.addEventListener('click', (e) => {
+            e.preventDefault();
+            buyOptions.classList.remove('show');
+            bulkBuyModal.style.display = 'flex';
+        });
+    }
+
+    if (closeBulkBuy && bulkBuyModal) {
+        closeBulkBuy.addEventListener('click', () => {
+            bulkBuyModal.style.display = 'none';
+        });
+        
+        bulkBuyModal.addEventListener('click', (e) => {
+            if (e.target === bulkBuyModal) {
+                bulkBuyModal.style.display = 'none';
+            }
+        });
+    }
+
+    if (bulkBuyForm) {
+        bulkBuyForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(bulkBuyForm);
+            const data = Object.fromEntries(formData.entries());
+            
+            const subject = `Bulk Buy Request - ${data.organization}`;
+            const body = `Name: ${data.name}%0D%0AContact: ${data.contact}%0D%0AOrganization: ${data.organization}%0D%0ACounty: ${data.county}%0D%0AProduct: ${data.product}%0D%0AQuantity: ${data.quantity}`;
+            
+            window.location.href = `mailto:partnerships.sct@sav.com?subject=${subject}&body=${body}`;
+            
+            setTimeout(() => {
+                bulkBuyModal.style.display = 'none';
+                bulkBuyForm.reset();
+            }, 1000);
+        });
+    }
+}
+
+// Contact Form Logic
+function initContactForms() {
+    const supportForm = document.querySelector('.support-form');
+    if (supportForm) {
+        supportForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const category = document.getElementById('category-select')?.value || 'General';
+            const name = supportForm.querySelector('input[placeholder*="name"]')?.value || '';
+            const email = supportForm.querySelector('input[type="email"]')?.value || '';
+            const phone = supportForm.querySelector('input[type="tel"]')?.value || '';
+            const description = supportForm.querySelector('textarea')?.value || '';
+            
+            let specificInfo = '';
+            const visibleSpecific = document.querySelector('.category-specific[style*="block"]');
+            if (visibleSpecific) {
+                const select = visibleSpecific.querySelector('select');
+                if (select) specificInfo = `%0D%0ADetail: ${select.value}`;
+            }
+
+            const subject = `Support Request - ${category}`;
+            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0ACategory: ${category}${specificInfo}%0D%0ADescription: ${description}`;
+            
+            window.location.href = `mailto:info@savanacircuit.com?subject=${subject}&body=${body}`;
+        });
+    }
+}

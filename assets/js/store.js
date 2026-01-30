@@ -34,7 +34,7 @@ const productData = {
     "BMC Solar Milk Cooler": { image: "../images/solar-bmc.webp" },
     "Eco-Sav Pasteurizer 100-500L": {  image: "../images/PASTUERIZER.jpg" },
     "MaziwaPlus DMS": {  image: "../images/M+%20DMS.png", subscription: true },
-    "Eco-Sav Solar Dryer": {  image: "../images/dryer.JPG" }
+    "Eco-Sav Solar Dryer": {  image: "../images/dryer.webp" }
 };
 
 class ShoppingCart {
@@ -273,11 +273,19 @@ const footerHTML = `
                 <h4>Company</h4>
                 <ul>
                     <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/index.html#partners">Partners</a></li>
+                    <li><a href="/about.html#partners">Partners</a></li>
+                    <li><a href="#" id="footer-bulk-buy">Bulk Buy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Governance</h4>
+                <ul>
                     <li><a href="/privacy-policy.html">Privacy Policy</a></li>
                     <li><a href="/terms-of-service.html">Terms of Service</a></li>
                     <li><a href="/product-policy.html">Product Policy</a></li>
-                    </li>
+                    <li><a href="/ehs-policy.html">Environmental, Health & Safety Policy</a></li>
+                    <li><a href="/speak-up-portal.html">Speak Up Portal</a></li>
+                    
                 </ul>
             </div>
             <div class="footer-section">
@@ -320,8 +328,9 @@ const footerHTML = `
                 </address>
                 <ul class="contact-list">
                     <li>Mobile: <a href="tel:+254798710210">+254 798 710 210</a></li>
-                    <li>Email: <a href="mailto:info@sav-circuit.com">info@sav-circuit.com</a></li>
-                
+                    <li>General: <a href="mailto:info@sav-circuit.com">info@sav-circuit.com</a></li>
+                    <li>Partners: <a href="mailto:partnerships.sct@sav.com">partnerships.sct@sav.com</a></li> 
+
                 </ul>
             </div>
            </div>
@@ -340,6 +349,15 @@ function loadFooter() {
         // Update the year dynamically after injection
         const yearSpan = document.getElementById('current-year');
         if (yearSpan) { yearSpan.textContent = new Date().getFullYear(); }
+
+        const footerBulkBuyBtn = document.getElementById('footer-bulk-buy');
+        if (footerBulkBuyBtn) {
+            footerBulkBuyBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const bulkBuyModal = document.getElementById('bulkBuyModal');
+                if (bulkBuyModal) bulkBuyModal.style.display = 'flex';
+            });
+        }
     } else { console.error('Target element #footer-placeholder not found. Footer could not be loaded.'); }
 }
 

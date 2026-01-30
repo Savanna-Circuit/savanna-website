@@ -1,0 +1,95 @@
+.mvv-modern-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.mvv-card {
+  padding: 2.5rem;
+  border-radius: 12px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.mvv-card:hover {
+  transform: translateY(-5px);
+}
+.mvv-card.mission {
+  background: linear-gradient(135deg, #02172c, #3498db);
+}
+.mvv-card.vision {
+  background: linear-gradient(135deg, #012208, #4caf50);
+}
+.mvv-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+  border-bottom: 2px solid rgba(255,255,255,0.3);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+.mvv-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.values-modern-container {
+  margin-top: 3rem;
+}
+.values-modern-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+.value-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border-top: 4px solid #ddd;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.value-card:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+.value-icon {
+  margin-bottom: 1rem;
+  display: inline-flex;
+  padding: 10px;
+  border-radius: 50%;
+  background: #f8f9fa;
+  width: 60px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+}
+.value-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.value-card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+.value-card.innovation { border-color: #a6f509; }
+.value-card.innovation .value-icon { color: #34495e; background: #ebf5fb; }
+.value-card.sustainability { border-color: navy; }
+.value-card.sustainability .value-icon { color: #34495e; background: #f5eef1; background: #eafaf1; }
+.value-card.farmer { border-color: #a6f509; }
+.value-card.farmer .value-icon { color: #34495e; background: #fdf2e9; }
+.value-card.impact { border-color: navy; }
+.value-card.impact .value-icon { color: #34495e; background: #f5eef8; }
+.value-card.integrity { border-color: #a6f509; }
+.value-card.integrity .value-icon { color: #34495e; background: #ebedef; }
+@media (max-width: 768px) {
+  .mvv-modern-grid { grid-template-columns: 1fr; }
+}
