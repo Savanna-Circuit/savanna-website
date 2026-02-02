@@ -520,7 +520,7 @@ const footerHTML = `
                 <ul class="contact-list">
                     <li>Mobile: <a href="tel:+254798710210">+254 798 710 210</a></li>
                     <li>General: <a href="mailto:info@sav-circuit.com">info@sav-circuit.com</a></li>
-                    <li>partners: <a href="mailto:partnerships.sct@sav.com">partnerships.sct@sav.com</a></li> 
+                    <li>partners: <a href="mailto:Partnerships.SCT@sav-circuit.com">Partnerships.SCT@sav-circuit.com</a></li> 
 
                 </ul>
             </div>
@@ -1352,7 +1352,7 @@ function initBuyButton() {
             const subject = `Bulk Buy Request - ${data.organization}`;
             const body = `Name: ${data.name}%0D%0AContact: ${data.contact}%0D%0AOrganization: ${data.organization}%0D%0ACounty: ${data.county}%0D%0AProduct: ${data.product}%0D%0AQuantity: ${data.quantity}`;
             
-            window.location.href = `mailto:partnerships.sct@sav.com?subject=${subject}&body=${body}`;
+            window.location.href = `mailto:Partnerships.SCT@sav-circuit.com?subject=${subject}&body=${body}`;
             
             setTimeout(() => {
                 bulkBuyModal.style.display = 'none';
