@@ -329,7 +329,7 @@ const footerHTML = `
                 <ul class="contact-list">
                     <li>Mobile: <a href="tel:+254798710210">+254 798 710 210</a></li>
                     <li>General: <a href="mailto:info@sav-circuit.com">info@sav-circuit.com</a></li>
-                    <li>Partners: <a href="mailto:partnerships.sct@sav.com">partnerships.sct@sav.com</a></li> 
+                    <li>Partners: <a href="mailto:Partnerships.SCT@sav-circuit.com">Partnerships.SCT@sav-circuit.com</a></li> 
 
                 </ul>
             </div>
@@ -804,7 +804,7 @@ function showUserProfileModal() {
                 </div>
                 <div class="profile-actions">
                     <button class="cta-button secondary full-width" onclick="handleViewCartFromProfile()">View Cart (${cart.getItemCount()} items)</button>
-                    <button class="cta-button secondary full-width" onclick="handleSignOut()"><!-- SVG HERE -->Sign Out</button>
+                    <button class="cta-button secondary full-width" onclick="handleSignOut()">Sign Out</button>
                 </div>
             </div>
         </div>
