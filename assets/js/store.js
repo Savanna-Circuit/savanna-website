@@ -539,7 +539,7 @@ function initBulkBuyModal() {
             const subject = `Bulk Buy Request - ${data.organization}`;
             const body = `Name: ${data.name}%0D%0AContact: ${data.contact}%0D%0AOrganization: ${data.organization}%0D%0ACounty: ${data.county}%0D%0AProduct: ${data.product}%0D%0AQuantity: ${data.quantity}`;
             
-            window.location.href = `mailto:partnerships.sct@sav.com?subject=${subject}&body=${body}`;
+            window.location.href = `mailto:Partnerships.SCT@sav-circuit.com?subject=${subject}&body=${body}`;
             
             setTimeout(() => {
                 bulkBuyModal.style.display = 'none';
